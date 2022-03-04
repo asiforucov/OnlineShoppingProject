@@ -1,0 +1,15 @@
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Business.deps.json
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Business.dll
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Business.pdb
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\asifr\source\repos\LifeStyle\Business\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.csproj.AssemblyReference.cache
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfoInputs.cache
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.AssemblyInfo.cs
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.csproj.CoreCompileInputs.cache
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.csproj.CopyComplete
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.dll
+C:\Users\asifr\source\repos\LifeStyle\Business\obj\Debug\netcoreapp3.1\Business.pdb

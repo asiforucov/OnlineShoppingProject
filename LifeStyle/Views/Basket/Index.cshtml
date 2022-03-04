@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- -----BASKET TABLE----- -->
+<section class="cart-section pt_large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="row-1">
+                                <th class="row-title"><p>Məhsul</p></th>
+                                <th class="row-title"><p>Məhsulun adı</p></th>
+                                <th class="row-title"><p>Qiymət</p></th>
+                                <th class="row-title"><p>Say</p></th>
+                                <th class="row-title"><p>Cəmi</p></th>
+                                <th class="row-title"><p></p></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row-2">
+                                <td class="row-close close-1" data-title="product-remove"><a href="#"><i class="ion-close-circled"></i></a></td>
+                                <td class="row-img"><img src="./assets/image/product/Women/Salvar/product1.png" width="120px" alt="cart-img"></td>
+                                <td class="product-name" data-title="Product"><a href="#" style="color: black;">Variable product 001</a></td>
+                                <td class="product-price" data-title="Price"><p>$ 78.00</p></td>
+                                <td class="product-quantity" data-title="Quantity">
+                                    <div class="quantity_filter">
+                                        <input type="button" value="-" class="minus">
+                                        <input class="quantity-number qty" type="text" value="2" min="1" max="10">
+                                        <input type="button" value="+" class="plus">
+                                    </div>
+                                </td>
+                                <td class="product-total" data-title="Subprice"><p>$ 156.00</p></td>
+                                <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
+                            </tr>
+                            <tr class="row-3">
+                                <td class="row-close close-1" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
+                                <td class="row-img"><img src="./assets/image/product/Women/Salvar/product1.png" width="120px" alt="cart-img"></td>
+                                <td class="product-name" data-title="Product"><a style="color: black;" href="#">Ornare sed consequat</a></td>
+                                <td class="product-price" data-title="Price"><p>$ 81.00</p></td>
+                                <td class="product-quantity" data-title="Quantity">
+                                    <div class="quantity_filter">
+                                        <input type="button" value="-" class="minus">
+                                        <input class="quantity-number qty" type="text" value="1" min="1" max="10">
+                                        <input type="button" value="+" class="plus">
+                                    </div>
+                                </td>
+                                <td class="product-total" data-title="Subprice"><p>$ 81.00</p></td>
+                                <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></i></a></td>
+                            </tr>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="12">
+                                    <ul class="table-btn">
+                                        <li><a href="Category-Product.html" class="btn btn-secondary"><i class="fa fa-chevron-left"></i>Alışverişə keç</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -----BASKET TABLE----- -->
+<!-- -----CARD TOTAL----- -->
+<section class="cart-box-section pb_large">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6">
+                <div class="cart-inner-box box-1 text-center">
+                    <div class="ci-title">
+                        <h6>Promo kod</h6>
+                    </div>
+                    <div class="ci-caption">
+                        <p>Promo kod daxil edərək endirim qazanın</p>
+                        <form>
+                            <input required="" class="form-control" type="text" placeholder="Kod">
+                            <button class="btn btn-secondary" type="submit">Daxil et</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="cart-inner-box box-2 text-center">
+                    <div class="ci-title">
+                        <h6>Cəmi</h6>
+                    </div>
+                    <div class="ci-caption">
+                        <ul>
+                            <li>Məhsul dəyəri <span>$237.00</span></li>
+                            <li>Ümumi <span>$237.00</span></li>
+
+                        </ul>
+                    </div>
+                    <div class="ci-btn">
+                        <a href="checkout.html" class="btn btn-primary btn-block rounded-0">Sifariş ver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -----CARD TOTAL----- -->

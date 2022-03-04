@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="login">
+    <div class="container py-4 py-lg-5 my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-0 box-shadow">
+                    <div class="card-body">
+                        <h2 class="h4 mb-1">Giriş et</h2>
+                        <hr class="mt-2">
+
+                        <form class="needs-validation mt-2" autocomplete="off" action="javascript:"
+                              method="post" id="sign-in-form">
+                            <input type="hidden" name="_token" value="mJDHGnPGd5TlFm3wzN6SJfzn82pgjSla5TAeEKPn">                            <div class="form-group">
+                                <label for="si-email">E-poçt ünvanı</label>
+                                <input class="form-control" type="email" name="email" id="si-email"
+                                       placeholder="johndoe@example.com"
+                                       required>
+                                <div class="invalid-feedback">E-poçt ünvanı yaz.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="si-password">Şifrə</label>
+                                <div class="password-toggle">
+                                    <input class="form-control" name="password" type="password" id="si-password"
+                                           required>
+                                    <label class="password-toggle-btn">
+                                        <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex flex-wrap justify-content-between">
+
+                                <div class="form-group">
+                                    <input type="checkbox" class="mr-1"
+                                           name="remember" id="remember">
+
+                                    <label class="" for="remember">Məni xatırla</label>
+                                </div>
+                                <a class="font-size-sm" href="recover-password.html">
+                                    Şifrəmi unutdum?
+                                </a>
+                            </div>
+                            <button class="btn btn-primary btn-block btn-shadow"
+                                    type="submit">
+                                Giriş et
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-6 for-no-account d-flex">
+                                <h6>Hesabın yoxdur? <a asp-controller="Register" asp-action="Index">Hesab yarat</a></h6>
+                            </div>
+                            <div class="col-md-12 col-sm-6">
+                                <a class="btn btn-outline-primary pull-right"
+                                   href="register.html">
+                                    <i class="fa fa-user-circle"></i> Qeydiyyatdan keç
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

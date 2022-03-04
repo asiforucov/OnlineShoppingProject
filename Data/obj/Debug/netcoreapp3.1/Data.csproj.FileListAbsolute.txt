@@ -1,0 +1,16 @@
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.csproj.AssemblyReference.cache
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.dll
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.pdb
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.csproj.CopyComplete
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.json
+C:\Users\asifr\source\repos\LifeStyle\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.dev.json
+C:\Users\asifr\source\repos\LifeStyle\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache

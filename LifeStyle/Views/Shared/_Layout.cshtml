@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/image/logo/favicon5.png">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Life Style - Onlayn Alış Veriş saytı</title>
+</head>
+<body>
+    <!-- ---HEADER--- -->
+    <header class="header-4">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="header_list text-md-left text-center">
+                            <li><a href="tel:+994 77 767 4000"><i class="fa fa-phone"></i>+994 77 767 4000</a></li>
+                            <li><a href="mailto:asiforujof@gmail.com"><i class="fa fa-envelope-o"></i>asiforujof@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="header_list text-md-right text-center">
+                            <li>
+                                <a asp-controller="Login" asp-action="Index" >Daxil ol</a>
+                            </li>
+                            <li><a asp-controller="Register" asp-action="Index">Qeydiyyat</a></li>
+                            <li><a asp-controller="UserAccount" asp-action="Index">Hesabım</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mdl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="hm-inner d-sm-flex align-items-center justify-content-between">
+                            <div class="header-logo">
+                                <a asp-controller="Home" asp-action="Index"><img src="./assets/image/logo/Lifestyle-100.png" alt="logo"></a>
+                            </div>
+                            <form class="header-form">
+                                <input class="search-box" placeholder="Axtar..." required="" value="" type="search">
+                                <button type="submit">Axtar</button>
+                            </form>
+                            <div class="header-right">
+                                <div class="like">
+                                    <a asp-controller="Favorities" asp-action="Index">
+                                        <div class="cart-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="header-cart">
+                                    <div class="basket">
+                                        <a href="#">
+                                            <div class="cart-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                                </svg>
+                                                <span>02</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="basket-price">
+                                        <h4>100 ₼</h4><i class="fa fa-angle-down"></i>
+                                    </div>
+                                    <div class="cart-box">
+                                        <div class="cart-info">
+                                            <div class="cart-prodect d-flex">
+                                                <div class="cart-img">
+                                                    <img src="./assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
+                                                </div>
+                                                <div class="cart-product">
+                                                    <a href="#">Ornare sed consequat</a>
+                                                    <p>₼ 81.00</p>
+                                                </div>
+                                                <a href="#" class="close-icon d-flex align-items-center"><i class="ion-close"></i></a>
+                                            </div>
+                                            <div class="cart-prodect d-flex">
+                                                <div class="cart-img">
+                                                    <img src="./assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
+                                                </div>
+                                                <div class="cart-product">
+                                                    <a href="#">Pellentesque posuere</a>
+                                                    <p>₼ 80.00</p>
+                                                </div>
+                                                <a href="#" class="close-icon d-flex align-items-center"><i class="ion-close"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="price-prodect d-flex align-items-center justify-content-between">
+                                            <p class="total">Cəmi</p>
+                                            <p class="total-price">₼ 161.00</p>
+                                        </div>
+                                        <div class="cart-btn">
+                                            <a asp-controller="Basket" asp-action="Index" class="">Səbətə bax</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-lg-none mm_icon">
+                                    <div class="form-captions" id="search">
+                                        <button type="submit" class="submit-btn-2"><i class="fa fa-search"></i></button>
+                                    </div>
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-btm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown active">
+                                        <a class="nav-link dropdown-toggler" asp-controller="Home" asp-action="Index"   aria-haspopup="true" aria-expanded="false">Əsas səhifə<i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link dropdown-toggler " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kateqoriyalar<i class="fa fa-angle-down"></i><i class="fa fa-angle-right"></i></a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="About" asp-action="Index">Haqqında</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="FAQ" asp-action="Index">FAQ</a>
+                                    </li>
+                                    @*<li class="nav-item">
+                                        <a class="nav-link" href="Contact.html">Əlaqə</a>
+                                    </li>*@
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ---HEADER--- -->
+    @RenderBody()
+    <!-- ---FOOTER--- -->
+    <footer class="page-footer font-small mdb-color pt-3">
+        <!-- Footer Links -->
+        <div class="container text-center" style="padding-bottom: 13px;">
+
+            <!-- Footer links -->
+            <div class="row text-center text-md-left mt-3 pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mt-3">
+                    <div class="text-nowrap mb-4">
+                        <a class="d-inline-block align-middle mt-n1 mr-3" href="./Home.html">
+                            <img width="250" style="height: 90px!important;" src="./assets/image/logo/Lifestyle-100.png">
+                        </a>
+                    </div>
+                    <center>
+                        <span class="social-media">
+                            <a class="social-btn sb-light sb-twitter ml-2 mb-2" target="_blank" href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                        <span class="social-media">
+                            <a class="social-btn sb-light sb-linkedin ml-2 mb-2" target="_blank" href="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </span>
+
+
+                        <span class="social-media">
+                            <a class="social-btn sb-light sb-instagram ml-2 mb-2" target="_blank" href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                        <span class="social-media">
+                            <a class="social-btn sb-light sb-facebook ml-2 mb-2" target="_blank" href="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </center>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">Xüsusi</h6>
+                    <ul class="widget-list">
+                        <li class="widget-list-item">
+                            <a class="widget-list-link" href="">Kateqoriyalar</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">Hesab və çatdırılma</h6>
+                    <ul class="widget-list">
+                        <li class="widget-list-item">
+                            <a class="widget-list-link" href="">Profil məlumatı</a>
+                        </li>
+                        <li class="widget-list-item">
+                            <a class="widget-list-link" asp-controller="Favorities" asp-action="Index">Arzu siyahısı</a>
+                        </li>
+                        <li class="widget-list-item">
+                            <a class="widget-list-link" href="">Ünvan</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">Haqqımızda</h6>
+
+
+                    <ul class="widget-list">
+
+                        <li class="widget-list-item">
+                            <a class="widget-list-link" asp-controller="About" asp-action="Index">Haqqımızda</a>
+                        </li>
+                        <li class="widget-list-item"><a class="widget-list-link" asp-controller="FAQ" asp-action="Index">Çox Verilən Suallar</a></li>
+                        <li class="widget-list-item ">
+                            <a class="widget-list-link" asp-controller="Privacy_Policy" asp-action="Index">
+                                Gizlilik Siyasəti
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Footer links -->
+        </div>
+
+        <hr>
+        <!-- Grid row -->
+        <div class="container text-center">
+            <div class="row d-flex align-items-center footer-end">
+                <div class="col-md-12 mt-3">
+                    <p class="text-center" style="font-size: 12px;">© Copyright 2022 <a href="https://www.instagram.com/asiforujof">Asif Orujov</a></p>
+                </div>
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+    </footer>
+    <!-- ---FOOTER--- -->
+    <script src="./assets/js/waypoint.js"></script>
+    <script src="./assets/js/sale-time.js"></script>
+    <script src="./assets/js/select2.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/mCustomScrollbar.concat.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/js/jquery.fitvids.js"></script>
+    <script src="./assets/js/jquery.elevatezoom.js"></script>
+    <script src="./assets/js/jquery.countup.js"></script>
+    <script src="./assets/js/isotope.min.js"></script>
+    <script src="./assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/sale-time.js"></script>
+    <script src="./assets/js/countdown.min.js"></script>
+    <script src="./assets/js/jquery-price-slider.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

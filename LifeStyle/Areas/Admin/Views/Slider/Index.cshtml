@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Slider>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <th scope="row">@count</th>
+                <td>@s.Name</td>
+                <td>@s.Image</td>
+                <td>@s.Title</td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>
+
+

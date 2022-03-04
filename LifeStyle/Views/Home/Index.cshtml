@@ -1,0 +1,846 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- ---INTRO--- -->
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item slider-area background_bg" data-img-src="assets/image/slider/slider-img-4.jpg" style="background: url(&quot;assets/image/slider/slider-img-4.jpg&quot;) center center / cover;">
+                            <div class="banner_slide_content text-white">
+                                <div class="slider-caption mx-5">
+                                    <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;color: white">YAY ENDİRİMİ</h1>
+                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">Sabah alış-verişinizə 50%-ə qədər endirim əldə edin!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item slider-area background_bg active" data-img-src="assets/image/slider/slider-img-5.jpg" style="background: url(&quot;assets/image/slider/slider-img-5.jpg&quot;) center center / cover;">
+                            <div class="banner_slide_content mx-5">
+                                <div class="slider-caption text-right">
+                                    <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible; ">CHRISTMAS SALE</h1>
+                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">Get up to 50% off your shopping items tomorrow!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item slider-area background_bg" data-img-src="assets/image/slider/slider-img-6.jpg" style="background: url(&quot;assets/image/slider/slider-img-6.jpg&quot;) center center / cover;">
+                            <div class="banner_slide_content text-white">
+                                <div class="slider-caption text-center">
+                                    <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;color: white">BÜTÜN MƏHSULLARA 50% ENDİRİM</h1>
+                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">Sabah alış-verişinizə 50%-ə qədər endirim əldə edin!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators carousel-style-2">
+                        <li data-target="#carouselExampleControls" data-slide-to="0" class=""></li>
+                        <li data-target="#carouselExampleControls" data-slide-to="1" class="active"></li>
+                        <li data-target="#carouselExampleControls" data-slide-to="2" class=""></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="facility-style-2">
+                    <div class="facility-box">
+                        <div class="facility-inner">
+                            <div class="fb-icon">
+                                <i class="fa fa-truck"></i>
+                            </div>
+                            <div class="fb-text">
+                                <h5>ÇATDIRILMA</h5>
+                                <span>Ölkə</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="facility-box">
+                        <div class="facility-inner">
+                            <div class="fb-icon">
+                                <i class="fa fa-headphones"></i>
+                            </div>
+                            <div class="fb-text">
+                                <h5>24/ 7 DƏSTƏK</h5>
+                                <span>Müştəri xidmətləri</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="facility-box">
+                        <div class="facility-inner">
+                            <div class="fb-icon">
+                                <i class="fa fa-cc-mastercard"></i>
+                            </div>
+                            <div class="fb-text">
+                                <h5>ÖDƏNİŞ</h5>
+                                <span>Təhlükəsiz Sistem</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="facility-box">
+                        <div class="facility-inner">
+                            <div class="fb-icon">
+                                <i class="fa fa-trophy"></i>
+                            </div>
+                            <div class="fb-text">
+                                <h5>KEYFİYYƏT</h5>
+                                <span>orjinal məhsullar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ---INTRO--- -->
+<!-- ---PRODUCT--- -->
+<section class="popular-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title text-center">
+                    <h4>MƏHSULLAR</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-wrap">
+                    <ul class="nav nav-tabs tab-style-2 justify-content-center" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="arrivals-tab" data-toggle="tab" href="#arrivals" role="tab" aria-controls="arrivals" aria-selected="true"><i class="icon icon-home"></i>Kişi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="sallers-tab" data-toggle="tab" href="#sallers" role="tab" aria-controls="sallers" aria-selected="false"><i class="icon icon-profile"></i>Qadın</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="offer-tab" data-toggle="tab" href="#offer" role="tab" aria-controls="offer" aria-selected="false"><i class="icon icon-file-text"></i>Uşaq</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="tab-content products-style-4">
+                    <div class="tab-pane fade show active" id="arrivals" role="tabpanel" aria-labelledby="arrivals-tab">
+                        <div class="row">
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Variable product 001</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 78.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Ornare sed consequat</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 95.00</del>₼ 81.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Pellentesque posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 80.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Consequat posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 50.00</del>₼ 45.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Variable product 001</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 78.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Ornare sed consequat</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 95.00</del>₼ 81.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Pellentesque posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 80.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Consequat posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 50.00</del>₼ 45.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-more-btn">
+                            <a href="" class="btn btn-primary ">Daha çox göstər</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sallers" role="tabpanel" aria-labelledby="sallers-tab">
+                        <div class="row">
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Variable product 001</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 78.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Ornare sed consequat</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 95.00</del>₼ 81.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Pellentesque posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 80.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Consequat posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 50.00</del>₼ 45.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Variable product 001</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 78.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Ornare sed consequat</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 95.00</del>₼ 81.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Pellentesque posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 80.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Consequat posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 50.00</del>₼ 45.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-more-btn">
+                            <a href="" class="btn btn-primary ">Daha çox göstər</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="offer" role="tabpanel" aria-labelledby="offer-tab">
+                        <div class="row">
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Variable product 001</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 78.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Ornare sed consequat</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 95.00</del>₼ 81.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Pellentesque posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 80.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Consequat posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 50.00</del>₼ 45.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Variable product 001</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 78.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Ornare sed consequat</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 95.00</del>₼ 81.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Pellentesque posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 90.00</del>₼ 80.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product/Women/Salvar/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a href="product-detail.html" class="cart-name">Consequat posuere</a>
+                                        <div class="product-rate">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star-half"></i>
+                                        </div>
+                                        <p class="cart-price"><del>₼ 50.00</del>₼ 45.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-more-btn">
+                            <a href="" class="btn btn-primary ">Daha çox göstər</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ---PRODUCT--- -->
+<!-- -----SALE----- -->
+<section class="bg_light_pink pt_large pb_large">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-4">
+                <div class="deal_img">
+                    <a href="#"><img src="./assets/image/slider/deal_img.png" alt="deal_img"></a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="deal_section text-center">
+                    <h2 class="deal_title">Yaz endirimi</h2>
+                    <p>21-28 Mart tarixlərində xüsusi endirimlərdən yararlanın.</p>
+                    <p>Endirimə qaldı:</p>
+                    <div class="countdown_time" data-time="2020/03/15">
+                        <div class="countdown_box">
+                            <div class="countdown_content">
+                                <span class="countdown days">00 </span>
+                                <span class="cd_text">Gün</span>
+                            </div>
+                        </div>
+                        <div class="countdown_box">
+                            <div class="countdown_content">
+                                <span class="countdown hours">00</span>
+                                <span class="cd_text">Saat</span>
+                            </div>
+                        </div>
+                        <div class="countdown_box">
+                            <div class="countdown_content">
+                                <span class="countdown minutes">00</span>
+                                <span class="cd_text">Dəqiqə</span>
+                            </div>
+                        </div>
+                        <div class="countdown_box">
+                            <div class="countdown_content">
+                                <span class="countdown seconds">00</span>
+                                <span class="cd_text">Saniyə</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -----SALE----- -->
+<!-- ---FOLLOW--- -->
+<section id="follow" style="background-image: url(./assets/image/paralax/follow-paralax.jpg);">
+    <div class="follow">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-sm-12">
+                    <div class="leftSide">
+                        <b style="color: #666666;">Yeniliklərdən xabardar olun!</b>
+                        <p style="color: #666666;">Hər dəfə yeni xüsusi təklifimiz olduqda bizdən e-poçt almaq istəyirsinizsə, burada qeydiyyatdan keçin!</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="rightSide">
+                        <form class="newsletter-form">
+                            <div class="outline-input">
+                                <input class="rounded-0" type="text" required="" placeholder="Email adresi daxil edin">
+                            </div>
+                            <button type="submit" title="Subscribe" class="btn btn-submit btn-primary rounded-0" name="submit" value="Submit">Abunə ol</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ---FOLLOW--- -->

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Count</th>
+            <th scope="col">Info</th>
+            <th scope="col">Create Date</th>
+            <th scope="col">Description</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <th scope="row">@count</th>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Count</td>
+                <td>@p.Information</td>
+                <td>@p.CreateDT</td>
+                <td>@p.Description</td>
+            </tr>
+            count++;
+        }
+    </tbody>
+</table>

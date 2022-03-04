@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="register">
+    <div class=" container py-4 py-lg-5 my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-0 box-shadow">
+                    <div class="card-body">
+                        <h2 class="h4 mb-1">Hesabın yoxdur? Hesab yarat</h2>
+                        <p class="font-size-sm text-muted mb-4">Qeydiyyat 1 dəqiqədən az vaxt alır, lakin sifarişlərə tam nəzarət imkanı verir.</p>
+                        <form class="needs-validation_" id="sign-up-form" action="https://www.hamisiburada.az/customer/auth/register"
+                              method="post">
+                            <input type="hidden" name="_token" value="mJDHGnPGd5TlFm3wzN6SJfzn82pgjSla5TAeEKPn">                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="reg-fn">Ad</label>
+                                        <input class="form-control" type="text" name="f_name" required>
+                                        <div class="invalid-feedback">Please enter your first name!</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="reg-ln">Soyad</label>
+                                        <input class="form-control" type="text" name="l_name">
+                                        <div class="invalid-feedback">Please enter your last name!</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="reg-email">E-poçt ünvanı</label>
+                                        <input class="form-control" type="email" name="email">
+                                        <div class="invalid-feedback">Please enter valid email address!</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="reg-phone">Telefon Nömrəsi</label>
+                                        <input class="form-control" type="text" name="phone" required>
+                                        <div class="invalid-feedback">Please enter your phone number!</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="si-password">Şifrə</label>
+                                        <div class="password-toggle">
+                                            <input class="form-control" name="password" type="password" id="si-password"
+                                                   required>
+                                            <label class="password-toggle-btn">
+                                                <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="si-password">Şifrəni təsdiq et</label>
+                                        <div class="password-toggle">
+                                            <input class="form-control" name="con_password" type="password" id="si-password"
+                                                   required>
+                                            <label class="password-toggle-btn">
+                                                <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group d-flex flex-wrap justify-content-between">
+
+                                <div class="form-group mb-1">
+                                    <strong>
+                                        <input type="checkbox" class="mr-1"
+                                               name="remember" id="inputCheckd">
+                                    </strong>
+                                    <label class="aaa" for="remember">
+                                        şərtləri qəbul edirəm &nbsp;<a class="font-size-sm" target="_blank" href="../../terms.html">
+                                            Şərtlər və Qaydalar
+                                        </a>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a class="btn btn-outline-primary" asp-controller="Login" asp-action="Index">
+                                        <i class="fa fa-sign-in"></i> Daxil ol
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="text-right">
+                                        <button class="btn btn-primary" type="submit" id="sign_in" disabled>
+                                            <i class="czi-user mr-2 ml-n1"></i>Qeydiyyatdan keç
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
