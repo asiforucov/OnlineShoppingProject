@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
+    <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+</ItemGroup>
 
 </Project>

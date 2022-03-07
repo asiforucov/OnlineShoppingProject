@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Data.DAL.Migrations
 {
-    public partial class CreateRelationDatabase : Migration
+    public partial class CreateDb2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -59,7 +59,8 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 255, nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
@@ -72,7 +73,8 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 255, nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
@@ -85,9 +87,9 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Image = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Title = table.Column<string>(nullable: true)
+                    Image = table.Column<string>(maxLength: 255, nullable: false),
+                    Name = table.Column<string>(maxLength: 255, nullable: false),
+                    Title = table.Column<string>(maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -206,13 +208,13 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    CreateDT = table.Column<DateTime>(nullable: false),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false),
-                    Count = table.Column<int>(nullable: false),
-                    Information = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 255, nullable: false),
+                    CreateDT = table.Column<DateTime>(nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
+                    Description = table.Column<string>(maxLength: 255, nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 0m),
+                    Count = table.Column<int>(nullable: false, defaultValue: 0),
+                    Information = table.Column<string>(type: "TEXT", nullable: false),
                     ProductCategoryId = table.Column<int>(nullable: false),
                     GenderCategoryId = table.Column<int>(nullable: false)
                 },
@@ -239,10 +241,10 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CreateDT = table.Column<DateTime>(nullable: false),
-                    UserName = table.Column<string>(nullable: true),
-                    Content = table.Column<string>(nullable: true),
-                    IsDelete = table.Column<bool>(nullable: false),
+                    CreateDT = table.Column<DateTime>(nullable: false, defaultValueSql: "GETUTCDATE()"),
+                    UserName = table.Column<string>(maxLength: 255, nullable: false),
+                    Content = table.Column<string>(type: "TEXT", nullable: false),
+                    IsDelete = table.Column<bool>(nullable: false, defaultValue: false),
                     ProductId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -262,8 +264,8 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ColorName = table.Column<string>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
+                    ColorName = table.Column<string>(maxLength: 255, nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
                     ProductId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -283,8 +285,8 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Image = table.Column<string>(nullable: true),
-                    IsMain = table.Column<bool>(nullable: false),
+                    Image = table.Column<string>(maxLength: 255, nullable: false),
+                    IsMain = table.Column<bool>(nullable: false, defaultValue: false),
                     ProductId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -304,8 +306,8 @@ namespace Data.DAL.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Size = table.Column<string>(nullable: true),
-                    IsDelete = table.Column<bool>(nullable: false),
+                    Size = table.Column<string>(maxLength: 255, nullable: false),
+                    IsDelete = table.Column<bool>(nullable: false, defaultValue: false),
                     ProductId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

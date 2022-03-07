@@ -12,6 +12,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<GenderCategory> builder)
         {
             builder.Property(gc => gc.Name).IsRequired().HasMaxLength(255);
+            builder.Property(gc => gc.IsDeleted).IsRequired().HasDefaultValue(false);
         }
     }
 }

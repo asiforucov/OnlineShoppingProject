@@ -1,5 +1,10 @@
+using Business.Implementations;
+using Business.Interfaces;
+using Core;
 using Core.Entities;
 using Data.DAL;
+using Data.Repositories;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.ViewModels.Slider;
 
 namespace LifeStyle
 {
@@ -27,7 +33,8 @@ namespace LifeStyle
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddFluentValidation(p => p.RegisterValidatorsFromAssemblyContaining<SliderCreateViewModel>());
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:Default"]);
@@ -43,6 +50,15 @@ namespace LifeStyle
                 Options.Password.RequireUppercase = false;
                 Options.Password.RequireDigit = true;
             });
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<IGenderCategoryService, GenderCategoryService>();
+            services.AddScoped<IProductCategoryService, ProductCategoryService>();
+            services.AddScoped<IProductColorService, ProductColorService>();
+            services.AddScoped<IProductImageService, ProductImageService>();
+            services.AddScoped<IProductSizeService, ProductSizeService>();
+            services.AddScoped<ISliderService, SliderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

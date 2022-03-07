@@ -22,5 +22,7 @@ namespace LifeStyle.Areas.Admin.Controllers
         {
             return View(await _unitOfWork.productRepository.GetAllAsync());
         }
+
+       
     }
 }

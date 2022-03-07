@@ -13,6 +13,7 @@ namespace Core.Entities
         public string PostCode { get; set; }
         public string FullName { get; set; }
         public string Surname { get; set; }
+
         public bool IsActivated { get; set; }
 
     }

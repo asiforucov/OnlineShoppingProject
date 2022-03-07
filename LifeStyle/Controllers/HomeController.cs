@@ -5,14 +5,27 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.Interfaces;
+using Business.ViewModels.Home;
 
 namespace LifeStyle.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly ISliderService _sliderService;
+        public HomeController(ISliderService sliderService)
         {
-            return View();
+            _sliderService = sliderService;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var sliders = await _sliderService.GetAllAsync();
+            var homeVM = new HomeVM()
+            {
+                Sliders = sliders,
+                
+            };
+            return View(homeVM);
         }
     }
 }

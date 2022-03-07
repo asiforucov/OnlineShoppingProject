@@ -12,6 +12,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<ProductCategory> builder)
         {
             builder.Property(pc => pc.Name).IsRequired().HasMaxLength(255);
+            builder.Property(pc => pc.IsDeleted).IsRequired().HasDefaultValue(false);
         }
     }
 }

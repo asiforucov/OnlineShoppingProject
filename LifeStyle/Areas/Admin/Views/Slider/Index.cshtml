@@ -8,22 +8,28 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
             <th scope="col">Image</th>
+            <th scope="col">Name</th>
             <th scope="col">Title</th>
+            <th scope="col">Setting</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var s in Model)
         {
-            <tr>
-                <th scope="row">@count</th>
-                <td>@s.Name</td>
-                <td>@s.Image</td>
-                <td>@s.Title</td>
-            </tr>
+        <tr>
+            <th scope="row">@count</th>
+            <td><img src="~/assets/image/@s.Image" alt="Alternate Text" style="width: 100px" /></td>
+            <td>@s.Name</td>
+            <td>@s.Title</td>
+            <td>
+                <a asp-controller="Slider" asp-action="Update" asp-route-id="@s.Id" class="btn btn-primary">Update</a>
+                <a asp-controller="Slider" asp-action="Delete" asp-route-id="@s.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
             count++;
         }
+    <a style="margin-left: 40%" asp-controller="Slider" asp-action="Create" class="btn btn-success ">Create</a>
     </tbody>
 </table>
 

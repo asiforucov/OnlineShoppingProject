@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220304222719_CreateRelationDatabase")]
-    partial class CreateRelationDatabase
+    [Migration("20220305054816_CreateDb2")]
+    partial class CreateDb2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -115,19 +115,26 @@ namespace Data.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreateDT")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -143,8 +150,15 @@ namespace Data.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -159,28 +173,41 @@ namespace Data.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Count")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<DateTime>("CreateDT")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("GenderCategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Information")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("decimal(18,2)")
+                        .HasDefaultValue(0m);
 
                     b.Property<int>("ProductCategoryId")
                         .HasColumnType("int");
@@ -201,8 +228,15 @@ namespace Data.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -217,10 +251,14 @@ namespace Data.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ColorName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -240,10 +278,14 @@ namespace Data.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<bool>("IsMain")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -263,13 +305,17 @@ namespace Data.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("Size")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -287,13 +333,19 @@ namespace Data.DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
