@@ -1,0 +1,54 @@
+﻿@model Business.ViewModels.ProductBFOS.FavoriteVM
+@{
+    ViewData["Title"] = "Favorite";
+    int count = 0;
+}
+
+<!-- -----Favorite TABLE----- -->
+<section class="cart-section pt_large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="row-1">
+                                <th class="row-title"><p>#</p></th>
+                                <th class="row-title"><p>Məhsul</p></th>
+                                <th class="row-title"><p>Məhsulun adı</p></th>
+                                <th class="row-title"><p>Qiymət</p></th>
+                                <th class="row-title"><p>Sil</p></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (var item in Model.ProductOperations)
+                           {
+                               var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
+                            <tr class="row-2">
+                                <td class="row-close close-1"></td>
+                                <td class="row-close close-1">@count</td>
+                                <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
+                                <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
+                                <td class="product-price" data-title="Price">
+                                    <p>$ @product.Price</p>
+                                </td>
+                                <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
+                            </tr>
+                           }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="12">
+                                    <ul class="table-btn">
+                                        <li><a href="Category-Product.html" class="btn btn-secondary"><i class="fa fa-chevron-left"></i>Alışverişə keç</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -----Favorite TABLE----- -->

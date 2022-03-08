@@ -59,6 +59,7 @@ namespace LifeStyle
             services.AddScoped<IProductImageService, ProductImageService>();
             services.AddScoped<IProductSizeService, ProductSizeService>();
             services.AddScoped<ISliderService, SliderService>();
+            services.AddScoped<IProductBFOSService, ProductBFOSService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
