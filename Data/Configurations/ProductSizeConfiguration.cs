@@ -12,7 +12,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<ProductSize> builder)
         {
             builder.Property(p => p.Size).IsRequired().HasMaxLength(255);
-            builder.Property(p => p.IsDelete).HasDefaultValue(false);
+            builder.Property(p => p.IsDeleted).HasDefaultValue(false);
         }
     }
 }

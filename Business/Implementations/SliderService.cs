@@ -23,6 +23,11 @@ namespace Business.Implementations
         }
 
 
+        public async Task<Slider> Get(int id)
+        {
+            return await _unitOfWork.sliderRepository.Get(s => s.Id == id);
+        }
+
         public async Task Create(SliderCreateViewModel sliderViewModel)
         {
             string photoFileName = await sliderViewModel.Photo.SaveFileAsync(_env.WebRootPath, "Assets", "image", "slider");
@@ -48,9 +53,23 @@ namespace Business.Implementations
             await _unitOfWork.SaveAsync();
         }
 
-        public Task Update(int id, SliderUpdateViewModel sliderViewModel)
+        public async Task Update(int id, SliderUpdateViewModel sliderViewModel)
         {
-            throw new NotImplementedException();
+            Slider dbSlider = await _unitOfWork.sliderRepository.Get(s => s.Id == id);
+
+            dbSlider.Name = sliderViewModel.Name;
+            dbSlider.Title = sliderViewModel.Title;
+            await _unitOfWork.SaveAsync();
+
+            if (sliderViewModel.Photo != null)
+            {
+                string filename = await sliderViewModel.Photo.SaveFileAsync(_env.WebRootPath, "assets", "image");
+                var sliderImage = new Slider()
+                {
+                    Image = filename
+                }; 
+                await _unitOfWork.sliderRepository.CreateAsync(sliderImage);
+            }
         }
 
       

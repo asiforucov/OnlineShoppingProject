@@ -21,6 +21,11 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
+        public async Task<ProductImage> Get(int id)
+        {
+            return await _unitOfWork.productImageRepository.Get(pi => pi.Id == id);
+        }
+
         public async Task<List<ProductImage>> GetAllAsync()
         {
             return await _unitOfWork.productImageRepository.GetAllAsync();

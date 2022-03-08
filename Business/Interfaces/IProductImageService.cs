@@ -10,6 +10,8 @@ namespace Business.Interfaces
     public interface IProductImageService
     {
         Task<List<ProductImage>> GetAllAsync();
+        Task<ProductImage> Get(int id);
+
         Task Create(ProductImageCreateViewModel productImageViewModel);
         Task Update(int id, ProductImageUpdateViewModel productImageViewModel);
         Task Remove(int id);

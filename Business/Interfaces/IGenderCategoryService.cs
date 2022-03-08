@@ -10,6 +10,8 @@ namespace Business.Interfaces
     public interface IGenderCategoryService
     {
         Task<List<GenderCategory>> GetAllAsync();
+        Task<GenderCategory> Get(int id);
+
         Task Create(GenderCategoryCreateViewModel genderCategorytViewModel);
         Task Update(int id, GenderCategoryUpdateViewModel genderCategoryViewModel);
         Task Remove(int id);

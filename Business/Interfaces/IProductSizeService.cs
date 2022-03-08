@@ -10,6 +10,8 @@ namespace Business.Interfaces
     public interface IProductSizeService
     {
         Task<List<ProductSize>> GetAllAsync();
+        Task<ProductSize> Get(int id);
+
         Task Create(ProductSizeCreateViewModel productSizeViewModel);
         Task Update(int id, ProductSizeUpdateViewModel productSizetViewModel);
         Task Remove(int id);

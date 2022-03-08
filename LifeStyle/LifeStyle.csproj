@@ -25,8 +25,28 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\assets\image\product\Men\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\countdown.min.js" />
+    <None Include="wwwroot\assets\js\custom.js" />
+    <None Include="wwwroot\assets\js\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\assets\js\isotope.min.js" />
+    <None Include="wwwroot\assets\js\jquery-price-slider.js" />
+    <None Include="wwwroot\assets\js\jquery.countup.js" />
+    <None Include="wwwroot\assets\js\jquery.elevatezoom.js" />
+    <None Include="wwwroot\assets\js\jquery.fitvids.js" />
+    <None Include="wwwroot\assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\mCustomScrollbar.concat.min.js" />
+    <None Include="wwwroot\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\js\popper.min.js" />
+    <None Include="wwwroot\assets\js\sale-time.js" />
+    <None Include="wwwroot\assets\js\script.js" />
+    <None Include="wwwroot\assets\js\select2.min.js" />
+    <None Include="wwwroot\assets\js\waypoint.js" />
   </ItemGroup>
 
 </Project>

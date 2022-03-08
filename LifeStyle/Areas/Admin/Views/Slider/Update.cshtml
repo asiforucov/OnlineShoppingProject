@@ -1,0 +1,21 @@
+﻿@model Business.ViewModels.Slider.SliderUpdateViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<form style="padding: 5%" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name">Slayd mətn başlığı</label>
+        <input asp-for="Name" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+    </div>
+    <div class="form-group">
+        <label asp-for="Title">Slayd mətni</label>
+        <input asp-for="Title" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo">Slayd üçün şəkil</label>
+        <input asp-for="Photo" type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
+

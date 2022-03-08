@@ -1,6 +1,6 @@
-﻿
+﻿@model Business.ViewModels.Auth.RegisterViewModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Register";
 }
 
 <section id="register">
@@ -11,46 +11,50 @@
                     <div class="card-body">
                         <h2 class="h4 mb-1">Hesabın yoxdur? Hesab yarat</h2>
                         <p class="font-size-sm text-muted mb-4">Qeydiyyat 1 dəqiqədən az vaxt alır, lakin sifarişlərə tam nəzarət imkanı verir.</p>
-                        <form class="needs-validation_" id="sign-up-form" action="https://www.hamisiburada.az/customer/auth/register"
+                        <div class="text-danger" asp-validation-summary="ModelOnly">
+
+                        </div>
+                        <form class="needs-validation_" id="sign-up-form"
                               method="post">
                             <input type="hidden" name="_token" value="mJDHGnPGd5TlFm3wzN6SJfzn82pgjSla5TAeEKPn">                            <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-fn">Ad</label>
-                                        <input class="form-control" type="text" name="f_name" required>
-                                        <div class="invalid-feedback">Please enter your first name!</div>
+                                        <input asp-for="Username" class="form-control" required>
+                                        <span asp-validation-for="Username" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-ln">Soyad</label>
-                                        <input class="form-control" type="text" name="l_name">
-                                        <div class="invalid-feedback">Please enter your last name!</div>
+                                        <input asp-for="FullName" class="form-control">
+                                        <span asp-validation-for="FullName" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-email">E-poçt ünvanı</label>
-                                        <input class="form-control" type="email" name="email">
-                                        <div class="invalid-feedback">Please enter valid email address!</div>
+                                        <input asp-for="Email" class="form-control">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-phone">Telefon Nömrəsi</label>
-                                        <input class="form-control" type="text" name="phone" required>
-                                        <div class="invalid-feedback">Please enter your phone number!</div>
+                                        <input asp-for="PhoneNumber" class="form-control" required>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="si-password">Şifrə</label>
                                         <div class="password-toggle">
-                                            <input class="form-control" name="password" type="password" id="si-password"
+                                            <input asp-for="Password" class="form-control" id="si-password"
                                                    required>
                                             <label class="password-toggle-btn">
                                                 <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
                                             </label>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
                                         </div>
                                     </div>
 
@@ -59,11 +63,12 @@
                                     <div class="form-group">
                                         <label for="si-password">Şifrəni təsdiq et</label>
                                         <div class="password-toggle">
-                                            <input class="form-control" name="con_password" type="password" id="si-password"
+                                            <input asp-for="ConfirmPassword" class="form-control" id="si-password"
                                                    required>
                                             <label class="password-toggle-btn">
                                                 <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
                                             </label>
+                                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                         </div>
                                     </div>
 
@@ -77,7 +82,7 @@
                                                name="remember" id="inputCheckd">
                                     </strong>
                                     <label class="aaa" for="remember">
-                                        şərtləri qəbul edirəm &nbsp;<a class="font-size-sm" target="_blank" href="../../terms.html">
+                                        Mən qəbul edirəm &nbsp;<a class="font-size-sm" target="_blank" asp-controller="Privacy_Policy" asp-action="Index">
                                             Şərtlər və Qaydalar
                                         </a>
                                     </label>
@@ -86,13 +91,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <a class="btn btn-outline-primary" asp-controller="Login" asp-action="Index">
-                                        <i class="fa fa-sign-in"></i> Daxil ol
+                                    <a class="btn btn-outline-primary" asp-controller="Account" asp-action="Login">
+                                        <i class="fa fa-sign-in"></i> Giriş et
                                     </a>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="text-right">
-                                        <button class="btn btn-primary" type="submit" id="sign_in" disabled>
+                                        <button class="btn btn-primary" type="submit" id="sign_in">
                                             <i class="czi-user mr-2 ml-n1"></i>Qeydiyyatdan keç
                                         </button>
                                     </div>

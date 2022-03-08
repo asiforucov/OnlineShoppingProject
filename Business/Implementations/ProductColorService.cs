@@ -21,9 +21,14 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
+        public async Task<ProductColor> Get(int id)
+        {
+            return await _unitOfWork.productColorRepository.Get(pc => pc.Id == id);
+        }
+
         public async Task<List<ProductColor>> GetAllAsync()
         {
-            return await _unitOfWork.productColorRepository.GetAllAsync();
+            return await _unitOfWork.productColorRepository.GetAllAsync(c => c.IsDeleted == false);
         }
 
         public Task Remove(int id)

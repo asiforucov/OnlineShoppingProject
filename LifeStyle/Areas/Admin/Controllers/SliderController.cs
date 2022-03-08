@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.ViewModels.Slider;
 using Business.Tools;
+using Business.ViewModels.Product;
+using Core.Entities;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
@@ -56,14 +58,42 @@ namespace LifeStyle.Areas.Admin.Controllers
         {
             return View();
         } 
-        public async Task<IActionResult> Update()
-        {
-            return RedirectToAction(nameof(Index));
-        } 
-        [HttpPost]
+
         public async Task<IActionResult> Update(int id)
         {
-            return RedirectToAction(nameof(Index));
+            Slider slider = await _sliderService.Get(id);
+            if (slider == null) return NotFound();
+            var sliderViewModel = new SliderUpdateViewModel()
+            {
+                Name = slider.Name,
+                Title = slider.Title
+            };
+            return View(sliderViewModel);
+        } 
+        [HttpPost]
+        public async Task<IActionResult> Update(SliderUpdateViewModel model,int id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Photo != null)
+                {
+                        if (!model.Photo.CheckFileType("image/"))
+                        {
+                            ModelState.AddModelError("ImageFiles", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
+                            return View(model);
+                        }
+
+                        if (!model.Photo.CheckFileSize(300))
+                        {
+                            ModelState.AddModelError("ImageFiles", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
+                            return View(model);
+                        }
+                }
+                await _sliderService.Update(id, model);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
+
         }
     }
 }

@@ -210,11 +210,21 @@ namespace Data.DAL.Migrations
                     b.Property<int>("ProductCategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProductColorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductSizeId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GenderCategoryId");
 
                     b.HasIndex("ProductCategoryId");
+
+                    b.HasIndex("ProductColorId");
+
+                    b.HasIndex("ProductSizeId");
 
                     b.ToTable("Product");
                 });
@@ -248,7 +258,7 @@ namespace Data.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ColorName")
+                    b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("nvarchar(255)")
                         .HasMaxLength(255);
@@ -258,12 +268,7 @@ namespace Data.DAL.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductColor");
                 });
@@ -295,6 +300,46 @@ namespace Data.DAL.Migrations
                     b.ToTable("ProductImage");
                 });
 
+            modelBuilder.Entity("Core.Entities.ProductOperation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ApplicationUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ApplicationUserId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsBasket")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsFavorite")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Ordered")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Send")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId1");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductOperations");
+                });
+
             modelBuilder.Entity("Core.Entities.ProductSize", b =>
                 {
                     b.Property<int>("Id")
@@ -302,13 +347,10 @@ namespace Data.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("IsDelete")
+                    b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Size")
                         .IsRequired()
@@ -316,9 +358,6 @@ namespace Data.DAL.Migrations
                         .HasMaxLength(255);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId")
-                        .IsUnique();
 
                     b.ToTable("ProductSize");
                 });
@@ -503,13 +542,16 @@ namespace Data.DAL.Migrations
                         .HasForeignKey("ProductCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("Core.Entities.ProductColor", b =>
-                {
-                    b.HasOne("Core.Entities.Product", "Product")
-                        .WithMany("ProductColor")
-                        .HasForeignKey("ProductId")
+                    b.HasOne("Core.Entities.ProductColor", "ProductColor")
+                        .WithMany()
+                        .HasForeignKey("ProductColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Entities.ProductSize", "ProductSize")
+                        .WithMany()
+                        .HasForeignKey("ProductSizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -523,11 +565,15 @@ namespace Data.DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Core.Entities.ProductSize", b =>
+            modelBuilder.Entity("Core.Entities.ProductOperation", b =>
                 {
+                    b.HasOne("Core.Entities.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId1");
+
                     b.HasOne("Core.Entities.Product", "Product")
-                        .WithOne("ProductSize")
-                        .HasForeignKey("Core.Entities.ProductSize", "ProductId")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

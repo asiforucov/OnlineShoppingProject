@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model IEnumerable<Product>
 @{
     ViewData["Title"] = "Index";
     int count = 1;
@@ -6,30 +6,43 @@
 
 <table class="table table-striped">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Count</th>
-            <th scope="col">Info</th>
-            <th scope="col">Create Date</th>
-            <th scope="col">Description</th>
-
-        </tr>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+        <th scope="col">CreateDate</th>
+        <th scope="col">Description</th>
+        <th scope="col">Information</th>
+        <th scope="col">ProductCategory</th>
+        <th scope="col">ProductSize</th>
+        <th scope="col">ProductColor</th>
+        <th scope="col">GenderCategory</th>
+    </tr>
     </thead>
     <tbody>
-        @foreach (var p in Model)
-        {
-            <tr>
-                <th scope="row">@count</th>
-                <td>@p.Name</td>
-                <td>@p.Price</td>
-                <td>@p.Count</td>
-                <td>@p.Information</td>
-                <td>@p.CreateDT</td>
-                <td>@p.Description</td>
-            </tr>
-            count++;
-        }
+    @foreach (var p in Model)
+    {
+        <tr>
+            <th scope="row">@count</th>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@p.Count</td>
+            <td>@p.CreateDT</td>
+            <td>@p.Description</td>
+            <td>@p.Information</td>
+            <td>@p.ProductCategory</td>
+            <td>@p.ProductSize</td>
+            <td>@p.ProductColor</td>
+            <td>@p.GenderCategory</td>
+            <td>
+                <a asp-controller="Product" asp-action="Update" asp-route-id="@p.Id" class="btn btn-primary">Update</a>
+                <a asp-controller="Product" asp-action="Delete" asp-route-id="@p.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        count++;
+    }
+    <a style="margin-left: 40%" asp-controller="Slider" asp-action="Create" class="btn btn-success ">Create</a>
     </tbody>
 </table>
+

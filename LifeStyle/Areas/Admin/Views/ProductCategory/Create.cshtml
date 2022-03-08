@@ -1,0 +1,12 @@
+﻿@model Business.ViewModels.ProductCategory.ProductCategoryCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form style="padding: 5%" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name">Kateqoriya adı</label>
+        <input asp-for="Name" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+    </div>
+    <button type="submit" class="btn btn-success">Əlavə et</button>
+</form>

@@ -10,6 +10,7 @@ namespace Business.Interfaces
     public interface ICommentService
     {
         Task<List<Comment>> GetAllAsync();
+        Task<Comment> Get(int id);
         Task Create(CommentCreateViewModel commentViewModel);
         Task Update(int id, CommentUpdateViewModel commentViewModel);
         Task Remove(int id);

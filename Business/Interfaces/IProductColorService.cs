@@ -10,6 +10,8 @@ namespace Business.Interfaces
     public interface IProductColorService
     {
         Task<List<ProductColor>> GetAllAsync();
+        Task<ProductColor> Get(int id);
+
         Task Create(ProductColorCreateViewModel productColorViewModel);
         Task Update(int id, ProductColorUpdateViewModel productColorViewModel);
         Task Remove(int id);

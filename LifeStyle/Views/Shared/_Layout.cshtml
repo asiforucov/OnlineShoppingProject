@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/image/logo/favicon5.png">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/image/logo/favicon5.png">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./assets/css/animate.css">
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/assets/css/animate.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Life Style - Onlayn Alış Veriş saytı</title>
 </head>
@@ -30,11 +30,24 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="header_list text-md-right text-center">
-                            <li>
-                                <a asp-controller="Login" asp-action="Index" >Daxil ol</a>
-                            </li>
-                            <li><a asp-controller="Register" asp-action="Index">Qeydiyyat</a></li>
-                            <li><a asp-controller="UserAccount" asp-action="Index">Hesabım</a></li>
+                           
+                          @if (User.Identity.IsAuthenticated)
+                          {
+                              <li>
+                                  <a style="color: white">@User.Identity.Name</a>
+                              </li>
+                              <li><a asp-controller="Account" asp-action="Logout">Çıxış</a></li>
+                              <li><a asp-controller="" asp-action="">Hesabım</a></li>
+                          }
+                          else
+                          {
+                              <li>
+                                  <a asp-controller="Account" asp-action="Login">Daxil ol</a>
+                              </li>
+                              <li><a asp-controller="Account" asp-action="Register">Qeydiyyat</a></li>
+                              <li><a asp-controller="" asp-action="">Hesabım</a></li>
+
+                          }
                         </ul>
                     </div>
                 </div>
@@ -46,7 +59,7 @@
                     <div class="col-md-12">
                         <div class="hm-inner d-sm-flex align-items-center justify-content-between">
                             <div class="header-logo">
-                                <a asp-controller="Home" asp-action="Index"><img src="./assets/image/logo/Lifestyle-100.png" alt="logo"></a>
+                                <a asp-controller="Home" asp-action="Index"><img src="~/assets/image/logo/Lifestyle-100.png" alt="logo"></a>
                             </div>
                             <form class="header-form">
                                 <input class="search-box" placeholder="Axtar..." required="" value="" type="search">
@@ -80,7 +93,7 @@
                                         <div class="cart-info">
                                             <div class="cart-prodect d-flex">
                                                 <div class="cart-img">
-                                                    <img src="./assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
+                                                    <img src="~/assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
                                                 </div>
                                                 <div class="cart-product">
                                                     <a href="#">Ornare sed consequat</a>
@@ -90,7 +103,7 @@
                                             </div>
                                             <div class="cart-prodect d-flex">
                                                 <div class="cart-img">
-                                                    <img src="./assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
+                                                    <img src="~/assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
                                                 </div>
                                                 <div class="cart-product">
                                                     <a href="#">Pellentesque posuere</a>
@@ -163,8 +176,8 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mt-3">
                     <div class="text-nowrap mb-4">
-                        <a class="d-inline-block align-middle mt-n1 mr-3" href="./Home.html">
-                            <img width="250" style="height: 90px!important;" src="./assets/image/logo/Lifestyle-100.png">
+                        <a class="d-inline-block align-middle mt-n1 mr-3" href="~/Home.html">
+                            <img width="250" style="height: 90px!important;" src="~/assets/image/logo/Lifestyle-100.png">
                         </a>
                     </div>
                     <center>
@@ -267,23 +280,23 @@
         <!-- Footer Links -->
     </footer>
     <!-- ---FOOTER--- -->
-    <script src="./assets/js/waypoint.js"></script>
-    <script src="./assets/js/sale-time.js"></script>
-    <script src="./assets/js/select2.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/mCustomScrollbar.concat.min.js"></script>
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="./assets/js/jquery.fitvids.js"></script>
-    <script src="./assets/js/jquery.elevatezoom.js"></script>
-    <script src="./assets/js/jquery.countup.js"></script>
-    <script src="./assets/js/isotope.min.js"></script>
-    <script src="./assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="./assets/js/custom.js"></script>
-    <script src="./assets/js/sale-time.js"></script>
-    <script src="./assets/js/countdown.min.js"></script>
-    <script src="./assets/js/jquery-price-slider.js"></script>
+    <script src="~/assets/js/waypoint.js"></script>
+    <script src="~/assets/js/sale-time.js"></script>
+    <script src="~/assets/js/select2.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/mCustomScrollbar.concat.min.js"></script>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/jquery.fitvids.js"></script>
+    <script src="~/assets/js/jquery.elevatezoom.js"></script>
+    <script src="~/assets/js/jquery.countup.js"></script>
+    <script src="~/assets/js/isotope.min.js"></script>
+    <script src="~/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/sale-time.js"></script>
+    <script src="~/assets/js/countdown.min.js"></script>
+    <script src="~/assets/js/jquery-price-slider.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

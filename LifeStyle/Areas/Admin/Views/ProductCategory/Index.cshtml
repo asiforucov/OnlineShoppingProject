@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProductCategory>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Setting</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <th scope="row">@count</th>
+                <td>@s.Name</td>
+                <td>
+                    <a asp-controller="ProductCategory" asp-action="Update" asp-route-id="@s.Id" class="btn btn-primary">Update</a>
+                    <a asp-controller="ProductCategory" asp-action="Delete" asp-route-id="@s.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            count++;
+        }
+        <a style="margin-left: 40%" asp-controller="ProductCategory" asp-action="Create" class="btn btn-success ">Əlavə et</a>
+    </tbody>
+</table>

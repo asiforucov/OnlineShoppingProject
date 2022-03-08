@@ -10,6 +10,7 @@ namespace Business.Interfaces
     public interface ISliderService
     {
         Task<List<Slider>> GetAllAsync();
+        Task<Slider> Get(int id);
         Task Create(SliderCreateViewModel sliderViewModel);
         Task Update(int id, SliderUpdateViewModel sliderViewModel);
         Task Remove(int id);

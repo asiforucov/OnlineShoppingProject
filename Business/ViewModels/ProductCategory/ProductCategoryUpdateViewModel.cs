@@ -6,5 +6,6 @@ namespace Business.ViewModels.ProductCategory
 {
     public class ProductCategoryUpdateViewModel
     {
+        public string Name { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Data.Configurations
     {
         public void Configure(EntityTypeBuilder<ProductColor> builder)
         {
-            builder.Property(p => p.ColorName).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.Color).IsRequired().HasMaxLength(255);
             builder.Property(p => p.IsDeleted).HasDefaultValue(false);
         }
     }

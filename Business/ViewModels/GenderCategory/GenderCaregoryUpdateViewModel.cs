@@ -6,5 +6,6 @@ namespace Business.ViewModels.GenderCategory
 {
     public class GenderCategoryUpdateViewModel
     {
+        public string Name { get; set; }
     }
 }

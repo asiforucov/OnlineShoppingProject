@@ -21,9 +21,14 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
+        public async Task<ProductSize> Get(int id)
+        {
+            return await _unitOfWork.productSizeRepository.Get(ps => ps.Id == id);
+        }
+
         public async Task<List<ProductSize>> GetAllAsync()
         {
-            return await _unitOfWork.productSizeRepository.GetAllAsync();
+            return await _unitOfWork.productSizeRepository.GetAllAsync(s => s.IsDeleted == false);
         }
 
         public Task Remove(int id)

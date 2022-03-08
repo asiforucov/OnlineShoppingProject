@@ -16,9 +16,11 @@ namespace Business.Implementations
         {
             _unitOfWork = unitOfWork;
         }
-        public Task Create(GenderCategoryCreateViewModel genderCategorytViewModel)
+        
+
+        public async Task<GenderCategory> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.genderCategoryRepository.Get(gc => gc.Id == id);
         }
 
         public async Task<List<GenderCategory>> GetAllAsync()
@@ -26,14 +28,29 @@ namespace Business.Implementations
             return await _unitOfWork.genderCategoryRepository.GetAllAsync();
         }
 
-        public Task Remove(int id)
+        public async Task Create(GenderCategoryCreateViewModel model)
         {
-            throw new NotImplementedException();
+            var newGender = new GenderCategory()
+            {
+                Name = model.Name
+            };
+            await _unitOfWork.genderCategoryRepository.CreateAsync(newGender);
+            await _unitOfWork.SaveAsync();
         }
 
-        public Task Update(int id, GenderCategoryUpdateViewModel genderCategoryViewModel)
+        public async Task Update(int id, GenderCategoryUpdateViewModel model)
         {
-            throw new NotImplementedException();
+            GenderCategory dbGender = await _unitOfWork.genderCategoryRepository.Get(b => b.Id == id);
+            dbGender.Name = model.Name;
+            await _unitOfWork.SaveAsync();
+        }
+
+        public async Task Remove(int id)
+        {
+            GenderCategory dbGender = await _unitOfWork.genderCategoryRepository.Get(b => b.Id == id);
+            dbGender.IsDeleted = true;
+            await _unitOfWork.SaveAsync();
+
         }
     }
 }

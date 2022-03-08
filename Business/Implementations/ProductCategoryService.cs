@@ -17,9 +17,9 @@ namespace Business.Implementations
         {
             _unitOfWork = unitOfWork;
         }
-        public Task Create(ProductCategoryCreateViewModel productCategoryViewModel)
+        public async Task<ProductCategory> Get(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.productCategoryRepository.Get(pc => pc.Id == id);
         }
 
         public async Task<List<ProductCategory>> GetAllAsync()
@@ -27,14 +27,29 @@ namespace Business.Implementations
             return await _unitOfWork.productCategoryRepository.GetAllAsync();
         }
 
-        public Task Remove(int id)
+        public async Task Create(ProductCategoryCreateViewModel model)
         {
-            throw new NotImplementedException();
+            var newCategory = new ProductCategory()
+            {
+                Name = model.Name
+            };
+            await _unitOfWork.productCategoryRepository.CreateAsync(newCategory);
+            await _unitOfWork.SaveAsync();
         }
 
-        public Task Update(int id, ProductCategoryUpdateViewModel productCategoryViewModel)
+        public async Task Update(int id, ProductCategoryUpdateViewModel model)
         {
-            throw new NotImplementedException();
+            ProductCategory dbCategory = await _unitOfWork.productCategoryRepository.Get(b => b.Id == id);
+            dbCategory.Name = model.Name;
+            await _unitOfWork.SaveAsync();
+        }
+
+        public async Task Remove(int id)
+        {
+            ProductCategory dbCategory = await _unitOfWork.productCategoryRepository.Get(b => b.Id == id);
+            dbCategory.IsDeleted = true;
+            await _unitOfWork.SaveAsync();
+
         }
     }
 }

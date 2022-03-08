@@ -35,5 +35,6 @@ namespace Data.DAL
         public DbSet<ProductSize> ProductSize { get; set; }
         public DbSet<Slider> Slider { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<ProductOperation> ProductOperations { get; set; }
     }
 }

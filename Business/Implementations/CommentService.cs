@@ -21,6 +21,11 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
+        public async Task<Comment> Get(int id)
+        {
+            return await _unitOfWork.commentRepository.Get(c => c.Id == id);
+        }
+
         public async Task<List<Comment>> GetAllAsync()
         {
             return await _unitOfWork.commentRepository.GetAllAsync();
