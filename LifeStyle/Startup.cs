@@ -57,7 +57,7 @@ namespace LifeStyle
             services.AddScoped<IProductCategoryService, ProductCategoryService>();
             services.AddScoped<IProductColorService, ProductColorService>();
             services.AddScoped<IProductImageService, ProductImageService>();
-            services.AddScoped<IProductSizeService, ProductSizeService>();
+            services.AddScoped<IProductBrandService, ProductSizeService>();
             services.AddScoped<ISliderService, SliderService>();
             services.AddScoped<IProductBFOSService, ProductBFOSService>();
         }

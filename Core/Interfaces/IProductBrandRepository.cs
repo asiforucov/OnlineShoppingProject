@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Core.Interfaces
 {
-    public interface IProductSizeRepository : IRepository<ProductSize> 
+    public interface IProductBrandRepository : IRepository<ProductBrand> 
     {
     }
 }

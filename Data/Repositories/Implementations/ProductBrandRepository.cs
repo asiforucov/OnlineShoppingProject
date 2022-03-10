@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Data.Repositories.Implementations
 {
-    public class ProductSizeRepository : Repository<ProductSize>, IProductSizeRepository
+    public class ProductBrandRepository : Repository<ProductBrand>, IProductBrandRepository
     {
-        public ProductSizeRepository(AppDbContext context) : base(context)
+        public ProductBrandRepository(AppDbContext context) : base(context)
         {
             _context = context;
         }

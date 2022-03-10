@@ -9,24 +9,24 @@ using Core.Entities;
 
 namespace Business.Implementations
 {
-    public class ProductSizeService : IProductSizeService
+    public class ProductSizeService : IProductBrandService
     {
         private readonly IUnitOfWork _unitOfWork;
         public ProductSizeService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-        public Task Create(ProductSizeCreateViewModel productSizeViewModel)
+        public Task Create(ProductBrandCreateViewModel productSizeViewModel)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<ProductSize> Get(int id)
+        public async Task<ProductBrand> Get(int id)
         {
             return await _unitOfWork.productSizeRepository.Get(ps => ps.Id == id);
         }
 
-        public async Task<List<ProductSize>> GetAllAsync()
+        public async Task<List<ProductBrand>> GetAllAsync()
         {
             return await _unitOfWork.productSizeRepository.GetAllAsync(s => s.IsDeleted == false);
         }
@@ -36,7 +36,7 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task Update(int id, ProductSizeUpdateViewModel productSizetViewModel)
+        public Task Update(int id, ProductBrandUpdateViewModel productSizetViewModel)
         {
             throw new NotImplementedException();
         }

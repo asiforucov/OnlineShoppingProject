@@ -76,11 +76,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ProductSizeId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
-                    <select class="form-control" asp-for="ProductSizeId">
-                        @foreach (var item in (List<ProductSize>)ViewBag.brands)
+                    <label asp-for="ProductBrandId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
+                    <select class="form-control" asp-for="ProductBrandId">
+                        @foreach (var item in (List<ProductBrand>)ViewBag.brands)
                         {
-            <option value="@item.Id">@item.Size</option>}
+            <option value="@item.Id">@item.Name</option>}
 
 
                     </select>

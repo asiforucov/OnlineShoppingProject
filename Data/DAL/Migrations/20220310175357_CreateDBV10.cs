@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Data.DAL.Migrations
 {
-    public partial class UpdateProduct : Migration
+    public partial class CreateDBV10 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,6 +68,20 @@ namespace Data.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductBrands",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(maxLength: 255, nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductBrands", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductCategory",
                 columns: table => new
                 {
@@ -93,20 +107,6 @@ namespace Data.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductColor", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductSize",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Size = table.Column<string>(maxLength: 255, nullable: false),
-                    IsDeleted = table.Column<bool>(nullable: false, defaultValue: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductSize", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -237,16 +237,16 @@ namespace Data.DAL.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 255, nullable: false),
+                    Size = table.Column<string>(maxLength: 100, nullable: false),
+                    Color = table.Column<string>(maxLength: 100, nullable: false),
                     CreateDT = table.Column<DateTime>(nullable: false, defaultValueSql: "GETUTCDATE()"),
                     IsDeleted = table.Column<bool>(nullable: false, defaultValue: false),
-                    Description = table.Column<string>(maxLength: 255, nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 0m),
                     Count = table.Column<int>(nullable: false, defaultValue: 0),
-                    Information = table.Column<string>(type: "TEXT", nullable: false),
                     ProductCategoryId = table.Column<int>(nullable: false),
-                    ProductSizeId = table.Column<int>(nullable: false),
-                    ProductColorId = table.Column<int>(nullable: false),
-                    GenderCategoryId = table.Column<int>(nullable: false)
+                    GenderCategoryId = table.Column<int>(nullable: false),
+                    ProductBrandId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -258,21 +258,15 @@ namespace Data.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_Product_ProductBrands_ProductBrandId",
+                        column: x => x.ProductBrandId,
+                        principalTable: "ProductBrands",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Product_ProductCategory_ProductCategoryId",
                         column: x => x.ProductCategoryId,
                         principalTable: "ProductCategory",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Product_ProductColor_ProductColorId",
-                        column: x => x.ProductColorId,
-                        principalTable: "ProductColor",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Product_ProductSize_ProductSizeId",
-                        column: x => x.ProductSizeId,
-                        principalTable: "ProductSize",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -328,20 +322,19 @@ namespace Data.DAL.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductId = table.Column<int>(nullable: false),
-                    ApplicationUserId = table.Column<int>(nullable: false),
-                    ApplicationUserId1 = table.Column<string>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false,defaultValue:false),
-                    IsFavorite = table.Column<bool>(nullable: false, defaultValue: false),
-                    IsBasket = table.Column<bool>(nullable: false, defaultValue: false),
-                    Ordered = table.Column<bool>(nullable: false, defaultValue: false),
-                    Send = table.Column<bool>(nullable: false, defaultValue: false)
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    IsFavorite = table.Column<bool>(nullable: false),
+                    IsBasket = table.Column<bool>(nullable: false),
+                    Ordered = table.Column<bool>(nullable: false),
+                    Send = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductOperations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProductOperations_AspNetUsers_ApplicationUserId1",
-                        column: x => x.ApplicationUserId1,
+                        name: "FK_ProductOperations_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -403,19 +396,14 @@ namespace Data.DAL.Migrations
                 column: "GenderCategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Product_ProductBrandId",
+                table: "Product",
+                column: "ProductBrandId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Product_ProductCategoryId",
                 table: "Product",
                 column: "ProductCategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Product_ProductColorId",
-                table: "Product",
-                column: "ProductColorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Product_ProductSizeId",
-                table: "Product",
-                column: "ProductSizeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductImage_ProductId",
@@ -423,9 +411,9 @@ namespace Data.DAL.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductOperations_ApplicationUserId1",
+                name: "IX_ProductOperations_ApplicationUserId",
                 table: "ProductOperations",
-                column: "ApplicationUserId1");
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductOperations_ProductId",
@@ -454,6 +442,9 @@ namespace Data.DAL.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
+                name: "ProductColor");
+
+            migrationBuilder.DropTable(
                 name: "ProductImage");
 
             migrationBuilder.DropTable(
@@ -475,13 +466,10 @@ namespace Data.DAL.Migrations
                 name: "GenderCategory");
 
             migrationBuilder.DropTable(
+                name: "ProductBrands");
+
+            migrationBuilder.DropTable(
                 name: "ProductCategory");
-
-            migrationBuilder.DropTable(
-                name: "ProductColor");
-
-            migrationBuilder.DropTable(
-                name: "ProductSize");
         }
     }
 }

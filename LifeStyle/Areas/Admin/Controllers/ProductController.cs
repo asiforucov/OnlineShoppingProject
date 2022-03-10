@@ -18,9 +18,9 @@ namespace LifeStyle.Areas.Admin.Controllers
         private readonly IProductCategoryService _productCategoryService;
         private readonly IGenderCategoryService _genderCategoryService;
         private readonly IProductColorService _productColorService;
-        private readonly IProductSizeService _productSizeService;
+        private readonly IProductBrandService _productSizeService;
 
-        public ProductController(IUnitOfWork unitOfWork, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductColorService productColorService, IProductSizeService productSizeService)
+        public ProductController(IUnitOfWork unitOfWork, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductColorService productColorService, IProductBrandService productSizeService)
         {
             _unitOfWork = unitOfWork;
             _productService = productService;

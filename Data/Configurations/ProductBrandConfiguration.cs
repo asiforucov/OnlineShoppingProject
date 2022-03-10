@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Data.Configurations
 {
-    public class ProductSizeConfiguration : IEntityTypeConfiguration<ProductSize>
+    public class ProductBrandConfiguration : IEntityTypeConfiguration<ProductBrand>
     {
-        public void Configure(EntityTypeBuilder<ProductSize> builder)
+        public void Configure(EntityTypeBuilder<ProductBrand> builder)
         {
-            builder.Property(p => p.Size).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(255);
             builder.Property(p => p.IsDeleted).HasDefaultValue(false);
         }
     }

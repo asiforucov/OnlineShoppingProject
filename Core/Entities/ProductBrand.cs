@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Core.Entities
 {
-    public class ProductSize
+    public class ProductBrand
     {
         public int Id { get; set; }
-        public string Size { get; set; }
+        public string Name { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

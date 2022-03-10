@@ -18,7 +18,7 @@ namespace Data.Repositories
         private IProductColorRepository _productColorRepository;
         private IProductImageRepository _productImageRepository;
         private IProductRepository _productRepository;
-        private IProductSizeRepository _productSizeRepository;
+        private IProductBrandRepository _productBrandRepository;
         private ISliderRepository _sliderRepository;
         private IProductBFOSRepository _productBFOSRepository;
 
@@ -39,7 +39,7 @@ namespace Data.Repositories
 
         public IProductImageRepository productImageRepository => _productImageRepository = _productImageRepository ?? new ProductImageRepository(_context);
 
-        public IProductSizeRepository productSizeRepository => _productSizeRepository = _productSizeRepository ?? new ProductSizeRepository(_context);
+        public IProductBrandRepository productSizeRepository => _productBrandRepository = _productBrandRepository ?? new ProductBrandRepository(_context);
         public ISliderRepository sliderRepository => _sliderRepository = _sliderRepository ?? new SliderRepository(_context);
 
         public IProductBFOSRepository productBFOSRepository => _productBFOSRepository = _productBFOSRepository ?? new ProductBFOSRepository(_context);

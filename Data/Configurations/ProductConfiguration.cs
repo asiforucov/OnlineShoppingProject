@@ -14,10 +14,11 @@ namespace Data.Configurations
             builder.Property(p => p.Name).IsRequired().HasMaxLength(255);
             builder.Property(p => p.CreateDT).HasDefaultValueSql("GETUTCDATE()");
             builder.Property(p => p.IsDeleted).HasDefaultValue(false);
-            builder.Property(p => p.Description).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.Description).IsRequired().HasColumnType("TEXT");
             builder.Property(p => p.Price).IsRequired().HasDefaultValue(0).HasColumnType("decimal(18,2)");
             builder.Property(p => p.Count).IsRequired().HasDefaultValue(0);
-            builder.Property(p => p.Information).IsRequired().HasColumnType("TEXT");
+            builder.Property(p => p.Color).IsRequired().HasMaxLength(100);
+            builder.Property(p => p.Size).IsRequired().HasMaxLength(100);
 
         }
     }

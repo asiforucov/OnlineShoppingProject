@@ -1,4 +1,5 @@
-﻿@model Business.ViewModels.Home.HomeVM
+﻿@using Microsoft.EntityFrameworkCore.Internal
+@model Business.ViewModels.Home.HomeVM
 @{
     ViewData["Title"] = "Home Page";
     var status = "active";
@@ -22,7 +23,7 @@
                                 </div>
                             </div>
                         }
-                       
+
                     </div>
                     <ol class="carousel-indicators carousel-style-2">
                         <li data-target="#carouselExampleControls" data-slide-to="0" class=""></li>
@@ -83,6 +84,8 @@
     </div>
 </section>
 <!-- ---INTRO--- -->
+
+
 <!-- ---PRODUCT--- -->
 <section class="popular-products">
     <div class="container">
@@ -97,46 +100,103 @@
             <div class="col-md-12">
                 <div class="tab-wrap">
                     <ul class="nav nav-tabs tab-style-2 justify-content-center" role="tablist">
-                        @foreach (var item in Model.GenderCategory)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link active" id="@item.Id" data-toggle="tab" href="#@item.Id" role="tab" aria-controls="@item.Id" aria-selected="true"><i class="icon icon-home"></i>@item.Name</a>
-                            </li>
-                        }
-                       
+                        <li class="nav-item">
+                            <a class="nav-link active" id="arrivals-tab" data-toggle="tab" href="#arrivals" role="tab" aria-controls="arrivals" aria-selected="true"><i class="icon icon-home"></i>Kişi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="sallers-tab" data-toggle="tab" href="#sallers" role="tab" aria-controls="sallers" aria-selected="false"><i class="icon icon-profile"></i>Qadın</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="offer-tab" data-toggle="tab" href="#offer" role="tab" aria-controls="offer" aria-selected="false"><i class="icon icon-file-text"></i>Uşaq</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="tab-content products-style-4">
-                    @foreach (var item in Model.Product)
-                    {
-                        <div class="tab-pane fade show active" id="@item.GenderCategoryId" role="tabpanel" aria-labelledby="@item.GenderCategoryId">
-                            <div class="row">
+                    <div class="tab-pane fade show active" id="arrivals" role="tabpanel" aria-labelledby="arrivals-tab">
+                        <div class="row">
+                            @foreach (var p in Model.Product.Where(p=>p.GenderCategoryId ==1))
+                            {
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
 
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="cart-name">@p.Name</a>
+                                        <p class="cart-price">₼ @p.Price</p>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                        <div class="show-more-btn">
+                            <a href="" class="btn btn-primary ">Daha çox göstər</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sallers" role="tabpanel" aria-labelledby="sallers-tab">
+                    <div class="row">
+                        @foreach (var p in Model.Product.Where(p=>p.GenderCategoryId ==2))
+                        {
+                            <div class="col-md-3 col-6 mb-4 pb-2">
+                                <div class="product-box common-cart-box text-center">
+                                    <div class="product-img common-cart-img">
+                                        <img src="./assets/image/product1.png" alt="product-img">
+                                        <div class="hover-option">
+                                            <ul class="hover-icon">
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info">
+                                        <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="cart-name">@p.Name</a>
+                                        <p class="cart-price">₼ @p.Price</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="tab-pane fade" id="offer" role="tabpanel" aria-labelledby="offer-tab">
+                        <div class="row">
+                            @foreach (var p in Model.Product.Where(p=>p.GenderCategoryId ==3).ToList())
+                            {
                                 <div class="col-md-3 col-6 mb-4 pb-2">
                                     <div class="product-box common-cart-box text-center">
                                         <div class="product-img common-cart-img">
-                                            <img src="~/assets/image/@item.ProductImages.Where(p=>p.ProductId == item.Id).FirstOrDefault().Image" alt="product-img">
+                                            <img src="./assets/image/product1.png" alt="product-img">
                                             <div class="hover-option">
                                                 <ul class="hover-icon">
                                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                    <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@item.Id"><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#test-popup3" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+                                                    <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                    <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
 
                                                 </ul>
                                             </div>
                                         </div>
+                                        <div class="product-info common-cart-info">
+                                            <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="cart-name">@p.Name</a>
+                                            <p class="cart-price">₼ @p.Price</p>
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
-                          
+                            }
                         </div>
-                    }
-                <div class="show-more-btn">
-                    <a href="" class="btn btn-primary ">Daha çox göstər</a>
-                </div>
+                        <div class="show-more-btn">
+                            <a href="" class="btn btn-primary ">Daha çox göstər</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

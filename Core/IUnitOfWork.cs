@@ -14,7 +14,7 @@ namespace Core
         public IProductCategoryRepository productCategoryRepository { get;  }
         public IProductColorRepository productColorRepository { get;  }
         public IProductImageRepository productImageRepository { get;  }
-        public IProductSizeRepository productSizeRepository { get;  }
+        public IProductBrandRepository productSizeRepository { get;  }
         public ISliderRepository sliderRepository { get;  }
         public IProductBFOSRepository productBFOSRepository { get;  }
         Task SaveAsync();

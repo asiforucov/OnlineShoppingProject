@@ -14,7 +14,7 @@ namespace Business.ViewModels.Product
         public string Information { get; set; }
         public int ProductCategoryId { get; set; }
         public int ProductColorId { get; set; }
-        public int ProductSizeId { get; set; }
+        public int ProductBrandId { get; set; }
         public int GenderCategoryId { get; set; }
         public IFormFile Photo { get; set; }
     }
