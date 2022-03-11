@@ -25,6 +25,8 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Superadmin\Data\" />
+    <Folder Include="Areas\Superadmin\Models\" />
     <Folder Include="wwwroot\assets\image\product\Men\" />
   </ItemGroup>
 

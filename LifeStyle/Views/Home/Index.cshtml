@@ -14,22 +14,19 @@
                     <div class="carousel-inner">
                         @for (int i = 0; i < Model.Sliders.Count; i++)
                         {
-                            <div class="carousel-item slider-area background_bg @if(i==0){@status} " data-img-src="assets/image/@Model.Sliders[i]" style="background: url(&quot;assets/image/slider/slider-img-5.jpg&quot;) center center/cover;">
+                            @foreach (var s in Model.Sliders)
+                            {
+                                <div class="carousel-item slider-area background_bg @if (i==0){@status } " data-img-src="assets/image/@s.Image[i]" style="background: url(&quot;~/assets/image/@s.Image[i]&quot;) center center/cover;">
                                 <div class="banner_slide_content mx-5">
                                     <div class="slider-caption text-right">
-                                        <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;">CHRISTMAS SALE</h1>
-                                        <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">Get up to 50% off your shopping items tomorrow!</p>
+                                        <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;">@s.Name</h1>
+                                        <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">@s.Title</p>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+                            }
                         }
-
                     </div>
-                    <ol class="carousel-indicators carousel-style-2">
-                        <li data-target="#carouselExampleControls" data-slide-to="0" class=""></li>
-                        <li data-target="#carouselExampleControls" data-slide-to="1" class="active"></li>
-                        <li data-target="#carouselExampleControls" data-slide-to="2" class=""></li>
-                    </ol>
                 </div>
             </div>
             <div class="col-md-3">
