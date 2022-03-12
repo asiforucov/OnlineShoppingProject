@@ -27,6 +27,7 @@ namespace LifeStyle.Controllers
             _productBFOSService = productBFOSService;
             _productService = productService;
         }
+        [Authorize]
         public async Task<IActionResult> SetFavorite(int id)
         {
 
@@ -37,7 +38,7 @@ namespace LifeStyle.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> Favorite()
         {
 
@@ -57,7 +58,7 @@ namespace LifeStyle.Controllers
 
             return View(favoriteVM);
         }
-
+        [Authorize]
         public async Task<IActionResult> SetBasket(int id)
         {
             var userId = _userManager.GetUserId(HttpContext.User);
@@ -67,6 +68,7 @@ namespace LifeStyle.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        [Authorize]
         public async Task<IActionResult> Basket()
         {
 

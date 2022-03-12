@@ -15,17 +15,17 @@
                         </div>
                         <form class="needs-validation mt-2" 
                               method="post" >
-                            <input type="hidden" name="_token" value="mJDHGnPGd5TlFm3wzN6SJfzn82pgjSla5TAeEKPn">                            <div class="form-group">
+                            <input type="hidden" name="_token" >                            <div class="form-group">
                                 <label for="si-email">E-poçt ünvanı</label>
-                                <input class="form-control" asp-for="Email" id="si-email"
-                                       placeholder="johndoe@example.com"
+                                <input style="text-transform: none" class="form-control" asp-for="Email" 
+                                       placeholder="ad@gmail.com"
                                        required>
                                 <span asp-validation-for="Email"></span>
                             </div>
                             <div class="form-group">
                                 <label for="si-password">Şifrə</label>
                                 <div class="password-toggle">
-                                    <input class="form-control" asp-for="Password" id="si-password"
+                                    <input class="form-control" style="text-transform: none" asp-for="Password" id="si-password"
                                            required>
                                     <label class="password-toggle-btn">
                                         <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
@@ -54,7 +54,7 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-md-12 col-sm-6 for-no-account">
-                                <h6>Hesabın yoxdur? Hesab yarat</h6>
+                                <h6>Hesabın yoxdur? <a asp-controller="Account" asp-action="Register">Hesab yarat</a> </h6>
                             </div>
                             <div class="col-md-12 col-sm-6">
                                 <a class="btn btn-outline-primary pull-right"

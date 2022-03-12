@@ -87,7 +87,7 @@ namespace Data.Repositories.Implementations
             {
                 foreach (var item in Includes)
                 {
-                    query.Include(item);
+                    query = query.Include(item);
                 }
             }
 

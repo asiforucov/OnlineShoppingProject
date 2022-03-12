@@ -21,20 +21,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                           @foreach (var item in Model.ProductOperations)
-                           {
-                               var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
+                        @foreach (var item in Model.ProductOperations)
+                        {
+                            var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
                             <tr class="row-2">
                                 <td class="row-close close-1"></td>
-                                <td class="row-close close-1">@count</td>
+                                <td class="row-close close-1">@product.Price</td>
                                 <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
                                 <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
                                 <td class="product-price" data-title="Price">
-                                    <p>$ @product.Price</p>
+                                    <p> @product.Price</p>
                                 </td>
                                 <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
                             </tr>
-                           }
+                        }
                         </tbody>
                         <tfoot>
                             <tr>

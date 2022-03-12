@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Tools;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Business.Implementations
@@ -19,19 +20,50 @@ namespace Business.Implementations
             _unitOfWork = unitOfWork;
             _env = env;
         }
-        public Task Create(ProductCreateViewModel productViewModel)
+        public async Task Create(ProductCreateViewModel productViewModel)
         {
-            throw new NotImplementedException();
-        }
+            var newProduct = new Product()
+            {
+                Name = productViewModel.Name,
+                Price = productViewModel.Price,
+                Description = productViewModel.Information,
+                Count = productViewModel.Count,
+                ProductBrandId = productViewModel.ProductBrandId,
+                GenderCategoryId = productViewModel.GenderCategoryId,
+                ProductCategoryId = productViewModel.ProductCategoryId,
+                Size = productViewModel.Size,
+                Color = productViewModel.Color
 
+            };
+            await _unitOfWork.productRepository.CreateAsync(newProduct);
+            await _unitOfWork.SaveAsync();
+            var products = await _unitOfWork.productRepository.GetAllAsync();
+            var readyProduct = products[products.Count - 1];
+            for (int i = 0; i < productViewModel.Photo.Count; i++)
+            {
+                string filename = await productViewModel.Photo[i].SaveFileAsync(_env.WebRootPath, "assets", "image");
+                var productImage = new ProductImage()
+                {
+                    Image = filename,
+                    ProductId = readyProduct.Id
+                };
+                await _unitOfWork.productImageRepository.CreateAsync(productImage);
+                if (i == 0)
+                {
+                    productImage.IsMain = true;
+                }
+            }
+            await _unitOfWork.SaveAsync();
+        }
         public async Task<Product> Get(int id)
         {
-            return await _unitOfWork.productRepository.Get(p => p.Id == id);
+            return await _unitOfWork.productRepository
+                .Get(p => p.Id == id, "ProductCategory", "GenderCategory", "ProductBrand");
         }
-
         public async Task<List<Product>> GetAllAsync()
         {
-            return await _unitOfWork.productRepository.GetAllAsync(p=>p.IsDeleted==false);
+            return await _unitOfWork.productRepository
+                .GetAllAsync(p=>p.IsDeleted==false, "ProductCategory", "GenderCategory", "ProductBrand");
         }
 
         public Task Remove(int id)

@@ -25,9 +25,9 @@ namespace Business.Implementations
             return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId);
         }
 
-        public Task<List<ProductOperation>> GetAllBasketAsync(string userId)
+        public async Task<List<ProductOperation>> GetAllBasketAsync(string userId)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId && po.IsBasket == true);
         }
 
         public async Task<List<ProductOperation>> GetAllFavouriteAsync(string userId)
@@ -45,9 +45,17 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task SetBasket(int id, string userid)
+        public async Task SetBasket(int id, string userid)
         {
-            throw new NotImplementedException();
+            var productOperation = new ProductOperation()
+            {
+                ProductId = id,
+                ApplicationUserId = userid,
+                IsBasket = true
+            };
+
+            await _unitOfWork.productBFOSRepository.CreateAsync(productOperation);
+            await _unitOfWork.SaveAsync();
         }
 
         public async Task SetFavourite(int id, string userid)

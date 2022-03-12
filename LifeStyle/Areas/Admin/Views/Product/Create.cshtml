@@ -15,15 +15,6 @@
                     <input required class="form-control" asp-for="Name" placeholder="Məhsulun adını daxil edin...">
                     <span class="text-danger" asp-validation-for="Name"></span>
                 </div>
-
-
-
-                <div class="form-group">
-                    <label asp-for="Description">Məhsul haqqında:</label>
-                    <input required class="form-control" asp-for="Description" placeholder="Məhsul haqqında məlumat daxil edin...">
-                    <span class="text-danger" asp-validation-for="Description"></span>
-                </div>
-
                 <div class="form-group">
                     <label asp-for="Information">Məhsul haqqında əlavə məlumat:</label>
                     <input required class="form-control" asp-for="Information" placeholder="Məhsul haqqında əlavə məlumat daxil edin...">
@@ -41,13 +32,23 @@
                     <input required class="form-control" asp-for="Price" placeholder="Məhsulun qiymətini daxil edin...">
                     <span class="text-danger" asp-validation-for="Price"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="Color">Məhsulun qiyməti:</label>
+                    <input required class="form-control" asp-for="Color" placeholder="Məhsulun qiymətini daxil edin...">
+                    <span class="text-danger" asp-validation-for="Color"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Size">Məhsulun qiyməti:</label>
+                    <input required class="form-control" asp-for="Size" placeholder="Məhsulun qiymətini daxil edin...">
+                    <span class="text-danger" asp-validation-for="Size"></span>
+                </div>
 
                 <br />
                 <br />
                 <div class="form-group">
                     <label asp-for="ProductCategoryId">Kateqoriya seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductCategoryId">
-                        @foreach (var item in (List<ProductCategory>)ViewBag.categories)
+                        @foreach (var item in (List<ProductCategory>)ViewBag.productCategory)
                         {
             <option value="@item.Id">@item.Name</option>}
 
@@ -58,14 +59,14 @@
                 <div class="form-group">
                     <label asp-for="GenderCategoryId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="GenderCategoryId">
-                        @foreach (var item in (List<GenderCategory>)ViewBag.brands)
+                        @foreach (var item in (List<GenderCategory>)ViewBag.genderCategory)
                         {
             <option value="@item.Id">@item.Name</option>}
 
 
                     </select>
                 </div>
-                <div class="form-group">
+                @*<div class="form-group">
                     <label asp-for="ProductColorId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductColorId">
                         @foreach (var item in (List<ProductColor>)ViewBag.brands)
@@ -74,11 +75,11 @@
 
 
                     </select>
-                </div>
+                </div>*@
                 <div class="form-group">
                     <label asp-for="ProductBrandId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductBrandId">
-                        @foreach (var item in (List<ProductBrand>)ViewBag.brands)
+                        @foreach (var item in (List<ProductBrand>)ViewBag.brand)
                         {
             <option value="@item.Id">@item.Name</option>}
 

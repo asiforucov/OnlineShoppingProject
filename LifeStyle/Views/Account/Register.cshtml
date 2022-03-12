@@ -20,21 +20,21 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-fn">Ad</label>
-                                        <input asp-for="Username" class="form-control" required>
+                                        <input asp-for="Username" style="text-transform: none" class="form-control" required>
                                         <span asp-validation-for="Username" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-ln">Soyad</label>
-                                        <input asp-for="FullName" class="form-control">
+                                        <input style="text-transform: none" asp-for="FullName" class="form-control">
                                         <span asp-validation-for="FullName" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-email">E-poçt ünvanı</label>
-                                        <input asp-for="Email" class="form-control">
+                                        <input style="text-transform: none" asp-for="Email" class="form-control">
                                         <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                     <div class="form-group">
                                         <label for="si-password">Şifrə</label>
                                         <div class="password-toggle">
-                                            <input asp-for="Password" class="form-control" id="si-password"
+                                            <input asp-for="Password" style="text-transform: none" class="form-control" id="si-password"
                                                    required>
                                             <label class="password-toggle-btn">
                                                 <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>
@@ -63,7 +63,7 @@
                                     <div class="form-group">
                                         <label for="si-password">Şifrəni təsdiq et</label>
                                         <div class="password-toggle">
-                                            <input asp-for="ConfirmPassword" class="form-control" id="si-password"
+                                            <input asp-for="ConfirmPassword" style="text-transform: none" class="form-control" id="si-password"
                                                    required>
                                             <label class="password-toggle-btn">
                                                 <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Göstər Şifrə </span>

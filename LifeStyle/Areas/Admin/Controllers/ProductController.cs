@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.Tools;
 using Business.ViewModels.Product;
 using Core.Entities;
 
@@ -18,16 +19,15 @@ namespace LifeStyle.Areas.Admin.Controllers
         private readonly IProductCategoryService _productCategoryService;
         private readonly IGenderCategoryService _genderCategoryService;
         private readonly IProductColorService _productColorService;
-        private readonly IProductBrandService _productSizeService;
+        private readonly IProductBrandService _productBrandService;
 
-        public ProductController(IUnitOfWork unitOfWork, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductColorService productColorService, IProductBrandService productSizeService)
+        public ProductController(IUnitOfWork unitOfWork, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductBrandService productBrandService)
         {
             _unitOfWork = unitOfWork;
             _productService = productService;
             _productCategoryService = productCategoryService;
             _genderCategoryService = genderCategoryService;
-            _productColorService = productColorService;
-            _productSizeService = productSizeService;
+            _productBrandService = productBrandService;
         }
 
 
@@ -37,56 +37,45 @@ namespace LifeStyle.Areas.Admin.Controllers
         }
 
 
-        [HttpGet]
         public async Task<ActionResult> Create()
         {
             ViewBag.productCategory = await _productCategoryService.GetAllAsync();
             ViewBag.genderCategory = await _genderCategoryService.GetAllAsync();
-            ViewBag.color = await _productColorService.GetAllAsync();
-            ViewBag.size = await _productSizeService.GetAllAsync();
+            //ViewBag.color = await _productColorService.GetAllAsync();
+            ViewBag.brand = await _productBrandService.GetAllAsync();
 
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Create(ProductCreateViewModel productViewModel)
-        //{
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(ProductCreateViewModel productViewModel)
+        {
 
-        //    ViewBag.categories = await _productCategoryService.GetAllAsync();
-        //    ViewBag.brands = await _genderCategoryService.GetAllAsync();
+            ViewBag.productCategory = await _productCategoryService.GetAllAsync();
+            ViewBag.genderCategory = await _genderCategoryService.GetAllAsync();
+            ViewBag.brand = await _productBrandService.GetAllAsync();
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        foreach (var item in productViewModel.)
-        //        {
-
-        //            if (!item.CheckFileType("image/"))
-        //            {
-        //                ModelState.AddModelError("ImageFiles", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
-        //                return View(productViewModel);
-        //            }
-
-        //            if (!item.CheckFileSize(300))
-        //            {
-        //                ModelState.AddModelError("ImageFiles", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
-        //                return View(productViewModel);
-        //            }
-
-        //        }
-
-        //        await _productService.Create(productViewModel);
-        //        return RedirectToAction(nameof(Index));
-        //    }
-
-
-        //    return View(productViewModel);
-
-
-
-        //    //await _productService.Create(productViewModel);
-
-        //}
+            if (ModelState.IsValid)
+            {
+                foreach (var item in productViewModel.Photo)
+                {
+                    if (!item.CheckFileType("image/"))
+                    {
+                        ModelState.AddModelError("Photo", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
+                        return View(productViewModel);
+                    }
+                    if (!item.CheckFileSize(300))
+                    {
+                        ModelState.AddModelError("Photo", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
+                        return View(productViewModel);
+                    }
+                }
+                await _productService.Create(productViewModel);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(productViewModel);
+        }
 
 
         //public async Task<ActionResult> Update(int id)
