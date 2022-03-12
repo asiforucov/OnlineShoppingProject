@@ -121,7 +121,7 @@
                                         <img src="./assets/image/product1.png" alt="product-img">
                                         <div class="hover-option">
                                             <ul class="hover-icon">
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id"><i class="fa fa-shopping-cart"></i></a></li>
                                                 <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
                                                 <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
 
