@@ -1,0 +1,141 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- -----PRODUCT DETAIL----- -->
+<section class="products-detail-section pt_large">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="product-image">
+                    <img class="product_img" src="~/assets/image/product1.png" data-zoom-image="image/product1.png">
+                </div>
+                <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme owl-loaded owl-drag">
+
+
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 190px;">
+                            <div class="owl-item active" style="width: 85px; margin-right: 10px;">
+                                <div class="item">
+                                    <a href="#" class="active" data-image="image/product1.png" data-zoom-image="image/product1.png">
+                                        <img src="~/assets/image/product1.png">
+                                    </a>
+                                </div>
+                            </div><div class="owl-item active" style="width: 85px; margin-right: 10px;">
+                                <div class="item">
+                                    <a href="#" data-image="image/product2.png" data-zoom-image="image/product2.png">
+                                        <img src="~/assets/image/product1.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><i class="ion-ios-arrow-back"></i></button><button type="button" role="presentation" class="owl-next disabled"><i class="ion-ios-arrow-forward"></i></button></div><div class="owl-dots disabled"></div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="quickview-product-detail">
+                    <h2 class="box-title">@Model.Name</h2>
+                    <h3 class="box-price">$ @Model.Price</h3>
+                    <p class="box-text">@Model.Description</p>
+                    <div class="quantity-box">
+                        <div class="count">
+                            <p>Say:</p>
+                            <div class="input-group" style="font-size: 20px">
+                              @Model.Count
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -----PRODUCT DETAIL----- -->
+<!-- -----COMMENT OZELLIKLER----- -->
+<section class="products-detail-tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="products-tabs">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="discription-tab" data-toggle="tab" href="#discription" role="tab" aria-controls="discription" aria-selected="true">məhsul haqqında</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">şərhlər (2)</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade tab-1 show active" id="discription" role="tabpanel" aria-labelledby="discription-tab">
+                            <div class="tab-title">
+                                <h6>Məhsul haqqında</h6>
+                            </div>
+                            <div class="tab-caption">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="1">Marka</td>
+                                            <td>@Model.ProductBrand</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1">Rəng</td>
+                                            <td>@Model.Color</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1">Ölçü</td>
+                                            <td>@Model.Size</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1">Kateqoriya</td>
+                                            <td>@Model.GenderCategory, @Model.ProductCategory</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade tab-2" id="ai" role="tabpanel" aria-labelledby="ai-tab">
+
+                        </div>
+                        <div class="tab-pane fade tab-3" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                            <div class="tab-title">
+                                <h6>Şərhlər</h6>
+                            </div>
+                            <div class="tab-caption">
+                                <div class="costomer-reviews">
+                                    <div class="costomer-reviews-box">
+                                        <div class="reviews-img">
+                                            <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
+                                        </div>
+                                        <div class="reviews-text">
+                                            <p class="reviewer-name">Asif Orucov</p>
+                                            <span class="reviews-date">Oktyabr 28, 2022</span>
+                                            <p class="reviewer-text">Çox zor mallardı</p>
+                                        </div>
+                                    </div>
+                                    <div class="costomer-reviews-box">
+                                        <div class="reviews-img">
+                                            <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
+                                        </div>
+                                        <div class="reviews-text">
+                                            <p class="reviewer-name">Asif Orucov</p>
+                                            <span class="reviews-date">Oktyabr 28, 2022</span>
+                                            <p class="reviewer-text">Çox zor mallardı</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="" style="text-align: center">
+                        <a asp-controller="Product" asp-action="Index" class="btn btn-success" style="margin: 20px">Geri</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- -----COMMENT OZELLIKLER----- -->
