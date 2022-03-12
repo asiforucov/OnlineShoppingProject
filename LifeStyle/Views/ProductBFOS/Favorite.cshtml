@@ -1,7 +1,7 @@
 ﻿@model Business.ViewModels.ProductBFOS.FavoriteVM
 @{
     ViewData["Title"] = "Favorite";
-    int count = 0;
+    int count = 1;
 }
 
 <!-- -----Favorite TABLE----- -->
@@ -26,7 +26,7 @@
                             var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
                             <tr class="row-2">
                                 <td class="row-close close-1"></td>
-                                <td class="row-close close-1">@product.Price</td>
+                                <td class="row-close">@count</td>
                                 <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
                                 <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
                                 <td class="product-price" data-title="Price">
@@ -34,6 +34,7 @@
                                 </td>
                                 <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
                             </tr>
+                            count++;
                         }
                         </tbody>
                         <tfoot>

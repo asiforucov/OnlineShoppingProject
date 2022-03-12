@@ -20,20 +20,25 @@ namespace LifeStyle.Areas.Admin.Controllers
         private readonly IGenderCategoryService _genderCategoryService;
         private readonly IProductColorService _productColorService;
         private readonly IProductBrandService _productBrandService;
+        private readonly IProductImageService _productImageService;
 
-        public ProductController(IUnitOfWork unitOfWork, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductBrandService productBrandService)
+        public ProductController(IUnitOfWork unitOfWork, IProductImageService productImageService, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductBrandService productBrandService)
         {
             _unitOfWork = unitOfWork;
             _productService = productService;
             _productCategoryService = productCategoryService;
             _genderCategoryService = genderCategoryService;
             _productBrandService = productBrandService;
+            _productImageService = productImageService;
         }
 
 
         public async Task<ActionResult> Index()
         {
-            return View(await _unitOfWork.productRepository.GetAllAsync());
+            ViewBag.productCategory = await _productCategoryService.GetAllAsync();
+            ViewBag.productImage = await _productImageService.GetAllAsync();
+            var index = await _unitOfWork.productRepository.GetAllAsync();
+            return View(index);
         }
 
 

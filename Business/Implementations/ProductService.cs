@@ -62,8 +62,8 @@ namespace Business.Implementations
         }
         public async Task<List<Product>> GetAllAsync()
         {
-            return await _unitOfWork.productRepository
-                .GetAllAsync(p=>p.IsDeleted==false, "ProductCategory", "GenderCategory", "ProductBrand");
+            var getall = await _unitOfWork.productRepository.GetAllAsync(p => p.IsDeleted == false, "ProductCategory");
+            return getall;
         }
 
         public Task Remove(int id)

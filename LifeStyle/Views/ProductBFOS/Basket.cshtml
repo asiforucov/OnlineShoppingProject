@@ -1,6 +1,7 @@
 ﻿@model Business.ViewModels.ProductBFOS.BasketVM
 @{
     ViewData["Title"] = "Basket";
+    int count = 1;
 }
 
 <!-- -----BASKET TABLE----- -->
@@ -12,6 +13,7 @@
                     <table class="table table-bordered text-center">
                         <thead>
                             <tr class="row-1">
+                                <th class="row-title"><p>#</p></th>
                                 <th class="row-title"><p>Məhsul</p></th>
                                 <th class="row-title"><p>Məhsulun adı</p></th>
                                 <th class="row-title"><p>Qiymət</p></th>
@@ -25,15 +27,21 @@
                         {
                             var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
                             <tr class="row-2">
-                                <td class="row-close close-1"></td>
-                                <td class="row-close close-1">@product.Price</td>
+                                <td class="row-close ">@count</td>
                                 <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
                                 <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
                                 <td class="product-price" data-title="Price">
                                     <p> @product.Price</p>
                                 </td>
-                                <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
+                                <td class="product-price" data-title="Price">
+                                    <p> @product.Count</p>
+                                </td>
+                                <td class="product-price" data-title="Price">
+                                    <p> @product.Count</p>
+                                </td>
+                                <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="BasketDelete"><i class="bi bi-x-circle"></i></a></td>
                             </tr>
+                            count++;
                         }
                         </tbody>
                         <tfoot>
