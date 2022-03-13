@@ -155,12 +155,12 @@ namespace LifeStyle.Areas.Admin.Controllers
         //    return View(productViewModel);
         //}
 
-        //public async Task<ActionResult> Delete(int id)
-        //{
-        //    await _productService.Remove(id);
+        public async Task<ActionResult> Delete(int id)
+        {
+            await _productService.Remove(id);
 
-        //    return RedirectToAction(nameof(Index));
-        //}
+            return RedirectToAction(nameof(Index));
+        }
 
 
 

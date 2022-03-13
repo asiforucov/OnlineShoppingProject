@@ -13,5 +13,10 @@ namespace LifeStyle.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> GetProduct()
+        {
+            return View();
+        }
     }
 }

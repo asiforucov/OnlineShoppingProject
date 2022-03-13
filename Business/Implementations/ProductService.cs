@@ -58,17 +58,19 @@ namespace Business.Implementations
         public async Task<Product> Get(int id)
         {
             return await _unitOfWork.productRepository
-                .Get(p => p.Id == id, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
+                .Get(p => p.Id == id && p.IsDeleted==false, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
         }
         public async Task<List<Product>> GetAllAsync()
         {
-            var getall = await _unitOfWork.productRepository.GetAllAsync(p => p.IsDeleted == false, "ProductCategory");
+            var getall = await _unitOfWork.productRepository.GetAllAsync(p => p.IsDeleted == false, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
             return getall;
         }
 
-        public Task Remove(int id)
+        public async Task Remove(int id)
         {
-            throw new NotImplementedException();
+            var deleted = await _unitOfWork.productRepository.Get(p => p.Id == id && p.IsDeleted ==false, "ProductCategory");
+            deleted.IsDeleted = true;
+            await _unitOfWork.SaveAsync();
         }
 
         public Task Update(int id, ProductUpdateViewModel productViewModel)
