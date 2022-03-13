@@ -27,10 +27,10 @@ namespace LifeStyle.Areas.Admin.Controllers
             return View(await _unitOfWork.genderCategoryRepository.GetAllAsync(gc => gc.IsDeleted == false));
         }
 
-        //public Task<IActionResult> Create()
-        //{
-        //    return View();
-        //}
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

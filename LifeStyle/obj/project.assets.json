@@ -40,6 +40,42 @@
           "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.Facebook/3.1.22": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.22": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.Authentication.Twitter/3.1.22": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.22": {
         "type": "package",
         "compile": {
@@ -2706,6 +2742,9 @@
         "dependencies": {
           "Data": "1.0.0",
           "FluentValidation.AspNetCore": "10.3.6",
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.22",
           "Microsoft.AspNetCore.Http.Features": "5.0.14"
         },
         "compile": {
@@ -2722,6 +2761,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
         "compile": {
@@ -2736,6 +2778,9 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Core": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.22"
         },
         "compile": {
@@ -2803,6 +2848,51 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/3.1.22": {
+      "sha512": "krdBHwagvzWARSKzhkyDtU8bAUiFKdlUpoMMiFkXuc3Ik5NG1+4Ku6XGyGSO0lPm7zUVgWjHYA/Y8He+4Mx0Lg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.facebook/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.xml",
+        "microsoft.aspnetcore.authentication.facebook.3.1.22.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.facebook.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.22": {
+      "sha512": "NqlKG+i0B3pehU0EspO/A6hxURdJuwXyKkikpnG983/KoMEIuCilBHfSleeoiKGs5sGV/PCo4brRDF5jdjQetw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.3.1.22.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Twitter/3.1.22": {
+      "sha512": "o05wnVZTYaXbjU0wxXgEaeYi4GOpc0NnIWP/yMhqPraGapmU7P2bJP2Egm72A/40aKqKWKzwQbFw/SuRt/bMPw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.twitter/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.xml",
+        "microsoft.aspnetcore.authentication.twitter.3.1.22.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.twitter.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.22": {
@@ -8856,6 +8946,9 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Business >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Facebook >= 3.1.22",
+      "Microsoft.AspNetCore.Authentication.Google >= 3.1.22",
+      "Microsoft.AspNetCore.Authentication.Twitter >= 3.1.22",
       "Microsoft.EntityFrameworkCore >= 3.1.22",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.22",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.22",
@@ -8911,6 +9004,18 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[3.1.22, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[3.1.22, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Twitter": {
+            "target": "Package",
+            "version": "[3.1.22, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.22, )"

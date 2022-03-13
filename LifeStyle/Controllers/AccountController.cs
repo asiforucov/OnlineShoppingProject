@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Business.ViewModels.Auth;
 using Core.Entities;
@@ -163,6 +164,67 @@ namespace LifeStyle.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+        public IActionResult FacebookLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
+            return new ChallengeResult("Facebook", properties);
+        }
+        public IActionResult TwitterLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Twitter", redirectUrl);
+            return new ChallengeResult("Twitter", properties);
+        }
+
+        public IActionResult GoogleLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+            return new ChallengeResult("Google", properties);
+        }
+
+        public async Task<IActionResult> SocialMediaResponse(string returnUrl)
+        {
+            var loginInfo = await _signInManager.GetExternalLoginInfoAsync();
+            if (loginInfo == null)
+            {
+                return RedirectToAction("Register");
+            }
+            else
+            {
+                var result =
+                    await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    if (loginInfo.Principal.HasClaim(scl => scl.Type == ClaimTypes.Email))
+                    {
+                        ApplicationUser user = new ApplicationUser()
+                        {
+                            Email = loginInfo.Principal.FindFirstValue(ClaimTypes.Email),
+                            FullName = loginInfo.Principal.FindFirstValue(ClaimTypes.Name),
+                            UserName = loginInfo.Principal.FindFirstValue(ClaimTypes.Surname)
+                        };
+                        var createResult = await _userManager.CreateAsync(user);
+                        if (createResult.Succeeded)
+                        {
+                            var identityLogin = await _userManager.AddLoginAsync(user, loginInfo);
+                            if (identityLogin.Succeeded)
+                            {
+                                await _signInManager.SignInAsync(user, true);
+                                return Redirect("Login");
+                            }
+                        }
+                    }
+                }
+            }
+
+            return RedirectToAction("Register");
         }
     }
 }

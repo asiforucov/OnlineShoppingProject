@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EkkdnnhXqT0j4tLvkzaq0swbPKFmT0P9dS1vx6ZwYaABrbCyMu6knQGfMD+i7JnScP1arGTYRyITsP5i7/cTDw==",
+  "dgSpecHash": "2oKCYj8cJoX7r5/30ptIp2n0fsfFi4N/gojb7Qpc4SRv4EfqVn5OGM0avxSuMN5aAqBuxVoi0Gj6kXYtXijWCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Data\\Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.22\\microsoft.aspnetcore.authentication.facebook.3.1.22.nupkg.sha512",
+    "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.22\\microsoft.aspnetcore.authentication.google.3.1.22.nupkg.sha512",
+    "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.twitter\\3.1.22\\microsoft.aspnetcore.authentication.twitter.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.22\\microsoft.aspnetcore.cryptography.internal.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.22\\microsoft.aspnetcore.cryptography.keyderivation.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.22\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.22.nupkg.sha512",

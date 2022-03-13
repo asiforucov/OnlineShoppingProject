@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "IkaJTZT1TyU+zcrX8knI6/WywV8tkCV3+QgLHr/KIxwV83jigxvHv9+UbQCYMDkmCB0gb+dEUYYVB6AsosZXiA==",
+  "dgSpecHash": "Ml32z88FBvR1OMOTdopXxRTd9vN1P2pQuDk0+kglaLBdvRWuddA+Fd0rDMpErnM7r8MNoqlZwf8Ykr8mciqPcw==",
   "success": true,
   "projectFilePath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
+    "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.22\\microsoft.aspnetcore.authentication.facebook.3.1.22.nupkg.sha512",
+    "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.22\\microsoft.aspnetcore.authentication.google.3.1.22.nupkg.sha512",
+    "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.twitter\\3.1.22\\microsoft.aspnetcore.authentication.twitter.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.22\\microsoft.aspnetcore.cryptography.internal.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.22\\microsoft.aspnetcore.cryptography.keyderivation.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.14\\microsoft.aspnetcore.http.features.5.0.14.nupkg.sha512",

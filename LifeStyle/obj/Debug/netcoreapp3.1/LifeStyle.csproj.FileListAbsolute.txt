@@ -202,3 +202,9 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\_ViewStart.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\Product\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\Product\GetAll.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Twitter.dll
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PraductBrand\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PraductBrand\Create.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PraductBrand\Update.cshtml.g.cs

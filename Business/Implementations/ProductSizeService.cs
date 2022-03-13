@@ -16,9 +16,14 @@ namespace Business.Implementations
         {
             _unitOfWork = unitOfWork;
         }
-        public Task Create(ProductBrandCreateViewModel productSizeViewModel)
+        public async Task Create(ProductBrandCreateViewModel productBrandViewModel)
         {
-            throw new NotImplementedException();
+            var newBrand = new ProductBrand()
+            {
+                Name = productBrandViewModel.Name
+            };
+            await _unitOfWork.productSizeRepository.CreateAsync(newBrand);
+            await _unitOfWork.SaveAsync();
         }
 
         public async Task<ProductBrand> Get(int id)
@@ -31,14 +36,18 @@ namespace Business.Implementations
             return await _unitOfWork.productSizeRepository.GetAllAsync(s => s.IsDeleted == false);
         }
 
-        public Task Remove(int id)
+        public async Task Remove(int id)
         {
-            throw new NotImplementedException();
+            ProductBrand dbCategory = await _unitOfWork.productSizeRepository.Get(b => b.Id == id);
+            dbCategory.IsDeleted = true;
+            await _unitOfWork.SaveAsync();
         }
 
-        public Task Update(int id, ProductBrandUpdateViewModel productSizetViewModel)
+        public async Task Update(int id, ProductBrandUpdateViewModel productBrandViewModel)
         {
-            throw new NotImplementedException();
+            ProductBrand brand = await _unitOfWork.productSizeRepository.Get(b => b.Id == id);
+            brand.Name = productBrandViewModel.Name;
+            await _unitOfWork.SaveAsync();
         }
     }
 }

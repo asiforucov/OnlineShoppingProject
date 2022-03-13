@@ -50,6 +50,21 @@ namespace LifeStyle
                 Options.Password.RequireUppercase = false;
                 Options.Password.RequireDigit = true;
             });
+            services.AddAuthentication().AddFacebook(options =>
+            {
+                options.AppId = "679373123404159";
+                options.AppSecret = "b2f94211c8b1d4cc3ab06b19e65b42de";
+            });
+            services.AddAuthentication().AddGoogle(options =>
+            {
+                options.ClientId = "910103900779-31m21f00r9pirt6fnjs3b63rbja3ehf5.apps.googleusercontent.com";
+                options.ClientSecret = "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";
+            });
+            services.AddAuthentication().AddTwitter(options =>
+            {
+                options.ConsumerKey = "4xKCmlg4miT3SkO44ND5CS06e";
+                options.ConsumerSecret = "Zq41BHnQ1dvlWBmklWCGVmtWUTSM4qwddxBHdxr1CNVQE3DCS7";
+            });
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICommentService, CommentService>();

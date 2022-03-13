@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Business.ViewModels.ProductSize
 {
-    public class ProductBrandCreateViewModel
+    public class ProductBrandUpdateViewModel
     {
+        public string Name { get; set; }
     }
 }

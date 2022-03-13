@@ -9,11 +9,38 @@
       "Data/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.22",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.22"
         },
         "runtime": {
           "Data.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/3.1.22": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "3.1.22.0",
+            "fileVersion": "3.100.2221.57904"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.22": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "3.1.22.0",
+            "fileVersion": "3.100.2221.57904"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Twitter/3.1.22": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {
+            "assemblyVersion": "3.1.22.0",
+            "fileVersion": "3.100.2221.57904"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.22": {
@@ -949,12 +976,6 @@
       "System.Security.Permissions/4.5.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Permissions.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.6.26515.6"
-          }
         }
       },
       "System.Security.Principal.Windows/4.5.0": {
@@ -1092,6 +1113,9 @@
       },
       "Core/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.22",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
         "runtime": {
@@ -1105,6 +1129,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/3.1.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-krdBHwagvzWARSKzhkyDtU8bAUiFKdlUpoMMiFkXuc3Ik5NG1+4Ku6XGyGSO0lPm7zUVgWjHYA/Y8He+4Mx0Lg==",
+      "path": "microsoft.aspnetcore.authentication.facebook/3.1.22",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.3.1.22.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NqlKG+i0B3pehU0EspO/A6hxURdJuwXyKkikpnG983/KoMEIuCilBHfSleeoiKGs5sGV/PCo4brRDF5jdjQetw==",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.22",
+      "hashPath": "microsoft.aspnetcore.authentication.google.3.1.22.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Twitter/3.1.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o05wnVZTYaXbjU0wxXgEaeYi4GOpc0NnIWP/yMhqPraGapmU7P2bJP2Egm72A/40aKqKWKzwQbFw/SuRt/bMPw==",
+      "path": "microsoft.aspnetcore.authentication.twitter/3.1.22",
+      "hashPath": "microsoft.aspnetcore.authentication.twitter.3.1.22.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.22": {
       "type": "package",
