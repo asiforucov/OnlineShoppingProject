@@ -194,3 +194,5 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\SuperHome\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductBFOS\Basket.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product_detail_admin\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\My_User\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductSearch\Index.cshtml.g.cs

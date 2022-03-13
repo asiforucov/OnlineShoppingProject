@@ -16,7 +16,8 @@ namespace Business.Interfaces
         Task<ProductOperation> Get(int id);
         Task SetFavourite(int id, string userid);
         Task SetBasket(int id, string userid);
-
+        Task DeleteBasket(int id, string userid);
+        Task DeleteFavorite(int id, string userid);
         Task SetOrdered(int id, string userid);
         Task SetSend(int id, string userid);
     }

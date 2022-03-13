@@ -32,7 +32,7 @@
                                 <td class="product-price" data-title="Price">
                                     <p> @product.Price</p>
                                 </td>
-                                <td class="row-close close-2" data-title="product-remove"><a href="#"><i class="bi bi-x-circle"></i></a></td>
+                                <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="DeleteFavorite" asp-route-id="@item.ProductId"><i class="bi bi-x-circle"></i></a></td>
                             </tr>
                             count++;
                         }

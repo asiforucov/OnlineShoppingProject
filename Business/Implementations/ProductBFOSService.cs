@@ -15,6 +15,25 @@ namespace Business.Implementations
         {
             _unitOfWork = unitOfWork;
         }
+
+        public async Task DeleteBasket(int id, string userid)
+        {
+            var bfos = await _unitOfWork.productBFOSRepository.Get(p =>
+                p.ProductId == id && p.ApplicationUserId == userid && p.IsBasket == true);
+            bfos.IsBasket = false;
+            _unitOfWork.productBFOSRepository.Update(bfos);
+            await _unitOfWork.SaveAsync();
+        }
+
+        public async Task DeleteFavorite(int id, string userid)
+        {
+            var bfos = await _unitOfWork.productBFOSRepository.Get(p =>
+                p.ProductId == id && p.ApplicationUserId == userid && p.IsFavorite == true);
+            bfos.IsFavorite = false;
+            _unitOfWork.productBFOSRepository.Update(bfos);
+            await _unitOfWork.SaveAsync();
+        }
+
         public Task<ProductOperation> Get(int id)
         {
             throw new NotImplementedException();
@@ -80,5 +99,7 @@ namespace Business.Implementations
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

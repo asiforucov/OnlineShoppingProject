@@ -3,7 +3,7 @@
     ViewData["Title"] = "Login";
 }
 
-<section id="login">
+@*<section id="login">
     <div class="container py-4 py-lg-5 my-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -13,11 +13,11 @@
                         <hr class="mt-2">
                         <div class="text-danger" asp-validation-summary="ModelOnly">
                         </div>
-                        <form class="needs-validation mt-2" 
-                              method="post" >
-                            <input type="hidden" name="_token" >                            <div class="form-group">
+                        <form class="needs-validation mt-2"
+                              method="post">
+                            <input type="hidden" name="_token">                            <div class="form-group">
                                 <label for="si-email">E-poçt ünvanı</label>
-                                <input style="text-transform: none" class="form-control" asp-for="Email" 
+                                <input style="text-transform: none" class="form-control" asp-for="Email"
                                        placeholder="ad@gmail.com"
                                        required>
                                 <span asp-validation-for="Email"></span>
@@ -65,6 +65,56 @@
 
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+
+
+<!-- Login-->
+<section class="sign-in" id="identity">
+    <div class="container">
+        <div class="signin-content">
+           
+            <div class="signin-image">
+
+                <figure><img src="~/login-register/pngegg.png" alt="sing up image"></figure>
+                <a href="#" class="signup-image-link">Qeydiyyatdan keç</a>
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Daxil ol</h2>
+                <form method="POST" class="register-form" id="login-form">
+                    <div class="form-group">
+                        <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input asp-for="Email" placeholder="Email"/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                        <input asp-for="Password" placeholder="Şifrə"/>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="RememberMe" id="remember-me" class="agree-term"/>
+                        <label for="remember-me" class="label-agree-term"><span><span></span></span>Xatırla məni</label>
+                    </div>
+                    <div class="text-danger" asp-validation-summary="ModelOnly">
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" class="form-submit" value="Daxil ol"/>
+                    </div>
+                </form>
+
+                <div class="social-login">
+                    <span class="social-label">Bunlarla daxil ol</span>
+                    <ul class="socials">
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                        <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>

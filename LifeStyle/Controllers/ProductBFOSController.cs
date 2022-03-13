@@ -30,63 +30,59 @@ namespace LifeStyle.Controllers
         [Authorize]
         public async Task<IActionResult> SetFavorite(int id)
         {
-
             var userId = _userManager.GetUserId(HttpContext.User);
-
             await _productBFOSService.SetFavourite(id, userId);
-
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Favorite", "ProductBFOS");
         }
         [Authorize]
         public async Task<IActionResult> Favorite()
         {
-
             var userId = _userManager.GetUserId(HttpContext.User);
-
             var products = await _productService.GetAllAsync();
             var productOperations = await _productBFOSService.GetAllFavouriteAsync(userId);
             var productImages = await _productImageService.GetAllAsync();
-
             FavoriteVM favoriteVM = new FavoriteVM
             {
                 Products = products,
                 ProductOperations = productOperations,
                 ProductImages = productImages
             };
-
-
             return View(favoriteVM);
         }
         [Authorize]
         public async Task<IActionResult> SetBasket(int id)
         {
             var userId = _userManager.GetUserId(HttpContext.User);
-
             await _productBFOSService.SetBasket(id, userId);
-
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Basket", "ProductBFOS");
         }
         [Authorize]
         public async Task<IActionResult> Basket()
         {
-
             var userId = _userManager.GetUserId(HttpContext.User);
-
             var products = await _productService.GetAllAsync();
             var productOperations = await _productBFOSService.GetAllBasketAsync(userId);
             var productImages = await _productImageService.GetAllAsync();
-
             BasketVM basketVM = new BasketVM
             {
                 Products = products,
                 ProductOperations = productOperations,
                 ProductImages = productImages
             };
-
-
             return View(basketVM);
+        }
+
+        public async Task<IActionResult> DeleteBasket(int id)
+        {
+            var userId = _userManager.GetUserId(HttpContext.User);
+            await _productBFOSService.DeleteBasket(id, userId);
+            return RedirectToAction("Basket");
+        }
+        public async Task<IActionResult> DeleteFavorite(int id)
+        {
+            var userId = _userManager.GetUserId(HttpContext.User);
+            await _productBFOSService.DeleteFavorite(id, userId);
+            return RedirectToAction("Favorite");
         }
     }
 }

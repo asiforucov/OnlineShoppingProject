@@ -39,7 +39,7 @@
                                 <td class="product-price" data-title="Price">
                                     <p> @product.Count</p>
                                 </td>
-                                <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="BasketDelete"><i class="bi bi-x-circle"></i></a></td>
+                                <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="Deletebasket" asp-route-id="@product.Id"><i class="bi bi-x-circle"></i></a></td>
                             </tr>
                             count++;
                         }
