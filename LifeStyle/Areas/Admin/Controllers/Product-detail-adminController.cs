@@ -11,10 +11,12 @@ namespace LifeStyle.Areas.Admin.Controllers
     public class Product_detail_adminController : Controller
     {
         private readonly IProductService _productService;
+        private readonly IProductImageService _productImageService;
 
-        public Product_detail_adminController(IProductService productService)
+        public Product_detail_adminController(IProductService productService, IProductImageService productImageService)
         {
             _productService = productService;
+            _productImageService = productImageService;
         }
         public async Task<IActionResult> Index(int id)
         {

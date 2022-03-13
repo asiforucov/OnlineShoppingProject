@@ -9,26 +9,23 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="product-image">
-                    <img class="product_img" src="~/assets/image/product1.png" data-zoom-image="image/product1.png">
+                    <img class="product_img" src="~/assets/image/@Model.ProductImages.Where(p=>p.IsMain == true).FirstOrDefault().Image" data-zoom-image="image/product1.png">
                 </div>
                 <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme owl-loaded owl-drag">
 
 
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 190px;">
-                            <div class="owl-item active" style="width: 85px; margin-right: 10px;">
-                                <div class="item">
-                                    <a href="#" class="active" data-image="image/product1.png" data-zoom-image="image/product1.png">
-                                        <img src="~/assets/image/product1.png">
-                                    </a>
+                            @foreach (var item in Model.ProductImages)
+                            {
+                                <div class="owl-item active" style="width: 85px; margin-right: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="active" data-image="image/product1.png" data-zoom-image="image/product1.png">
+                                            <img src="~/assets/image/@item.Image">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div><div class="owl-item active" style="width: 85px; margin-right: 10px;">
-                                <div class="item">
-                                    <a href="#" data-image="image/product2.png" data-zoom-image="image/product2.png">
-                                        <img src="~/assets/image/product1.png">
-                                    </a>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><i class="ion-ios-arrow-back"></i></button><button type="button" role="presentation" class="owl-next disabled"><i class="ion-ios-arrow-forward"></i></button></div><div class="owl-dots disabled"></div>
                 </div>

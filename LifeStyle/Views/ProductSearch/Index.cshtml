@@ -8,11 +8,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page_title text-center">
-                    <h1>shop List</h1>
+                    <h1>Məhsullar</h1>
                     <ul class="breadcrumb justify-content-center">
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="#">shop</a></li>
-                        <li><span>shop List</span></li>
+                        <li><a asp-controller="Home" asp-action="Index">Əsas səhifə</a></li>
+                        <li><span>Məhsullar</span></li>
                     </ul>
                 </div>
             </div>
@@ -68,9 +67,10 @@
                                     <p class="product-list-text" style="">@p.Description</p>
                                     <div class="hover-option">
                                         <div class="add-cart-btn">
-                                            <a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="" class="btn btn-primary">Səbətə at</a>
+                                            <a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="background-color: #eb3e32" class="btn btn-primary border-0">Səbətə əlavə et</a>
                                         </div>
                                         <ul class="hover-icon">
+                                            <li><a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="margin-top: 10px"><i style="color: #eb3e32" class="bi bi-cart3"></i></a></li>
                                             <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
                                             <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
                                         </ul>

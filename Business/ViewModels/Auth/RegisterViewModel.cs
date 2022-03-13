@@ -8,7 +8,6 @@ namespace Business.ViewModels.Auth
     public class RegisterViewModel
     {
         public string FullName { get; set; }
-        //public string Surname { get; set; }
         public string PhoneNumber { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }

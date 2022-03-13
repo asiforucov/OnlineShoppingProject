@@ -119,28 +119,36 @@
         <div class="signup-content">
             <div class="signup-form">
                 <h2 class="form-title">Qeydiyyat</h2>
-                <div class="text-danger" asp-validation-summary="ModelOnly">
-
-                </div>
+                
                 <form method="post" class="register-form" id="register-form">
                     <div class="form-group">
                         <label style="padding-bottom: 20px" ><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input asp-for="Username" type="text" name="name" id="name" placeholder="Ad Soyad" />
+                        <input asp-for="Username" placeholder="Username" />
                         <span asp-validation-for="Username" class="text-danger"></span>
                     </div>
                     <div class="form-group">
+                        <label style="padding-bottom: 20px" ><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input asp-for="FullName" placeholder="Ad Soyad" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label style="padding-bottom: 20px" ><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input asp-for="PhoneNumber" placeholder="Telefon nömrəsi" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
                         <label style="padding-bottom: 20px" ><i  class="zmdi zmdi-email"></i></label>
-                        <input asp-for="Email"  placeholder="Email" />
+                        <input asp-for="Email" placeholder="Email" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label style="padding-bottom: 20px" for="pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input asp-for="Password" type="password" name="pass" id="pass" placeholder="Şifrə" />
+                        <label style="padding-bottom: 20px" ><i class="zmdi zmdi-lock"></i></label>
+                        <input asp-for="Password" placeholder="Şifrə" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label style="padding-bottom: 20px" for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                        <input asp-for="ConfirmPassword" type="password" name="re_pass" id="re_pass" placeholder="Şifrə təkrarı" />
+                        <label style="padding-bottom: 20px" ><i class="zmdi zmdi-lock-outline"></i></label>
+                        <input asp-for="ConfirmPassword" placeholder="Şifrə təkrarı" />
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -148,13 +156,19 @@
                         <label for="agree-term" class="label-agree-term"><span><span></span></span>Razıyam  <a asp-controller="Privacy_Policy" asp-action="Index" class="term-service text-primary">Şərtlər və qaydalar</a></label>
                     </div>
                     <div class="form-group form-button">
-                        <input type="submit" class="form-submit" value="Qeydiyyat">
+                        <button type="submit" class="form-submit">Qeydiyyat
+                        </button>
+                        @*<input type="submit" class="form-submit" value="Qeydiyyat">*@
+
                     </div>
                 </form>
             </div>
             <div class="signup-image">
                 <figure><img src="~/login-register/2-323478_fashion-borders-images-png-images-clipart-fashion-clip.png" alt="sing up image"></figure>
                 <p>Hesabın var? <a asp-controller="Account" asp-action="Login" class="-image-link">Daxil ol</a></p>
+            </div>
+            <div class="text-danger" asp-validation-summary="ModelOnly">
+
             </div>
         </div>
     </div>

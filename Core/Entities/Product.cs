@@ -19,7 +19,7 @@ namespace Core.Entities
         public int ProductCategoryId { get; set; }
         public ProductCategory ProductCategory { get; set; }
         public List<Comment> Comments { get; set; }
-        //public int ProductSizeId { get; set; }
+         //public int ProductSizeId { get; set; }
         //public ProductSize ProductSize { get; set; }
         //public int ProductColorId { get; set; }
         //public ProductColor ProductColor { get; set; }

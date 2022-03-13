@@ -35,10 +35,16 @@ namespace LifeStyle.Areas.Admin.Controllers
 
         public async Task<ActionResult> Index()
         {
-            ViewBag.productCategory = await _productCategoryService.GetAllAsync();
-            ViewBag.productImage = await _productImageService.GetAllAsync();
-            var index = await _unitOfWork.productRepository.GetAllAsync();
-            return View(index);
+            var productCategories = await _productCategoryService.GetAllAsync();
+            var productImages = await _productImageService.GetAllAsync();
+            var product = await _unitOfWork.productRepository.GetAllAsync();
+            ProductHomeVM productHomeVM = new ProductHomeVM()
+            {
+                ProductImages = productImages,
+                ProductCategories = productCategories,
+                Products = product
+            };
+            return View(productHomeVM);
         }
 
 

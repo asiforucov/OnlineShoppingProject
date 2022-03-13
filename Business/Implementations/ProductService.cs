@@ -58,7 +58,7 @@ namespace Business.Implementations
         public async Task<Product> Get(int id)
         {
             return await _unitOfWork.productRepository
-                .Get(p => p.Id == id, "ProductCategory", "GenderCategory", "ProductBrand");
+                .Get(p => p.Id == id, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
         }
         public async Task<List<Product>> GetAllAsync()
         {
