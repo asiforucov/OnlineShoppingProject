@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Interfaces;
+using Business.ViewModels.Comment;
 using Core;
 
 namespace LifeStyle.Controllers
@@ -12,12 +13,13 @@ namespace LifeStyle.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductService _productService;
+        private readonly ICommentService _commentService;
         private readonly IProductCategoryService _productCategoryService;
         private readonly IGenderCategoryService _genderCategoryService;
         private readonly IProductColorService _productColorService;
         private readonly IProductBrandService _productSizeService;
 
-        public Product_detailController(IUnitOfWork unitOfWork, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductColorService productColorService, IProductBrandService productSizeService)
+        public Product_detailController(IUnitOfWork unitOfWork, ICommentService commentService, IProductService productService, IProductCategoryService productCategoryService, IGenderCategoryService genderCategoryService, IProductColorService productColorService, IProductBrandService productSizeService)
         {
             _unitOfWork = unitOfWork;
             _productService = productService;
@@ -25,11 +27,19 @@ namespace LifeStyle.Controllers
             _genderCategoryService = genderCategoryService;
             _productColorService = productColorService;
             _productSizeService = productSizeService;
+            _commentService = commentService;
         }
         public async Task<IActionResult> Index(int id)
         {
             var product = await _productService.Get(id);
             return View(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateComment(CommentCreateViewModel commentCreateViewModel)
+        {
+            await _commentService.Create(commentCreateViewModel);
+            return View(commentCreateViewModel);
         }
     }
 }

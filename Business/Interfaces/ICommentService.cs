@@ -11,8 +11,7 @@ namespace Business.Interfaces
     {
         Task<List<Comment>> GetAllAsync();
         Task<Comment> Get(int id);
-        Task Create(CommentCreateViewModel commentViewModel);
-        Task Update(int id, CommentUpdateViewModel commentViewModel);
+        Task Create(CommentCreateViewModel commentCreateViewModel);
         Task Remove(int id);
     }
 }

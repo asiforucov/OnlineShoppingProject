@@ -16,10 +16,20 @@ namespace Business.Implementations
         {
             _unitOfWork = unitOfWork;
         }
-        public Task Create(CommentCreateViewModel commentViewModel)
+        public async Task Create(CommentCreateViewModel commentViewModel)
         {
-            throw new NotImplementedException();
+            var comment = new Comment()
+            {
+                Content = commentViewModel.Content,
+                ProductId = commentViewModel.ProductId,
+                ApplicationUserId = commentViewModel.UserId
+            };
+
+            await _unitOfWork.commentRepository.CreateAsync(comment);
+            await _unitOfWork.SaveAsync();
         }
+
+        
 
         public async Task<Comment> Get(int id)
         {
@@ -36,9 +46,6 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task Update(int id, CommentUpdateViewModel commentViewModel)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

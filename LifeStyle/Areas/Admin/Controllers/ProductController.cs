@@ -89,71 +89,67 @@ namespace LifeStyle.Areas.Admin.Controllers
         }
 
 
-        //public async Task<ActionResult> Update(int id)
-        //{
-        //    ViewBag.categories = await _categoryService.GetAllAsync();
-        //    ViewBag.brands = await _brandService.GetAllAsync();
+        public async Task<ActionResult> Update(int id)
+        {
+            //ViewBag.categories = await _productCategoryService.GetAllAsync();
+            //ViewBag.brands = await _productBrandService.GetAllAsync();
+            //Product product = await _productService.Get(id);
+            //if (product == null) return NotFound();
+            //var productViewModel = new ProductUpdateViewModel()
+            //{
+            //    Name = product.Name,
+            //    Description = product.Description,
+            //    Information = product.Information,
+            //    Price = product.Price,
+            //    Count = product.Count,
+            //    DiscountPrice = product.DiscountPrice,
+            //    CategoryId = product.CategoryId,
+            //    IsDiscount = product.IsDiscount,
+            //    BrandId = product.BrandId
 
-        //    Product product = await _productService.Get(id);
-
-        //    if (product == null) return NotFound();
-
-
-        //    var productViewModel = new ProductUpdateViewModel()
-        //    {
-        //        Name = product.Name,
-        //        Description = product.Description,
-        //        Information = product.Information,
-        //        Price = product.Price,
-        //        Count = product.Count,
-        //        DiscountPrice = product.DiscountPrice,
-        //        CategoryId = product.CategoryId,
-        //        IsDiscount = product.IsDiscount,
-        //        BrandId = product.BrandId
-
-        //    };
+            //};
 
 
 
-        //    return View(productViewModel);
-        //}
+            return View();
+        }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Update(int id, ProductUpdateViewModel productViewModel)
-        //{
-        //    ViewBag.categories = await _categoryService.GetAllAsync();
-        //    ViewBag.brands = await _brandService.GetAllAsync();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Update(int id, ProductUpdateViewModel productViewModel)
+        {
+            //ViewBag.categories = await _categoryService.GetAllAsync();
+            //ViewBag.brands = await _brandService.GetAllAsync();
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (productViewModel.ImageFiles != null)
-        //        {
-        //            foreach (var item in productViewModel.ImageFiles)
-        //            {
+            //if (ModelState.IsValid)
+            //{
+            //    if (productViewModel.ImageFiles != null)
+            //    {
+            //        foreach (var item in productViewModel.ImageFiles)
+            //        {
 
-        //                if (!item.CheckFileType("image/"))
-        //                {
-        //                    ModelState.AddModelError("ImageFiles", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
-        //                    return View(productViewModel);
-        //                }
+            //            if (!item.CheckFileType("image/"))
+            //            {
+            //                ModelState.AddModelError("ImageFiles", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
+            //                return View(productViewModel);
+            //            }
 
-        //                if (!item.CheckFileSize(300))
-        //                {
-        //                    ModelState.AddModelError("ImageFiles", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
-        //                    return View(productViewModel);
-        //                }
+            //            if (!item.CheckFileSize(300))
+            //            {
+            //                ModelState.AddModelError("ImageFiles", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
+            //                return View(productViewModel);
+            //            }
 
-        //            }
+            //        }
 
-        //        }
-        //        await _productService.Update(id, productViewModel);
-        //        return RedirectToAction(nameof(Index));
-        //    }
+            //    }
+            //    await _productService.Update(id, productViewModel);
+            //    return RedirectToAction(nameof(Index));
+            //}
 
 
-        //    return View(productViewModel);
-        //}
+            return View(productViewModel);
+        }
 
         public async Task<ActionResult> Delete(int id)
         {

@@ -1,4 +1,4 @@
-using Business.Implementations;
+﻿using Business.Implementations;
 using Business.Interfaces;
 using Core;
 using Core.Entities;
@@ -49,6 +49,9 @@ namespace LifeStyle
                 Options.Password.RequireLowercase = false;
                 Options.Password.RequireUppercase = false;
                 Options.Password.RequireDigit = true;
+
+
+                Options.User.AllowedUserNameCharacters = "abcçdeəfgğhiıjklmnopqrsştuüvyzxqwWABCÇDEƏFGĞHİIJKLMNOPQRSŞTUÜVYZXQ0123456789-._ ";
             });
             services.AddAuthentication().AddFacebook(options =>
             {
