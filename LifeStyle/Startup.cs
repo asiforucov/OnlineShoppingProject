@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.ViewModels.Slider;
+using Microsoft.AspNetCore.Http;
 
 namespace LifeStyle
 {
@@ -52,6 +53,10 @@ namespace LifeStyle
 
 
                 Options.User.AllowedUserNameCharacters = "abcçdeəfgğhiıjklmnopqrsştuüvyzxqwWABCÇDEƏFGĞHİIJKLMNOPQRSŞTUÜVYZXQ0123456789-._ ";
+            });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Error_404");
             });
             services.AddAuthentication().AddFacebook(options =>
             {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Business.Tools;
 using Business.ViewModels.Auth;
 using Core.Entities;
 using Microsoft.AspNetCore.Identity;
@@ -15,12 +16,14 @@ namespace LifeStyle.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public AccountController(UserManager<ApplicationUser> userManager,
             SignInManager
-                <ApplicationUser> signInManager)
+                <ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
         public IActionResult Index()
         {
@@ -52,6 +55,7 @@ namespace LifeStyle.Controllers
                 var Message = $"<a href=\"{Confirmation}\">Təsdiqləyin</a>";
                 if (EmailSender(model.Email,Message))
                 {
+                    await _userManager.AddToRoleAsync(newUser, UserRoles.User.ToString());
                     return RedirectToAction("ThanksRegistration","Account");
                 }
             }
@@ -117,7 +121,7 @@ namespace LifeStyle.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl)
         {
 
             if (!ModelState.IsValid) return View(model);
@@ -151,11 +155,19 @@ namespace LifeStyle.Controllers
                 return View(model);
             }
 
+            if (ReturnUrl != null)
+            {
+                return Redirect(ReturnUrl);
+            }
             return RedirectToAction("Index", "Home");
         }
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout(string ReturnUrl)
         {
             await _signInManager.SignOutAsync();
+            if (ReturnUrl != null)
+            {
+                return Redirect(ReturnUrl);
+            }
             return RedirectToAction("Index", "Home");
         }
         public IActionResult FacebookLogin(string returnUrl)
@@ -300,6 +312,22 @@ namespace LifeStyle.Controllers
         }
 
         public IActionResult PassDetailSend()
+        {
+            return View();
+        }
+
+        //public async Task CreateRole()
+        //{
+        //    foreach (var role in Enum.GetValues(typeof(UserRoles)))
+        //    {
+        //        if (!await _roleManager.RoleExistsAsync(role.ToString()))
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole {Name = role.ToString()});
+        //        }
+        //    }
+        //}
+
+        public IActionResult AccessDenied()
         {
             return View();
         }

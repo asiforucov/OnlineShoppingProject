@@ -5,10 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Interfaces;
 using Core;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class DashboardController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
