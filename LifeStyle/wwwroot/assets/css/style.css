@@ -12,6 +12,11 @@
         width: 60% !important;
     }
 }
+
+
+.user-name {
+    text-transform: capitalize;
+}
 #slider .cards .card-box {
 	height: 4rem;
 	display: flex;
