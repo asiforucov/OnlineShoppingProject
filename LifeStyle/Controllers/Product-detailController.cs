@@ -48,5 +48,11 @@ namespace LifeStyle.Controllers
              await _commentService.Create(productDetailVm);
              return RedirectToAction("Index","Home");
         }
+        public async  Task<IActionResult> Delete(int id)
+        {
+             await _commentService.Remove(id);
+             return RedirectToAction("Index","Home");
+        }
+        
     }
 }

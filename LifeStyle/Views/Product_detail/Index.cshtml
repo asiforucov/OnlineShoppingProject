@@ -121,7 +121,7 @@
                                     {
                                         <div class="costomer-reviews-box">
                                             <div class="reviews-img">
-                                                @*<img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">*@
+                                                <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
                                             </div>
                                             <div class="reviews-text">
                                                 <p class="reviewer-name">@comment.UserName</p>
@@ -129,8 +129,11 @@
                                                 <p class="reviewer-text">@comment.Content</p>
                                             </div>
                                         </div>
+                                        @if (comment.UserName == User.Identity.Name)
+                                        {
+                                            <a asp-controller="Product_detail" asp-action="Delete" asp-route-id="@comment.Id">Delete</a>
+                                        }
 
-                                        
                                     }
                                     @*<div class="costomer-reviews-box">
                                         <div class="reviews-img">

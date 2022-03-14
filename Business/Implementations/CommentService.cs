@@ -42,9 +42,12 @@ namespace Business.Implementations
             return await _unitOfWork.commentRepository.GetAllAsync();
         }
 
-        public Task Remove(int id)
+        public async Task Remove(int id)
         {
-            throw new NotImplementedException();
+            var comment = await _unitOfWork.commentRepository.Get(p => p.IsDelete == false&& p.Id ==id);
+            comment.IsDelete = true;
+             _unitOfWork.commentRepository.Update(comment);
+            await _unitOfWork.SaveAsync();
         }
 
 

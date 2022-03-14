@@ -12,21 +12,32 @@ namespace LifeStyle.Areas.Admin.Controllers
     public class Product_detail_adminController : Controller
     {
         private readonly IProductService _productService;
+        private readonly ICommentService _commentService;
         private readonly IProductImageService _productImageService;
 
-        public Product_detail_adminController(IProductService productService, IProductImageService productImageService)
+        public Product_detail_adminController(IProductService productService, IProductImageService productImageService, ICommentService commentService)
         {
             _productService = productService;
             _productImageService = productImageService;
+            _commentService = commentService;
         }
         public async Task<IActionResult> Index(int id)
         {
             var dbProduct = await _productService.Get(id);
+            var dbcomements = await _commentService.GetbyPid(id);
             var detailVM = new ProductDetailVM()
             {
-                product = dbProduct
+                product = dbProduct,
+                Comments = dbcomements
             };
             return View(detailVM);
         }
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _commentService.Remove(id);
+            return RedirectToAction("Index", "Product");
+        }
+
+
     }
 }

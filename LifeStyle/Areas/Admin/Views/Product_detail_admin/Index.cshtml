@@ -103,26 +103,20 @@
                             </div>
                             <div class="tab-caption">
                                 <div class="costomer-reviews">
-                                    <div class="costomer-reviews-box">
-                                        <div class="reviews-img">
-                                            <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
+                                    @foreach (var comment in @Model.Comments)
+                                    {
+                                        <div class="costomer-reviews-box">
+                                            <div class="reviews-img">
+                                                <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
+                                            </div>
+                                            <div class="reviews-text">
+                                                <p class="reviewer-name">@comment.UserName</p>
+                                                <span class="reviews-date">@comment.CreateDT</span>
+                                                <p class="reviewer-text">@comment.Content</p>
+                                            </div>
                                         </div>
-                                        <div class="reviews-text">
-                                            <p class="reviewer-name">Asif Orucov</p>
-                                            <span class="reviews-date">Oktyabr 28, 2022</span>
-                                            <p class="reviewer-text">Çox zor mallardı</p>
-                                        </div>
-                                    </div>
-                                    <div class="costomer-reviews-box">
-                                        <div class="reviews-img">
-                                            <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
-                                        </div>
-                                        <div class="reviews-text">
-                                            <p class="reviewer-name">Asif Orucov</p>
-                                            <span class="reviews-date">Oktyabr 28, 2022</span>
-                                            <p class="reviewer-text">Çox zor mallardı</p>
-                                        </div>
-                                    </div>
+                                            <a asp-controller="Product_detail_admin" asp-action="Delete" asp-route-id="@comment.Id">Delete</a>
+                                    }
                                 </div>
                             </div>
                         </div>
