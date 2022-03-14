@@ -1,7 +1,6 @@
 C:\Users\asifr\source\repos\LifeStyle\Core\bin\Debug\netcoreapp3.1\Core.deps.json
 C:\Users\asifr\source\repos\LifeStyle\Core\bin\Debug\netcoreapp3.1\Core.dll
 C:\Users\asifr\source\repos\LifeStyle\Core\bin\Debug\netcoreapp3.1\Core.pdb
-C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.csproj.AssemblyReference.cache
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs

@@ -1,6 +1,6 @@
 ﻿@model Business.ViewModels.Product.ProductUpdateViewModel
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "update";
 }
 
 <div class="card shadow mb-4">
@@ -9,49 +9,64 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <form method="post" enctype="multipart/form-data">
+            <form asp-controller="Product" asp-action="Update" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label asp-for="Name">Məhsulun adı:</label>
-                    <input required class="form-control" asp-for="Name" placeholder="Məhsulun adını daxil edin...">
+                    <input required class="form-control" asp-for="Name" value="@Model.Name" placeholder="Məhsulun adını daxil edin...">
                     <span class="text-danger" asp-validation-for="Name"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Information">Məhsul haqqında əlavə məlumat:</label>
-                    <input required class="form-control" asp-for="Information" placeholder="Məhsul haqqında əlavə məlumat daxil edin...">
+                    <input required class="form-control" asp-for="Information" value="@Model.Information" placeholder="Məhsul haqqında əlavə məlumat daxil edin...">
                     <span class="text-danger" asp-validation-for="Information"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Count">Məhsulun sayı:</label>
-                    <input required class="form-control" asp-for="Count" placeholder="Məhsulun sayını daxil edin...">
+                    <input required class="form-control" asp-for="Count" value="@Model.Count" placeholder="Məhsulun sayını daxil edin...">
                     <span class="text-danger" asp-validation-for="Count"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Price">Məhsulun qiyməti:</label>
-                    <input required class="form-control" asp-for="Price" placeholder="Məhsulun qiymətini daxil edin...">
+                    <input required class="form-control" asp-for="Price" value="@Model.Price" placeholder="Məhsulun qiymətini daxil edin...">
                     <span class="text-danger" asp-validation-for="Price"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Color">Məhsulun rəngi:</label>
-                    <input required class="form-control" asp-for="Color" placeholder="Məhsulun rəngini daxil edin...">
+                    <input required class="form-control" asp-for="Color" value="@Model.Color" placeholder="Məhsulun rəngini daxil edin...">
                     <span class="text-danger" asp-validation-for="Color"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Size">Məhsulun ölçüsü:</label>
-                    <input required class="form-control" asp-for="Size" placeholder="Məhsulun ölçüsünü daxil edin...">
+                    <input required class="form-control" asp-for="Size" value="@Model.Size" placeholder="Məhsulun ölçüsünü daxil edin...">
                     <span class="text-danger" asp-validation-for="Size"></span>
                 </div>
+                <h1>sox icive</h1>
 
                 <br />
                 <br />
                 <div class="form-group">
                     <label asp-for="ProductCategoryId">Kateqoriya seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductCategoryId">
-                        @foreach (var item in (List<ProductCategory>)ViewBag.productCategory)
+                        @foreach (var item in (List<ProductBrand>)ViewBag.brand)
                         {
+                            if (Model.ProductCategoryId == item.Id)
+                            {
+                                <option value="@Model.ProductCategoryId">@item.Name</option>
+                                break;
+
+                            }
+
+
+                        }                        @foreach (var item in (List<ProductCategory>)ViewBag.productCategory)
+                        {
+                            if (Model.ProductCategoryId == item.Id)
+                            {
+                                continue;
+                            }
                             <option value="@item.Id">@item.Name</option>
-}
+                        }
 
 
                     </select>
@@ -60,22 +75,66 @@
                 <div class="form-group">
                     <label asp-for="GenderCategoryId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="GenderCategoryId">
+
+                        @foreach (var item in (List<ProductBrand>)ViewBag.brand)
+                        {
+                            if (Model.ProductBrandId == item.Id)
+                            {
+
+                                <option value="@Model.ProductBrandId">@item.Name</option>
+                                break;
+
+                            }
+
+
+                        }
                         @foreach (var item in (List<GenderCategory>)ViewBag.genderCategory)
                         {
+                            if (Model.GenderCategoryId == item.Id)
+                            {
+                                continue;
+                            }
                             <option value="@item.Id">@item.Name</option>
-}
+                        }
 
 
                     </select>
                 </div>
-              
+                @*<div class="form-group">
+                            <label asp-for="ProductColorId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
+                            <select class="form-control" asp-for="ProductColorId">
+                                @foreach (var item in (List<ProductColor>)ViewBag.brands)
+                                {
+                    <option value="@item.Id">@item.Color</option>}
+
+
+                            </select>
+                        </div>*@
                 <div class="form-group">
                     <label asp-for="ProductBrandId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductBrandId">
+
                         @foreach (var item in (List<ProductBrand>)ViewBag.brand)
                         {
+                            if (Model.ProductBrandId == item.Id)
+                            {
+
+                                <option value="@Model.ProductBrandId">@item.Name</option>
+                                break;
+
+                            }
+
+
+                        }
+                        @foreach (var item in (List<ProductBrand>)ViewBag.brand)
+                        {
+                            if (Model.ProductBrandId == item.Id)
+                            {
+                                continue;
+                            }
                             <option value="@item.Id">@item.Name</option>
-}
+
+                        }
 
 
                     </select>
@@ -83,7 +142,7 @@
 
                 <div class="form-group">
                     <label asp-for="Photo">Məhsulun şəkilləri:</label>
-                    <input required class="form-control" asp-for="Photo">
+                    <input  class="form-control" asp-for="Photo">
                     <span class="text-danger" asp-validation-for="Photo"></span>
                 </div>
 

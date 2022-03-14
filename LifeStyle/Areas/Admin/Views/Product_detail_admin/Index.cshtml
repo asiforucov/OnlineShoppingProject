@@ -1,4 +1,4 @@
-﻿@model Product
+﻿@model Business.ViewModels.ProductDetail.ProductDetailVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -9,14 +9,14 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="product-image">
-                    <img class="product_img" src="~/assets/image/@Model.ProductImages.Where(p=>p.IsMain == true).FirstOrDefault().Image" data-zoom-image="image/product1.png">
+                    <img class="product_img" src="~/assets/image/@Model.product.ProductImages.Where(p=>p.IsMain == true).FirstOrDefault().Image" data-zoom-image="image/product1.png">
                 </div>
                 <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme owl-loaded owl-drag">
 
 
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 190px;">
-                            @foreach (var item in Model.ProductImages)
+                            @foreach (var item in Model.product.ProductImages)
                             {
                                 <div class="owl-item active" style="width: 85px; margin-right: 10px;">
                                     <div class="item">
@@ -32,14 +32,14 @@
             </div>
             <div class="col-md-7">
                 <div class="quickview-product-detail">
-                    <h2 class="box-title">@Model.Name</h2>
-                    <h3 class="box-price">$ @Model.Price</h3>
-                    <p class="box-text">@Model.Description</p>
+                    <h2 class="box-title">@Model.product.Name</h2>
+                    <h3 class="box-price">$ @Model.product.Price</h3>
+                    <p class="box-text">@Model.product.Description</p>
                     <div class="quantity-box">
                         <div class="count">
                             <p>Say:</p>
                             <div class="input-group" style="font-size: 20px">
-                              @Model.Count
+                              @Model.product.Count
                             </div>
                         </div>
                     </div>
@@ -75,19 +75,19 @@
                                         <tbody>
                                         <tr>
                                             <td colspan="1">Marka</td>
-                                            <td>@Model.ProductBrand.Name</td>
+                                            <td>@Model.product.ProductBrand.Name</td>
                                         </tr>
                                         <tr>
                                             <td colspan="1">Rəng</td>
-                                            <td>@Model.Color</td>
+                                            <td>@Model.product.Color</td>
                                         </tr>
                                         <tr>
                                             <td colspan="1">Ölçü</td>
-                                            <td>@Model.Size</td>
+                                            <td>@Model.product.Size</td>
                                         </tr>
                                         <tr>
                                             <td colspan="1">Kateqoriya</td>
-                                            <td>@Model.GenderCategory.Name, @Model.ProductCategory.Name</td>
+                                            <td>@Model.product.GenderCategory.Name, @Model.product.ProductCategory.Name</td>
                                         </tr>
                                         </tbody>
                                     </table>

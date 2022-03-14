@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Business.ViewModels.ProductDetail;
 
 namespace Business.Interfaces
 {
@@ -11,7 +12,8 @@ namespace Business.Interfaces
     {
         Task<List<Comment>> GetAllAsync();
         Task<Comment> Get(int id);
-        Task Create(CommentCreateViewModel commentCreateViewModel);
+        Task Create(ProductDetailVM productDetailVm);
         Task Remove(int id);
+        Task<List<Comment>> GetbyPid(int id);
     }
 }

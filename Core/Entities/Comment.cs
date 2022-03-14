@@ -8,7 +8,7 @@ namespace Core.Entities
     {
         public int Id { get; set; }
         public DateTime CreateDT { get; set; }
-        public string ApplicationUserId { get; set; }
+        public string UserName { get; set; }
         public string Content { get; set; }
         public bool IsDelete { get; set; }
         public int ProductId { get; set; }

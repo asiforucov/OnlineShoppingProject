@@ -1,4 +1,4 @@
-﻿@model Core.Entities.Product
+﻿@model Business.ViewModels.ProductDetail.ProductDetailVM
 @*@model Business.ViewModels.Comment.CommentCreateViewModel*@
 
 @{
@@ -37,9 +37,9 @@
             </div>
             <div class="col-md-7">
                 <div class="quickview-product-detail">
-                    <h2 class="box-title">@Model.Name</h2>
+                    <h2 class="box-title">@Model.product.Name</h2>
                     <h3 class="box-price"><del>$ 95.00</del>$ 81.00</h3>
-                    <p class="box-text">@Model.Description</p>
+                    <p class="box-text">@Model.product.Description</p>
                     <div class="quantity-box">
                         <div class="count">
                             <p>Say:</p>
@@ -88,19 +88,19 @@
                                         <tbody>
                                             <tr>
                                                 <td colspan="1">Marka</td>
-                                                <td>@Model.ProductBrand</td>
+                                                <td>@Model.product.ProductBrand</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="1">Rəng</td>
-                                                <td>@Model.Color</td>
+                                                <td>@Model.product.Color</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="1">Ölçü</td>
-                                                <td>@Model.Size</td>
+                                                <td>@Model.product.Size</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="1">Kateqoriya</td>
-                                                <td>@Model.GenderCategory, @Model.ProductCategory</td>
+                                                <td>@Model.product.GenderCategory, @Model.product.ProductCategory</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -117,8 +117,22 @@
                             <div class="tab-caption">
                                 <div class="costomer-reviews">
 
+                                    @foreach (var comment in @Model.Comments)
+                                    {
+                                        <div class="costomer-reviews-box">
+                                            <div class="reviews-img">
+                                                @*<img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">*@
+                                            </div>
+                                            <div class="reviews-text">
+                                                <p class="reviewer-name">@comment.UserName</p>
+                                                <span class="reviews-date">@comment.CreateDT</span>
+                                                <p class="reviewer-text">@comment.Content</p>
+                                            </div>
+                                        </div>
 
-                                    <div class="costomer-reviews-box">
+                                        
+                                    }
+                                    @*<div class="costomer-reviews-box">
                                         <div class="reviews-img">
                                             <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
                                         </div>
@@ -127,17 +141,7 @@
                                             <span class="reviews-date">Oktyabr 28, 2022</span>
                                             <p class="reviewer-text">Çox zor mallardı</p>
                                         </div>
-                                    </div>
-                                    <div class="costomer-reviews-box">
-                                        <div class="reviews-img">
-                                            <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
-                                        </div>
-                                        <div class="reviews-text">
-                                            <p class="reviewer-name">Asif Orucov</p>
-                                            <span class="reviews-date">Oktyabr 28, 2022</span>
-                                            <p class="reviewer-text">Çox zor mallardı</p>
-                                        </div>
-                                    </div>
+                                    </div>*@
 
 
 
@@ -148,9 +152,11 @@
                                     <div class="tab-title">
                                         <h6>Şərh əlavə et</h6>
                                     </div>
-                                    <form class="add-review-form">
+                                    <form class="add-review-form" method="post" asp-controller="Product_detail" asp-action="CreateComment">
                                         <div class="input-3">
-                                            <textarea required="" rows="6" class="form-control" placeholder="Şərhini yaz"></textarea>
+                                            <input asp-for="Content" required  rows="6" class="form-control" placeholder="Şərhini yaz"/>
+                                            <input type="hidden" asp-for="UserName"  value="@User.Identity.Name" />
+                                            <input type="hidden" asp-for="ProductId"   value="@Model.product.Id" />
                                         </div>
                                         <div class="input-btn">
                                             <button type="submit" class="btn btn-secondary">Göndər</button>

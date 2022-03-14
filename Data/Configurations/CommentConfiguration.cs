@@ -12,7 +12,7 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<Comment> builder)
         {
             builder.Property(c => c.CreateDT).HasDefaultValueSql("GETUTCDATE()");
-            builder.Property(c => c.ApplicationUserId).IsRequired().HasMaxLength(255);
+            builder.Property(c => c.UserName).IsRequired().HasMaxLength(255);
             builder.Property(p => p.Content).IsRequired().HasColumnType("TEXT");
             builder.Property(c => c.IsDelete).HasDefaultValue(false);
         }

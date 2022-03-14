@@ -58,7 +58,7 @@ namespace Business.Implementations
         public async Task<Product> Get(int id)
         {
             return await _unitOfWork.productRepository
-                .Get(p => p.Id == id && p.IsDeleted==false, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
+                .Get(p => p.Id == id && p.IsDeleted == false, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
         }
         public async Task<List<Product>> GetAllAsync()
         {
@@ -68,14 +68,43 @@ namespace Business.Implementations
 
         public async Task Remove(int id)
         {
-            var deleted = await _unitOfWork.productRepository.Get(p => p.Id == id && p.IsDeleted ==false, "ProductCategory");
+            var deleted = await _unitOfWork.productRepository.Get(p => p.Id == id && p.IsDeleted == false, "ProductCategory");
             deleted.IsDeleted = true;
             await _unitOfWork.SaveAsync();
         }
 
-        public Task Update(int id, ProductUpdateViewModel productViewModel)
+        public async Task Update(int id, ProductUpdateViewModel productViewModel)
         {
-            throw new NotImplementedException();
+
+            Product dbProduct = await _unitOfWork.productRepository.Get(p => p.Id == id);
+
+            dbProduct.Name = productViewModel.Name;
+            dbProduct.Price = productViewModel.Price;
+            dbProduct.Count = productViewModel.Count;
+            dbProduct.Color = productViewModel.Color;
+            dbProduct.GenderCategoryId = productViewModel.GenderCategoryId;
+            dbProduct.ProductCategoryId = productViewModel.ProductCategoryId;
+            dbProduct.ProductBrandId = productViewModel.ProductBrandId;
+            dbProduct.Description = productViewModel.Information;
+            dbProduct.Size = productViewModel.Size;
+            await _unitOfWork.SaveAsync();
+
+            if (productViewModel.Photo != null)
+            {
+                for (int i = 0; i < productViewModel.Photo.Count; i++)
+                {
+                    string filename = await productViewModel.Photo[i].SaveFileAsync(_env.WebRootPath, "assets", "image");
+                    var productImage = new ProductImage()
+                    {
+                        Image = filename,
+                        ProductId = id
+
+                    };
+                    await _unitOfWork.productImageRepository.CreateAsync(productImage);
+                }
+            }
+            await _unitOfWork.SaveAsync();
+
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Interfaces;
 using Business.ViewModels.Comment;
+using Business.ViewModels.ProductDetail;
 using Core;
 
 namespace LifeStyle.Controllers
@@ -31,15 +32,21 @@ namespace LifeStyle.Controllers
         }
         public async Task<IActionResult> Index(int id)
         {
-            var product = await _productService.Get(id);
-            return View(product);
+            var dbProduct = await _productService.Get(id);
+            var dbcomements = await _commentService.GetbyPid(id);
+            var detailVM = new ProductDetailVM()
+            {
+                product = dbProduct,
+                Comments = dbcomements
+            };
+            return View(detailVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateComment(CommentCreateViewModel commentCreateViewModel)
+        public async  Task<IActionResult> CreateComment(ProductDetailVM productDetailVm)
         {
-            await _commentService.Create(commentCreateViewModel);
-            return View(commentCreateViewModel);
+             await _commentService.Create(productDetailVm);
+             return RedirectToAction("Index","Home");
         }
     }
 }

@@ -91,61 +91,60 @@ namespace LifeStyle.Areas.Admin.Controllers
 
         public async Task<ActionResult> Update(int id)
         {
-            //ViewBag.categories = await _productCategoryService.GetAllAsync();
-            //ViewBag.brands = await _productBrandService.GetAllAsync();
-            //Product product = await _productService.Get(id);
-            //if (product == null) return NotFound();
-            //var productViewModel = new ProductUpdateViewModel()
-            //{
-            //    Name = product.Name,
-            //    Description = product.Description,
-            //    Information = product.Information,
-            //    Price = product.Price,
-            //    Count = product.Count,
-            //    DiscountPrice = product.DiscountPrice,
-            //    CategoryId = product.CategoryId,
-            //    IsDiscount = product.IsDiscount,
-            //    BrandId = product.BrandId
 
-            //};
-
-
-
-            return View();
+            ViewBag.productCategory = await _productCategoryService.GetAllAsync();
+            ViewBag.genderCategory = await _genderCategoryService.GetAllAsync();
+            ViewBag.brand = await _productBrandService.GetAllAsync();
+            Product product = await _productService.Get(id);
+            if (product == null) return NotFound();
+            var productViewModel = new ProductUpdateViewModel()
+            {
+                Name = product.Name,
+                Price = product.Price,
+                Count = product.Count,
+                Color = product.Color,
+                GenderCategoryId = product.GenderCategoryId,
+                ProductCategoryId = product.ProductCategoryId,
+                ProductBrandId = product.ProductBrandId,
+                Information = product.Description,
+                Size = product.Size
+            };
+            return View(productViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Update(int id, ProductUpdateViewModel productViewModel)
         {
-            //ViewBag.categories = await _categoryService.GetAllAsync();
-            //ViewBag.brands = await _brandService.GetAllAsync();
+            ViewBag.productCategory = await _productCategoryService.GetAllAsync();
+            ViewBag.genderCategory = await _genderCategoryService.GetAllAsync();
+            ViewBag.brand = await _productBrandService.GetAllAsync();
 
-            //if (ModelState.IsValid)
-            //{
-            //    if (productViewModel.ImageFiles != null)
-            //    {
-            //        foreach (var item in productViewModel.ImageFiles)
-            //        {
+            if (ModelState.IsValid)
+            {
+                if (productViewModel.Photo != null)
+                {
+                    foreach (var item in productViewModel.Photo)
+                    {
 
-            //            if (!item.CheckFileType("image/"))
-            //            {
-            //                ModelState.AddModelError("ImageFiles", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
-            //                return View(productViewModel);
-            //            }
+                        if (!item.CheckFileType("image/"))
+                        {
+                            ModelState.AddModelError("Photo", "Seçdiyiniz fayl şəkil tipində olmalıdır ! ");
+                            return View(productViewModel);
+                        }
 
-            //            if (!item.CheckFileSize(300))
-            //            {
-            //                ModelState.AddModelError("ImageFiles", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
-            //                return View(productViewModel);
-            //            }
+                        if (!item.CheckFileSize(300))
+                        {
+                            ModelState.AddModelError("Photo", "Seçdiyiniz faylın ölçüsü 300 kb dan çox olmamalıdır !");
+                            return View(productViewModel);
+                        }
 
-            //        }
+                    }
 
-            //    }
-            //    await _productService.Update(id, productViewModel);
-            //    return RedirectToAction(nameof(Index));
-            //}
+                }
+                await _productService.Update(id, productViewModel);
+                return RedirectToAction(nameof(Index));
+            }
 
 
             return View(productViewModel);

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Business.Interfaces;
-using Business.ViewModels.Comment;
+using Business.ViewModels.ProductDetail;
 using Core;
 using Core.Entities;
 
@@ -16,25 +15,27 @@ namespace Business.Implementations
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task Create(CommentCreateViewModel commentViewModel)
+        public async Task Create(ProductDetailVM commentViewModel)
         {
             var comment = new Comment()
             {
                 Content = commentViewModel.Content,
                 ProductId = commentViewModel.ProductId,
-                ApplicationUserId = commentViewModel.UserId
+                UserName = commentViewModel.UserName
             };
 
             await _unitOfWork.commentRepository.CreateAsync(comment);
             await _unitOfWork.SaveAsync();
         }
 
-        
+
 
         public async Task<Comment> Get(int id)
         {
             return await _unitOfWork.commentRepository.Get(c => c.Id == id);
         }
+
+
 
         public async Task<List<Comment>> GetAllAsync()
         {
@@ -46,6 +47,14 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
-       
+
+
+        public async Task<List<Comment>> GetbyPid(int id)
+        {
+            var pids = await _unitOfWork
+                .commentRepository
+                .GetAllAsync(p => p.ProductId == id && p.IsDelete == false);
+            return pids;
+        }
     }
 }

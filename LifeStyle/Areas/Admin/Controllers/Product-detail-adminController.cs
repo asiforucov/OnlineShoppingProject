@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Interfaces;
+using Business.ViewModels.ProductDetail;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
@@ -20,8 +21,12 @@ namespace LifeStyle.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index(int id)
         {
-            var product = await _productService.Get(id);
-            return View(product);
+            var dbProduct = await _productService.Get(id);
+            var detailVM = new ProductDetailVM()
+            {
+                product = dbProduct
+            };
+            return View(detailVM);
         }
     }
 }
