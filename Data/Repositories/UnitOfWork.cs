@@ -20,6 +20,7 @@ namespace Data.Repositories
         private IProductRepository _productRepository;
         private IProductBrandRepository _productBrandRepository;
         private ISliderRepository _sliderRepository;
+        private IAccountRepository _accountRepository;
         private IProductBFOSRepository _productBFOSRepository;
 
 
@@ -43,6 +44,8 @@ namespace Data.Repositories
         public ISliderRepository sliderRepository => _sliderRepository = _sliderRepository ?? new SliderRepository(_context);
 
         public IProductBFOSRepository productBFOSRepository => _productBFOSRepository = _productBFOSRepository ?? new ProductBFOSRepository(_context);
+
+        public IAccountRepository accountRepository => _accountRepository = _accountRepository ?? new AccountRepository(_context);
 
         public async Task SaveAsync()
         {

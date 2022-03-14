@@ -70,7 +70,6 @@ namespace LifeStyle.Controllers
 
             return View();
         }
-
         public bool EmailSender(string email,string message)
         {
             MailMessage mailMessage = new MailMessage();
@@ -97,7 +96,6 @@ namespace LifeStyle.Controllers
             }
             return false;
         }
-
         public async Task<IActionResult> EmailConfirmation(string tokenLink,string email)
         {
             var User = await _userManager.FindByEmailAsync(email);
@@ -109,18 +107,14 @@ namespace LifeStyle.Controllers
             var response= await _userManager.ConfirmEmailAsync(User, tokenLink);
             return View(response.Succeeded ? "ConfirmationSuccess" : "Error");
         }
-
         public IActionResult ThanksRegistration()
         {
             return View();
         }
-
         public IActionResult Login()
         {
             return View();
         }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -159,7 +153,6 @@ namespace LifeStyle.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -177,14 +170,12 @@ namespace LifeStyle.Controllers
             var properties = _signInManager.ConfigureExternalAuthenticationProperties("Twitter", redirectUrl);
             return new ChallengeResult("Twitter", properties);
         }
-
         public IActionResult GoogleLogin(string returnUrl)
         {
             string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
             return new ChallengeResult("Google", properties);
         }
-
         public async Task<IActionResult> SocialMediaResponse(string returnUrl)
         {
             var loginInfo = await _signInManager.GetExternalLoginInfoAsync();
@@ -225,6 +216,92 @@ namespace LifeStyle.Controllers
             }
 
             return RedirectToAction("Register");
+        }
+
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (token ==null && email == null)
+            {
+                ModelState.AddModelError("","Hesab tapılmadı. Zəhmət olmasa emailin düzgünlüyünü yoxlayın.");
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPass)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(resetPass);
+            }
+
+            var user = await _userManager.FindByEmailAsync(resetPass.Email);
+            if (user==null)
+            {
+                ModelState.AddModelError("", "Hesab tapılmadı. Zəhmət olmasa emailin düzgünlüyünü yoxlayın.");
+                return View(user);
+            }
+
+            var result = await _userManager.ResetPasswordAsync(user, resetPass.Token, resetPass.NewPassword);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("",error.Description);
+                    return View();
+                }
+            }
+
+            return RedirectToAction("ResetSuccesful");
+        }
+
+        public IActionResult ResetSuccesful()
+        {
+            return View();
+        } 
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel forgetPass)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(forgetPass);
+            }
+
+            var user = await _userManager.FindByEmailAsync(forgetPass.Email);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Hesab tapılmadı. Zəhmət olmasa emailin düzgünlüyünü yoxlayın.");
+                return View(user);
+            }
+
+            var tokenLink = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var confirmation = Url.Action("ResetPassword","Account",new
+            {
+                email = user.Email,
+                token = tokenLink
+            },protocol: HttpContext.Request.Scheme);
+            var message = $"<a href=\"{confirmation}\">Şifrəni dəyiş</a>";
+            bool answer = EmailSender(forgetPass.Email, message);
+            if (answer)
+            {
+                return RedirectToAction("PassDetailSend");
+            }
+
+            return View();
+
+        }
+
+        public IActionResult PassDetailSend()
+        {
+            return View();
         }
     }
 }

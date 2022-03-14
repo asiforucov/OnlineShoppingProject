@@ -209,3 +209,7 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyl
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.dll
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.pdb
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.genruntimeconfig.cache
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetSuccesful.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\PassDetailSend.cshtml.g.cs

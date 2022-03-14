@@ -86,6 +86,7 @@
 
             <div class="signin-form">
                 <h2 class="form-title">Daxil ol</h2>
+
                 <form method="POST" class="register-form" id="login-form">
                     <div class="form-group">
                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -100,7 +101,9 @@
                     <div class="form-group">
                         <input asp-for="RememberMe" id="remember-me" class="agree-term"/>
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>Xatırla məni</label>
+                        <a asp-controller="Account" asp-action="ForgetPassword"  class="ml-3 text-dark">Şifrəni unutmuşam</a>
                     </div>
+
                     <div class="text-danger" asp-validation-summary="ModelOnly">
                     </div>
                     <div class="form-group form-button">

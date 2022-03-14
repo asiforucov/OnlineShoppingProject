@@ -1,5 +1,4 @@
 ﻿@model Business.ViewModels.ProductDetail.ProductDetailVM
-@*@model Business.ViewModels.Comment.CommentCreateViewModel*@
 
 @{
     ViewData["Title"] = "Index";
@@ -11,26 +10,24 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="product-image">
-                    <img class="product_img" src="~/assets/image/product1.png" data-zoom-image="image/product1.png">
+                    <img class="product_img" src="~/assets/image/@Model.product.ProductImages.Where(p=>p.IsMain == true).FirstOrDefault().Image" data-zoom-image="image/@Model.product.ProductImages.Where(p=>p.IsMain == true).FirstOrDefault().Image">
                 </div>
                 <div id="pr_item_gallery" class="product_gallery_item owl-thumbs-slider owl-carousel owl-theme owl-loaded owl-drag">
 
 
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 190px;">
-                            <div class="owl-item active" style="width: 85px; margin-right: 10px;">
-                                <div class="item">
-                                    <a href="#" class="active" data-image="image/product1.png" data-zoom-image="image/product1.png">
-                                        <img src="~/assets/image/product1.png">
-                                    </a>
+                            @foreach (var item in Model.product.ProductImages)
+                            {
+                                <div class="owl-item active" style="width: 85px; margin-right: 10px;">
+                                    <div class="item">
+                                        <a href="#" class="active" data-image="image/@item.Image" data-zoom-image="image/@item.Image">
+                                            <img src="~/assets/image/@item.Image">
+                                        </a>
+                                    </div>
                                 </div>
-                            </div><div class="owl-item active" style="width: 85px; margin-right: 10px;">
-                                <div class="item">
-                                    <a href="#" data-image="image/product2.png" data-zoom-image="image/product2.png">
-                                        <img src="~/assets/image/product1.png">
-                                    </a>
-                                </div>
-                            </div>
+                            }
+                            
                         </div>
                     </div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><i class="ion-ios-arrow-back"></i></button><button type="button" role="presentation" class="owl-next disabled"><i class="ion-ios-arrow-forward"></i></button></div><div class="owl-dots disabled"></div>
                 </div>
@@ -38,7 +35,7 @@
             <div class="col-md-7">
                 <div class="quickview-product-detail">
                     <h2 class="box-title">@Model.product.Name</h2>
-                    <h3 class="box-price"><del>$ 95.00</del>$ 81.00</h3>
+                    <h3 class="box-price">@Model.product.Price</h3>
                     <p class="box-text">@Model.product.Description</p>
                     <div class="quantity-box">
                         <div class="count">
@@ -88,7 +85,7 @@
                                         <tbody>
                                             <tr>
                                                 <td colspan="1">Marka</td>
-                                                <td>@Model.product.ProductBrand</td>
+                                                <td>@Model.product.ProductBrand.Name</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="1">Rəng</td>
@@ -100,7 +97,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="1">Kateqoriya</td>
-                                                <td>@Model.product.GenderCategory, @Model.product.ProductCategory</td>
+                                                <td>@Model.product.GenderCategory.Name, @Model.product.ProductCategory.Name</td>
                                             </tr>
                                         </tbody>
                                     </table>
