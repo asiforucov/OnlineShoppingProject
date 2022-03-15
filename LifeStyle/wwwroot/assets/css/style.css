@@ -14,6 +14,12 @@
 }
 
 
+@media screen and (max-width: 885px) and (min-width: 768px) {
+    .fb-icon {
+        display: block !important;
+    }
+}
+
 .user-name {
     text-transform: capitalize;
 }
@@ -5173,7 +5179,8 @@ header {
     background-color: #eb3e32;
 }
 .common-cart-img img {
-    width: 100%;
+	width: 100%;
+    height: 335px;
 }
 .common-cart-img {
 	position: relative;
@@ -5520,7 +5527,7 @@ header {
 	width: 1px;
 	height: 100%;
 	position: absolute;
-	background-color: cyan;
+	background-color: rgb(235, 62, 50);
 	right: 0;
 }
 .facility-box:last-child::before {
