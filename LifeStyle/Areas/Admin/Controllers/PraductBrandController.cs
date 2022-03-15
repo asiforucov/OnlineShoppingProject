@@ -60,7 +60,20 @@ namespace LifeStyle.Areas.Admin.Controllers
             await _productBrandService.Update(id, model);
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public async Task<IActionResult> Index(string brandSearch)
+        {
+            ViewData["SearchedCategory"] = brandSearch;
 
+            var categoryQuery = from c in await _unitOfWork.genderCategoryRepository.GetAllAsync() select c;
+
+            if (!String.IsNullOrEmpty(brandSearch))
+            {
+                categoryQuery = categoryQuery.Where(c => c.Name.Contains(brandSearch));
+            }
+
+            return View(categoryQuery.ToList());
+        }
 
     }
 }

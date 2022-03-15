@@ -64,5 +64,19 @@ namespace LifeStyle.Areas.Admin.Controllers
             await _productCategoryService.Update(id, model);
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public async Task<IActionResult> Index(string categorySearch)
+        {
+            ViewData["SearchedCategory"] = categorySearch;
+
+            var categoryQuery = from c in await _unitOfWork.productCategoryRepository.GetAllAsync() select c;
+
+            if (!String.IsNullOrEmpty(categorySearch))
+            {
+                categoryQuery = categoryQuery.Where(c => c.Name.Contains(categorySearch));
+            }
+
+            return View(categoryQuery.ToList());
+        }
     }
 }
