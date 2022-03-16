@@ -157,20 +157,20 @@ namespace LifeStyle.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Index(string productSearch)
-        {
-            ViewData["SearchedCategory"] = productSearch;
+        //[HttpGet]
+        //public async Task<IActionResult> Index(string productSearch)
+        //{
+        //    ViewData["SearchedCategory"] = productSearch;
 
-            var categoryQuery = from c in await _unitOfWork.productCategoryRepository.GetAllAsync() select c;
+        //    var categoryQuery = from c in await _unitOfWork.productCategoryRepository.GetAllAsync() select c;
 
-            if (!String.IsNullOrEmpty(productSearch))
-            {
-                categoryQuery = categoryQuery.Where(c => c.Name.Contains(productSearch));
-            }
+        //    if (!String.IsNullOrEmpty(productSearch))
+        //    {
+        //        categoryQuery = categoryQuery.Where(c => c.Name.Contains(productSearch));
+        //    }
 
-            return View(categoryQuery.ToList());
-        }
+        //    return View(categoryQuery.ToList());
+        //}
 
     }
 }

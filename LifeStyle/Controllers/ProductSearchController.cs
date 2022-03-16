@@ -22,19 +22,28 @@ namespace LifeStyle.Controllers
             _productService = productService;
             _productImageService = productImageService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int categoryid, int page=1)
         {
             var category = await _productCategoryService.GetAllAsync();
-            var gender = await _genderCategoryService.GetAllAsync();
-            var product = await _productService.GetAllAsync();
+            //var gender = await _genderCategoryService.GetAllAsync();
+            var product = await _productService.GetAllPaginatedAsync(page);
             var productImage = await _productImageService.GetAllAsync();
-            var homeVM = new HomeVM()
+            var homeVM = new HomePaginatedVM()
             {
                 ProductCategories = category,
-                GenderCategory = gender,
-                Product = product,
+                //GenderCategory = gender,
+                //Product = product,
                 ProductImages = productImage
             };
+            //if (categoryid!= 0)
+            //{
+            //    var filteredCategory = await _productCategoryService.Get(categoryid);
+            //    homeVM.Product = filteredCategory.Products;
+            //    return View(homeVM);
+
+            //}
+
+            homeVM.Product = product;
             return View(homeVM);
         }
     }

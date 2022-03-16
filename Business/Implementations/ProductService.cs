@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Tools;
 using Microsoft.AspNetCore.Hosting;
+using Business.ViewModels.Paginate;
 
 namespace Business.Implementations
 {
@@ -64,6 +65,32 @@ namespace Business.Implementations
         {
             var getall = await _unitOfWork.productRepository.GetAllAsync(p => p.IsDeleted == false, "ProductCategory", "GenderCategory", "ProductBrand", "ProductImages");
             return getall;
+        }
+
+        public async Task<Paginate<Product>> GetAllPaginatedAsync(int page)
+        {
+            var products = await _unitOfWork
+                .productRepository
+                .GetAllPaginatedAsync(page, 10, p => p.IsDeleted == false && p.ProductCategory.IsDeleted == false,
+                    "ProductCategory");
+
+            var Result = new Paginate<Product>
+            {
+                AllPageCount = await getPageCount(8),
+                CurrentPage = page,
+                Items = products,
+            };
+            return Result;
+        }
+
+        public async Task<int> getPageCount(int take)
+        {
+            var products = await _unitOfWork
+                .productRepository
+                .GetAllAsync(p => p.IsDeleted == false && p.ProductCategory.IsDeleted == false,
+                    "ProductCategory");
+            var productCount = products.Count;
+            return (int)Math.Ceiling(((decimal)productCount / take));
         }
 
         public async Task Remove(int id)

@@ -53,10 +53,7 @@
                               {
                                   <li><a asp-area="Superadmin" asp-controller="SuperHome" asp-action="Index">Super Admin</a></li>
                               }
-                              <li><a asp-controller="Account" asp-action="Logout" asp-route-ReturnUrl="@Context.Request.Path.Value">Çıxış <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-                                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                              </svg></a></li>
+                              <li><a asp-controller="Account" asp-action="Logout" asp-route-ReturnUrl="@Context.Request.Path.Value">Çıxış</a></li>
                           }
                           else
                           {
@@ -160,7 +157,7 @@
                                         <a class="nav-link dropdown-toggler" asp-controller="Home" asp-action="Index"   aria-haspopup="true" aria-expanded="false">Əsas səhifə<i class="fa fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a class="nav-link dropdown-toggler " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kateqoriyalar<i class="fa fa-angle-down"></i><i class="fa fa-angle-right"></i></a>
+                                        <a class="nav-link " asp-controller="ProductSearch" asp-action="Index" >Kateqoriyalar@*<i class="fa fa-angle-down"></i>*@<i class="fa fa-angle-right"></i></a>
                                     <li class="nav-item">
                                         <a class="nav-link" asp-controller="About" asp-action="Index">Haqqında</a>
                                     </li>
