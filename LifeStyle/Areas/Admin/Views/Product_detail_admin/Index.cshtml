@@ -61,7 +61,7 @@
                             <a class="nav-link active" id="discription-tab" data-toggle="tab" href="#discription" role="tab" aria-controls="discription" aria-selected="true">məhsul haqqında</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">şərhlər (2)</a>
+                            <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">şərhlər (@Model.Comments.Where(c => c.IsDelete == false).Count())</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -107,15 +107,17 @@
                                     {
                                         <div class="costomer-reviews-box">
                                             <div class="reviews-img">
-                                                <img src="./assets/image/logo/costomer-img.jpg" alt="costomer-img">
+                                                <img src="~/assets/image/product-logo/user.png" style="width: 90px" alt="costomer-img">
+
                                             </div>
                                             <div class="reviews-text">
                                                 <p class="reviewer-name">@comment.UserName</p>
                                                 <span class="reviews-date">@comment.CreateDT</span>
                                                 <p class="reviewer-text">@comment.Content</p>
                                             </div>
+                                            <a class="btn btn-danger" asp-controller="Product_detail_admin" asp-action="Delete" asp-route-id="@comment.Id">Şərhi sil</a>
+
                                         </div>
-                                            <a asp-controller="Product_detail_admin" asp-action="Delete" asp-route-id="@comment.Id">Delete</a>
                                     }
                                 </div>
                             </div>

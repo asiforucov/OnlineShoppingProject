@@ -5,92 +5,7 @@
     var status = "active";
 }
 
-<!-- ---INTRO--- -->
-@*<section id="slider">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-12">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
 
-                            <div class="carousel-item slider-area background_bg active" data-img-src="~/assets/image/@Model.Sliders[0].Image" style="background: url(&quot;assets/image/@Model.Sliders[0].Image&quot;) center center/cover;">
-                                <div class="banner_slide_content mx-5">
-                                    <div class="slider-caption text-right">
-                                        <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;">CHRISTMAS SALE</h1>
-                                        <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">Get up to 50% off your shopping items tomorrow!</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            run ele
-
-                            @for (int i = 1; i < Model.Sliders.Count; i++)
-                            {
-                        <div class="carousel-item slider-area background_bg" data-img-src="~/assets/image/@Model.Sliders[i].Image" style="background: url(&quot;assets/image/@Model.Sliders[i].Image&quot;) center center/cover;">
-                            <div class="banner_slide_content text-white">
-                                <div class="slider-caption mx-5">
-                                    <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible; color: white">YAY ENDİRİMİ</h1>
-                                    <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">Sabah alış-verişinizə 50%-ə qədər endirim əldə edin!</p>
-                                </div>
-                            </div>
-                        </div>
-
-                            }
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="facility-style-2">
-                        <div class="facility-box">
-                            <div class="facility-inner">
-                                <div class="fb-icon">
-                                    <i class="fa fa-truck"></i>
-                                </div>
-                                <div class="fb-text">
-                                    <h5>ÇATDIRILMA</h5>
-                                    <span>Ölkə</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="facility-box">
-                            <div class="facility-inner">
-                                <div class="fb-icon">
-                                    <i class="fa fa-headphones"></i>
-                                </div>
-                                <div class="fb-text">
-                                    <h5>24/ 7 DƏSTƏK</h5>
-                                    <span>Müştəri xidmətləri</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="facility-box">
-                            <div class="facility-inner">
-                                <div class="fb-icon">
-                                    <i class="fa fa-cc-mastercard"></i>
-                                </div>
-                                <div class="fb-text">
-                                    <h5>ÖDƏNİŞ</h5>
-                                    <span>Təhlükəsiz Sistem</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="facility-box">
-                            <div class="facility-inner">
-                                <div class="fb-icon">
-                                    <i class="fa fa-trophy"></i>
-                                </div>
-                                <div class="fb-text">
-                                    <h5>KEYFİYYƏT</h5>
-                                    <span>orjinal məhsullar</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>*@
-<!-- ---INTRO--- -->
 <!-- ---INTRO SLIDER--- -->
 <section class="slider slider-type-2 p-0 mx-15">
     <div class="container-fluid">
@@ -112,8 +27,8 @@
                             <div class="carousel-item slider-area background_bg" data-img-src="assets/image/@Model.Sliders[i].Image" style="background: url(&quot;~/assets/image/slider-img-6.jpg&quot;) center center/cover;">
                                 <div class="banner_slide_content">
                                     <div class="slider-caption">
-                                        <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;">@Model.Sliders[0].Name</h1>
-                                        <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">@Model.Sliders[0].Title</p>
+                                        <h1 class="animation animated fadeInDown" data-animation="fadeInDown" data-animation-delay="0.2s" style="animation-delay: 0.2s; visibility: visible;">@Model.Sliders[i].Name</h1>
+                                        <p class="animation animated fadeInUp" data-animation="fadeInUp" data-animation-delay="0.6s" style="animation-delay: 0.6s; visibility: visible;">@Model.Sliders[i].Title</p>
                                     </div>
                                 </div>
                             </div>
