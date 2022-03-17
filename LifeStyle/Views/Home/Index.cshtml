@@ -152,7 +152,7 @@
                                 <div class="col-md-3 col-6 mb-4 pb-2">
                                     <div class="product-box common-cart-box text-center">
                                         <div class="product-img common-cart-img">
-                                            <img src="./assets/image/@item.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" alt="product-img">
+                                            <img src="./assets/image/@item.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
                                             <div class="hover-option">
                                                 <ul class="hover-icon">
                                                     <li><a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i></a></li>

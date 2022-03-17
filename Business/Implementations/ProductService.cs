@@ -72,7 +72,7 @@ namespace Business.Implementations
             var products = await _unitOfWork
                 .productRepository
                 .GetAllPaginatedAsync(page, 10, p => p.IsDeleted == false && p.ProductCategory.IsDeleted == false,
-                    "ProductCategory");
+                    "ProductCategory", "ProductImages", "ProductBrand", "GenderCategory", "Comments");
 
             var Result = new Paginate<Product>
             {

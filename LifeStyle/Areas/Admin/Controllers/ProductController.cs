@@ -33,18 +33,20 @@ namespace LifeStyle.Areas.Admin.Controllers
         }
 
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int page=1)
         {
-            var productCategories = await _productCategoryService.GetAllAsync();
-            var productImages = await _productImageService.GetAllAsync();
-            var product = await _unitOfWork.productRepository.GetAllAsync();
-            ProductHomeVM productHomeVM = new ProductHomeVM()
-            {
-                ProductImages = productImages,
-                ProductCategories = productCategories,
-                Products = product
-            };
-            return View(productHomeVM);
+            //var productCategories = await _productCategoryService.GetAllAsync();
+            //var productImages = await _productImageService.GetAllAsync();
+            //var product = await _unitOfWork.productRepository.GetAllAsync();
+            //ProductHomeVM productHomeVM = new ProductHomeVM()
+            //{
+            //    ProductImages = productImages,
+            //    ProductCategories = productCategories,
+            //    Products = product
+            //};
+            var products = await _productService.GetAllPaginatedAsync(page);
+            return View(products);
+            //return View(productHomeVM);
         }
 
 
