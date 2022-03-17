@@ -12,7 +12,14 @@
         width: 60% !important;
     }
 }
-
+#loader {
+    background: white url('/assets/image/loader.gif') no-repeat center center;
+    background-size: 30%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
 
 @media screen and (max-width: 885px) and (min-width: 768px) {
     .fb-icon {

@@ -211,9 +211,11 @@ namespace LifeStyle.Controllers
                         {
                             Email = loginInfo.Principal.FindFirstValue(ClaimTypes.Email),
                             FullName = loginInfo.Principal.FindFirstValue(ClaimTypes.Name),
-                            UserName = loginInfo.Principal.FindFirstValue(ClaimTypes.Surname)
+                            UserName = loginInfo.Principal.FindFirstValue(ClaimTypes.Surname),
+                            EmailConfirmed = true
                         };
                         var createResult = await _userManager.CreateAsync(user);
+                        await _userManager.AddToRoleAsync(user, UserRoles.User.ToString());
                         if (createResult.Succeeded)
                         {
                             var identityLogin = await _userManager.AddLoginAsync(user, loginInfo);

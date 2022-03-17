@@ -22,6 +22,8 @@
     <title>Life Style - Onlayn Alış Veriş saytı</title>
 </head>
 <body>
+    <div id="loader"></div>
+
     <!-- ---HEADER--- -->
     <header class="header-4">
         <div class="header-top">
@@ -35,32 +37,32 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="header_list text-md-right text-center">
-                           
-                          @if (User.Identity.IsAuthenticated)
-                          {
-                              <li class="user-name">
-                                  <b>   <a style="color: white">@User.Identity.Name</a></b>    
-                              </li>
-                              @if (User.IsInRole("User"))
-                              {
-                                  <li><a asp-controller="My_User" asp-action="Index">Hesabım</a></li>
-                              } 
-                              @if (User.IsInRole("Admin"))
-                              {
-                                  <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin Panel</a></li>
-                              } 
-                              @if (User.IsInRole("SuperAdmin"))
-                              {
-                                  <li><a asp-area="Superadmin" asp-controller="SuperHome" asp-action="Index">Super Admin</a></li>
-                              }
-                              <li><a asp-controller="Account" asp-action="Logout" asp-route-ReturnUrl="@Context.Request.Path.Value">Çıxış</a></li>
-                          }
-                          else
-                          {
-                              <li><a asp-controller="Account" asp-action="Login" asp-route-ReturnUrl="@Context.Request.Path.Value">Daxil ol</a></li>
-                              <li><a asp-controller="Account" asp-action="Register">Qeydiyyat</a></li>
-                              <li><a asp-controller="My_User" asp-action="Index">Hesabım</a></li>
-                          }
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="user-name">
+                                    <b> <a style="color: white">@User.Identity.Name</a></b>
+                                </li>
+                                @if (User.IsInRole("User"))
+                                {
+                                    <li><a asp-controller="My_User" asp-action="Index">Hesabım</a></li>
+                                }
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li><a asp-area="Admin" asp-controller="Dashboard" asp-action="Index">Admin Panel</a></li>
+                                }
+                                @if (User.IsInRole("SuperAdmin"))
+                                {
+                                    <li><a asp-area="Superadmin" asp-controller="SuperHome" asp-action="Index">Super Admin</a></li>
+                                }
+                                <li><a asp-controller="Account" asp-action="Logout" asp-route-ReturnUrl="@Context.Request.Path.Value">Çıxış</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-controller="Account" asp-action="Login" asp-route-ReturnUrl="@Context.Request.Path.Value">Daxil ol</a></li>
+                                <li><a asp-controller="Account" asp-action="Register">Qeydiyyat</a></li>
+                                <li><a asp-controller="My_User" asp-action="Index">Hesabım</a></li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -104,6 +106,8 @@
                                     </div>
                                     <div class="cart-box">
                                         <div class="cart-info">
+
+
                                             <div class="cart-prodect d-flex">
                                                 <div class="cart-img">
                                                     <img src="~/assets/image/product/Women/Salvar/1_org_zoom.jpg" alt="cart-img">
@@ -154,10 +158,10 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item dropdown active">
-                                        <a class="nav-link dropdown-toggler" asp-controller="Home" asp-action="Index"   aria-haspopup="true" aria-expanded="false">Əsas səhifə<i class="fa fa-angle-right"></i></a>
+                                        <a class="nav-link dropdown-toggler" asp-controller="Home" asp-action="Index" aria-haspopup="true" aria-expanded="false">Əsas səhifə<i class="fa fa-angle-right"></i></a>
                                     </li>
                                     <li>
-                                        <a class="nav-link " asp-controller="ProductSearch" asp-action="Index" >Kateqoriyalar@*<i class="fa fa-angle-down"></i>*@<i class="fa fa-angle-right"></i></a>
+                                        <a class="nav-link " asp-controller="ProductSearch" asp-action="Index">Kateqoriyalar@*<i class="fa fa-angle-down"></i>*@<i class="fa fa-angle-right"></i></a>
                                     <li class="nav-item">
                                         <a class="nav-link" asp-controller="About" asp-action="Index">Haqqında</a>
                                     </li>
@@ -166,8 +170,8 @@
                                         <a class="nav-link" asp-controller="FAQ" asp-action="Index">FAQ</a>
                                     </li>
                                     @*<li class="nav-item">
-                                        <a class="nav-link" href="Contact.html">Əlaqə</a>
-                                    </li>*@
+                                            <a class="nav-link" href="Contact.html">Əlaqə</a>
+                                        </li>*@
                                 </ul>
                             </div>
                         </nav>
@@ -190,7 +194,7 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mt-3">
                     <div class="text-nowrap mb-4">
                         <a class="d-inline-block align-middle mt-n1 mr-3" href="~/Home.html">
-                            <img width="250" style="height: 90px!important;" src="~/assets/image/logo/Lifestyle-100.png">
+                            <img width="250" style="height: 90px !important;" src="~/assets/image/logo/Lifestyle-100.png">
                         </a>
                     </div>
                     <center>
@@ -292,24 +296,19 @@
         </div>
         <!-- Footer Links -->
     </footer>
+    <div style="display: none;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xkDThoocEYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xkDThoocEYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xkDThoocEYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     <!-- ---FOOTER--- -->
-    <script src="~/assets/js/waypoint.js"></script>
-    <script src="~/assets/js/sale-time.js"></script>
-    <script src="~/assets/js/select2.min.js"></script>
-    <script src="~/assets/js/popper.min.js"></script>
-    <script src="~/assets/js/owl.carousel.min.js"></script>
-    <script src="~/assets/js/mCustomScrollbar.concat.min.js"></script>
+   
     <script src="~/assets/js/jquery.min.js"></script>
-    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="~/assets/js/jquery.fitvids.js"></script>
-    <script src="~/assets/js/jquery.elevatezoom.js"></script>
-    <script src="~/assets/js/jquery.countup.js"></script>
-    <script src="~/assets/js/isotope.min.js"></script>
-    <script src="~/assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="~/assets/js/custom.js"></script>
-    <script src="~/assets/js/sale-time.js"></script>
-    <script src="~/assets/js/countdown.min.js"></script>
-    <script src="~/assets/js/jquery-price-slider.js"></script>
+<script src="~/assets/js/custom.js"></script>
+<script src="~/assets/js/script.js"></script>
+
+
+   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

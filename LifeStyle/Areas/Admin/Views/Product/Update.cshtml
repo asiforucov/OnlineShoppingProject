@@ -3,7 +3,7 @@
     ViewData["Title"] = "update";
 }
 
-<div class="card shadow mb-4">
+<div style="padding-top: 5%" class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Məhsul əlavə et</h6>
     </div>
@@ -97,15 +97,15 @@
                     </select>
                 </div>
                 @*<div class="form-group">
-                            <label asp-for="ProductColorId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
-                            <select class="form-control" asp-for="ProductColorId">
-                                @foreach (var item in (List<ProductColor>)ViewBag.brands)
-                                {
-                    <option value="@item.Id">@item.Color</option>}
+                <label asp-for="ProductColorId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
+                <select class="form-control" asp-for="ProductColorId">
+                    @foreach (var item in (List<ProductColor>)ViewBag.brands)
+                    {
+        <option value="@item.Id">@item.Color</option>}
 
 
-                            </select>
-                        </div>*@
+                </select>
+            </div>*@
                 <div class="form-group">
                     <label asp-for="ProductBrandId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductBrandId">
@@ -137,8 +137,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Photo">Məhsulun şəkilləri:</label>
-                    <input  class="form-control" asp-for="Photo">
+                    <label asp-for="Photo" class="form-label">Məhsulun şəkilləri:</label>
+                    <input asp-for="Photo" class="form-control" />
                     <span class="text-danger" asp-validation-for="Photo"></span>
                 </div>
 

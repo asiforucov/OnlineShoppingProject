@@ -7,6 +7,7 @@ using Business.Interfaces;
 using Business.ViewModels.Comment;
 using Business.ViewModels.ProductDetail;
 using Core;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Controllers
 {
@@ -42,6 +43,7 @@ namespace LifeStyle.Controllers
             return View(detailVM);
         }
 
+        [Authorize]
         [HttpPost]
         public async  Task<IActionResult> CreateComment(ProductDetailVM productDetailVm)
         {

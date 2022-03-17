@@ -5,7 +5,7 @@ $(document).ready(function() {
         var settings = $.extend(
             {
                 endTime: "",
-                refresh: 1000,
+                refresh: 2000,
                 onEnd: function () {}
             },
             options

@@ -14,14 +14,16 @@ namespace LifeStyle.Controllers
     {
         private readonly ISliderService _sliderService;
         private readonly IProductService _productService;
+        private readonly IProductBFOSService _productBfosService;
         private readonly IProductImageService _productImageService;
         private readonly IGenderCategoryService _genderCategoryService;
-        public HomeController(ISliderService sliderService, IGenderCategoryService genderCategoryService, IProductService productService, IProductImageService productImageService)
+        public HomeController(ISliderService sliderService, IProductBFOSService productBfosService, IGenderCategoryService genderCategoryService, IProductService productService, IProductImageService productImageService)
         {
             _sliderService = sliderService;
             _genderCategoryService = genderCategoryService;
             _productService = productService;
             _productImageService = productImageService;
+            _productBfosService = productBfosService;
         }
         public async Task<IActionResult> Index()
         {
@@ -38,5 +40,7 @@ namespace LifeStyle.Controllers
             };
             return View(homeVM);
         }
+
+      
     }
 }
