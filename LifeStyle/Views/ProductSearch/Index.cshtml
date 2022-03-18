@@ -3,7 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
-<section class="breadcrumbs-section background_bg" data-img-src="./assets/image/product-logo/shop-list-img.jpg" style="background: url(&quot;./assets/image/product logo/shop-list-img.jpg&quot;) center center / cover;">
+<section class="breadcrumbs-section background_bg" style="width: 100%" data-img-src="./assets/image/product-logo/woman.jpg">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -24,37 +24,36 @@
         <div class="row">
             <div class="col-xl-9 col-lg-8 col-md-12">
                 @*<div class="shop-options d-sm-flex justify-content-between align-items-center">
-                    <div class="sorting-option">
-                        <select class="sorting-items" name="category">
-                            <option value="menu_order" selected="selected">Default sorting</option>
-                            <option value="popularity">Sort by popularity</option>
-                            <option value="rating">Sort by average rating</option>
-                            <option value="date">Sort by newness</option>
-                            <option value="price">Sort by price: low to high</option>
-                            <option value="price-desc">Sort by price: high to low</option>
-                        </select>
-                    </div>
-                    <div class="showing-items">
-                        <p>Showing 1–9 of 15 results</p>
-                    </div>
-                    <div class="shop-list_grid">
-                        <div class="list_grid-btns">
-                            <a href="javascript:void(0)" class="list-view on"><i class="ion-navicon-round"></i></a>
-                            <a href="javascript:void(0)" class="grid-view"><i class="ion-grid"></i></a>
+                        <div class="sorting-option">
+                            <select class="sorting-items" name="category">
+                                <option value="menu_order" selected="selected">Default sorting</option>
+                                <option value="popularity">Sort by popularity</option>
+                                <option value="rating">Sort by average rating</option>
+                                <option value="date">Sort by newness</option>
+                                <option value="price">Sort by price: low to high</option>
+                                <option value="price-desc">Sort by price: high to low</option>
+                            </select>
                         </div>
-                    </div>
-                </div>*@
+                        <div class="showing-items">
+                            <p>Showing 1–9 of 15 results</p>
+                        </div>
+                        <div class="shop-list_grid">
+                            <div class="list_grid-btns">
+                                <a href="javascript:void(0)" class="list-view on"><i class="ion-navicon-round"></i></a>
+                                <a href="javascript:void(0)" class="grid-view"><i class="ion-grid"></i></a>
+                            </div>
+                        </div>
+                    </div>*@
                 <div class="row list_grid_container list justify-content-center">
                     @foreach (var p in Model.Product.Items)
                     {
                         <div class="col-md-4 col-6">
                             <div class="product-box common-cart-box box-1">
                                 <div class="product-img common-cart-img">
-                                    <img src="./assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
+                                    <img src="~/assets/image/@p.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
+                                    @*<img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">*@
                                     <div class="hover-option">
-                                        <div class="add-cart-btn">
-                                            <a href="#" class="btn btn-primary">Səbətə əlavə et</a>
-                                        </div>
+
                                         <ul class="hover-icon">
                                             <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
                                             <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
@@ -80,112 +79,117 @@
                         </div>
                     }
                 </div>
-                    <div class="col-md-12">
-                        <nav>
-                            @*<ul class="pagination justify-content-center">
+                <div class="col-md-12">
+                    <nav>
+                        @*<ul class="pagination justify-content-center">
                                 <li class="active"><a href="#">1</a></li>
                                 <li><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
                                 <li><a href="#" aria-label="Next"><i class="fa fa-angle-right"></i></a></li>
                             </ul>*@
-                            <div class="pagination_page">
-                                @if (@Model.Product.AllPageCount > 1)
-                                {
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
+                        <div class="pagination_page">
+                            @if (@Model.Product.AllPageCount > 1)
+                            {
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
 
-                                @if (Model.Product.CurrentPage > 1)
-                                {
-                                    var prev = Model.Product.CurrentPage - 1;
-                        <li class="" >
-                            <a class="page-link d-none" asp-action="Index" asp-route-page="@prev"><i class="bi bi-chevron-left"></i></a>
-                        </li> }
+                                        @if (Model.Product.CurrentPage > 1)
+                                        {
+                                            var prev = Model.Product.CurrentPage - 1;
+                                            <li class="">
+                                                <a class="page-link d-none" asp-action="Index" asp-route-page="@prev"><i class="bi bi-chevron-left"></i></a>
+                                            </li>
+ }
                                         else
                                         {
-                        <li class="">
-                            <a class="page-link d-none"><i class="bi bi-chevron-left"></i></a>
-                        </li>}
-                                @{ if (1 < Model.Product.AllPageCount)
-                                                    {
-                                                        var start = 1;
-                                                        var end = Model.Product.AllPageCount;
-                                                        for (int i = start; i <= end; i++)
-                                                        {
-                                    <li class="@(Model.Product.CurrentPage == i ? "disabled" : "")">
-                                        <a class="" asp-action="Index" asp-route-page="@i">@i</a>
-                                    </li> }
-                                                    } }
-                                @if (Model.Product.CurrentPage < Model.Product.AllPageCount)
-                                {
-                                    var next = Model.Product.CurrentPage + 1;
-                        <li class="">
-                            <a class="" asp-action="Index" asp-route-page="@next"><i class="fa fa-angle-right"></i></a>
-                        </li> }
+                                            <li class="">
+                                                <a class="page-link d-none"><i class="bi bi-chevron-left"></i></a>
+                                            </li>
+}
+                                        @{ if (1 < Model.Product.AllPageCount)
+                                            {
+                                                var start = 1;
+                                                var end = Model.Product.AllPageCount;
+                                                for (int i = start; i <= end; i++)
+                                                {
+                                                    <li class="@(Model.Product.CurrentPage == i ? "disabled" : "")">
+                                                        <a class="" asp-action="Index" asp-route-page="@i">@i</a>
+                                                    </li>
+ }
+                                            } }
+                                        @if (Model.Product.CurrentPage < Model.Product.AllPageCount)
+                                        {
+                                            var next = Model.Product.CurrentPage + 1;
+                                            <li class="">
+                                                <a class="" asp-action="Index" asp-route-page="@next"><i class="fa fa-angle-right"></i></a>
+                                            </li>
+ }
                                         else
                                         {
-                                            <li><a href="#" ><i class="fa fa-angle-right"></i></a></li>}
+                                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+}
 
-                            </ul>
-                        </nav>}
+                                    </ul>
+                                </nav>}
 
-                            </div>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-12 order-lg-first">
                 <div class="shop-sidebar">
                     @*<div class="side-quantity-box side-box">
-                        <div class="side-box-title">
-                            <h6>Cins</h6>
-                        </div>
-                        <div class="quantity-box-detail">
-                            <ul>
-                                <li><a href="#">Kişi<span>(10)</span></a></li>
-                                <li><a href="#">Qadın<span>(05)</span></a></li>
-                                <li><a href="#">Uşaq<span>(15)</span></a></li>
-                            </ul>
-                        </div>
-                    </div>*@
+                            <div class="side-box-title">
+                                <h6>Cins</h6>
+                            </div>
+                            <div class="quantity-box-detail">
+                                <ul>
+                                    <li><a href="#">Kişi<span>(10)</span></a></li>
+                                    <li><a href="#">Qadın<span>(05)</span></a></li>
+                                    <li><a href="#">Uşaq<span>(15)</span></a></li>
+                                </ul>
+                            </div>
+                        </div>*@
                     <div class="side-quantity-box side-box">
                         <div class="side-box-title">
                             <h6>Kateqoriyalar</h6>
                         </div>
                         <div class="quantity-box-detail">
                             <ul>
-                                @foreach ( var item in Model.ProductCategories)
+                                @foreach (var item in Model.ProductCategories)
                                 {
-                                    <li><a asp-controller="ProductSearch" asp-action="" asp-route-categoryid="@item.Id">@item.Name<span>(@item.Products.Where(p=>p.IsDeleted == false).Count())</span></a></li>
+                                    <li><a asp-controller="ProductSearch" asp-action="" asp-route-categoryid="@item.Id">@item.Name<span>(@item.Products.Where(p => p.IsDeleted == false).Count())</span></a></li>
 
                                 }
                             </ul>
                         </div>
                     </div>
                     @*<div class="side-filter-box side-box">
-                        <div class="side-box-title">
-                            <h6>Filter</h6>
-                        </div>
-                        <div class="filter-box-detail">
-                            <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
-                            <div class="price_slider_amount">
-                                <div class="slider-values d-flex align-items-center">
-                                    <p>Qiymət</p>
-                                    <input type="text" id="amount" name="price">
+                            <div class="side-box-title">
+                                <h6>Filter</h6>
+                            </div>
+                            <div class="filter-box-detail">
+                                <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+                                <div class="price_slider_amount">
+                                    <div class="slider-values d-flex align-items-center">
+                                        <p>Qiymət</p>
+                                        <input type="text" id="amount" name="price">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="side-quantity-box side-box">
-                        <div class="side-box-title">
-                            <h6>Markalar</h6>
-                        </div>
-                        <div class="quantity-box-detail">
-                            <ul>
-                                <li><a href="#">Adidas<span>(10)</span></a></li>
-                                <li><a href="#">Nike<span>(05)</span></a></li>
+                        <div class="side-quantity-box side-box">
+                            <div class="side-box-title">
+                                <h6>Markalar</h6>
+                            </div>
+                            <div class="quantity-box-detail">
+                                <ul>
+                                    <li><a href="#">Adidas<span>(10)</span></a></li>
+                                    <li><a href="#">Nike<span>(05)</span></a></li>
 
-                            </ul>
-                        </div>
-                    </div>*@
+                                </ul>
+                            </div>
+                        </div>*@
 
                 </div>
             </div>

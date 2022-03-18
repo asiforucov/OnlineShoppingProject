@@ -1,22 +1,4 @@
 
-
-/*===================================*
-01. LOADING JS
-/*===================================*/
-$(window).on('load', function() {
-	var preLoder = $("#preloader");
-	preLoder.delay(700).fadeOut(500).addClass('loaded');
-});
-	
-/*===================================*
-02. POPUP JS
-*===================================*/
-	$(window).on('load',function(){
-		setTimeout(function() {
-			$("#exampleModal").modal('show', {}, 500)
-		}, 3000);
-	});
-
 /*===================================*
 03. DATA IMAGE SRC JS
 *===================================*/
@@ -39,40 +21,7 @@ $(window).on('load', function() {
 /*===================================*
 05. MENU JS
 *===================================*/
-//Main navigation scroll spy for shadow
-	if ($(window).width() >= 992) {
-		$(window).on('scroll', function() {
-			var scroll = $(window).scrollTop();
-	
-			if (scroll >= 160) {
-				$('header').addClass('nav-fixed');
-			} else {
-				$('header').removeClass('nav-fixed');
-			}
-	
-		});
-	}
-//Show Hide dropdown-menu Main navigation 
-	$( document ).ready( function () {
-		$( '.dropdown-menu a.dropdown-toggler' ).on( 'click', function ( e ) {
-			var $el = $( this );
-			var $parent = $( this ).offsetParent( ".dropdown-menu" );
-			if ( !$( this ).next().hasClass( 'show' ) ) {
-				$( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
-			}
-			var $subMenu = $( this ).next( ".dropdown-menu" );
-			$subMenu.toggleClass( 'show' );
-			
-			$( this ).parent( "li" ).toggleClass( 'show' );
-	
-			$( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
-				$( '.dropdown-menu .show' ).removeClass( "show" );
-			} );
-			
-			return false;
-		} );
-	} );
-
+/
 /*===================================*
 06. SEARCH JS
 *===================================*/

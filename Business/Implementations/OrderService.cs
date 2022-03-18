@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Business.Interfaces;
 using Business.ViewModels.ProductBFOS;
 using Core;
 using Core.Entities;
-using Core.Interfaces;
 
 namespace Business.Implementations
 {
-    public class OrderService:IOrderService
+    public class OrderService : IOrderService
     {
         private readonly IUnitOfWork _unitOfWork;
         public OrderService(IUnitOfWork unitOfWork)
@@ -29,9 +26,9 @@ namespace Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<List<Order>> GetAllAsync()
+        public async Task<List<Order>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.orderRepository.GetAllAsync();
         }
 
         public Task Remove(int id)

@@ -29,7 +29,12 @@
         loader.style.display = "none";
     });
 
-
+    $(document).ready(function(){
+        $('#search').on("click",(function(e){
+            $(".header-form").toggleClass("search-open");
+            e.stopPropagation()
+        }));
+    })
 </script>
 
 
@@ -101,19 +106,19 @@
                                 </div>
                                 <div class="header-cart">
                                     <div class="basket">
-                                        <a href="#">
+                                        <a asp-controller="ProductBFOS" asp-action="Basket">
                                             <div class="cart-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                                                 </svg>
-                                                <span>02</span>
+                                                @*<span>02</span>*@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="basket-price">
-                                        <h4>100 ₼</h4><i class="fa fa-angle-down"></i>
-                                    </div>
-                                    <div class="cart-box">
+                                    @*<div class="basket-price">
+                                        <h4>100 ₼</h4>
+                                    </div>*@
+                                    @*<div class="cart-box">
                                         <div class="cart-info">
 
 
@@ -145,7 +150,7 @@
                                         <div class="cart-btn">
                                             <a asp-controller="ProductBFOS" asp-action="Basket" class="">Səbətə bax</a>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                                 <div class="d-lg-none mm_icon">
                                     <div class="form-captions" id="search">
@@ -242,7 +247,7 @@
                     <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">Xüsusi</h6>
                     <ul class="widget-list">
                         <li class="widget-list-item">
-                            <a class="widget-list-link" href="">Kateqoriyalar</a>
+                            <a class="widget-list-link" asp-controller="ProductSearch" asp-action="Index">Kateqoriyalar</a>
                         </li>
 
                     </ul>
@@ -312,10 +317,10 @@
         </div>
 <!-- ---FOOTER--- -->
 
-
-<script src="~/assets/js/script.js"></script>
 <script src="~/assets/js/jquery.min.js"></script>
 <script src="~/assets/js/custom.js"></script>
+
+<script src="~/assets/js/script.js"></script>
 
    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
