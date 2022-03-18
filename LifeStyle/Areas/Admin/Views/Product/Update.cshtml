@@ -45,7 +45,7 @@
                 <div class="form-group">
                     <label asp-for="ProductCategoryId">Kateqoriya seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductCategoryId">
-                        @foreach (var item in (List<ProductBrand>)ViewBag.brand)
+                        @foreach (var item in (List<ProductCategory>)ViewBag.productCategory)
                         {
                             if (Model.ProductCategoryId == item.Id)
                             {
@@ -69,15 +69,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="GenderCategoryId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
+                    <label asp-for="GenderCategoryId">Cins seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="GenderCategoryId">
 
-                        @foreach (var item in (List<ProductBrand>)ViewBag.brand)
+                        @foreach (var item in (List<GenderCategory>)ViewBag.genderCategory)
                         {
-                            if (Model.ProductBrandId == item.Id)
+                            if (Model.GenderCategoryId == item.Id)
                             {
 
-                                <option value="@Model.ProductBrandId">@item.Name</option>
+                                <option value="@Model.GenderCategoryId">@item.Name</option>
                                 break;
 
                             }
@@ -97,15 +97,15 @@
                     </select>
                 </div>
                 @*<div class="form-group">
-                <label asp-for="ProductColorId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
-                <select class="form-control" asp-for="ProductColorId">
-                    @foreach (var item in (List<ProductColor>)ViewBag.brands)
-                    {
-        <option value="@item.Id">@item.Color</option>}
+                            <label asp-for="ProductColorId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
+                            <select class="form-control" asp-for="ProductColorId">
+                                @foreach (var item in (List<ProductColor>)ViewBag.brands)
+                                {
+                    <option value="@item.Id">@item.Color</option>}
 
 
-                </select>
-            </div>*@
+                            </select>
+                        </div>*@
                 <div class="form-group">
                     <label asp-for="ProductBrandId">Brend seçin:<span class="text-danger" class="text-danger">*</span></label>
                     <select class="form-control" asp-for="ProductBrandId">

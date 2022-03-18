@@ -45,38 +45,79 @@
                         </div>
                     </div>*@
                 <div class="row list_grid_container list justify-content-center">
-                    @foreach (var p in Model.Product.Items)
+                    @if (@Model.Product != null)
                     {
-                        <div class="col-md-4 col-6">
-                            <div class="product-box common-cart-box box-1">
-                                <div class="product-img common-cart-img">
-                                    <img src="~/assets/image/@p.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
-                                    @*<img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">*@
-                                    <div class="hover-option">
+                        @foreach (var p in Model.Product.Items)
+                        {
+                            <div class="col-md-4 col-6">
+                                <div class="product-box common-cart-box box-1">
+                                    <div class="product-img common-cart-img">
+                                        <img src="~/assets/image/@p.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
+                                        @*<img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">*@
+                                        <div class="hover-option">
 
-                                        <ul class="hover-icon">
-                                            <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
-                                            <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-info common-cart-info text-center">
-                                    <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id class="cart-name">@p.Name</a>
-                                    <p class="cart-price">$ @p.Price</p>
-                                    <p class="product-list-text" style="">@p.Description</p>
-                                    <div class="hover-option">
-                                        <div class="add-cart-btn">
-                                            <a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="background-color: #eb3e32" class="btn btn-primary border-0">Səbətə əlavə et</a>
+                                            <ul class="hover-icon">
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
                                         </div>
-                                        <ul class="hover-icon">
-                                            @*<li><a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="margin-top: 10px"><i style="color: #eb3e32" class="bi bi-cart3"></i></a></li>*@
-                                            <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
-                                            <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
-                                        </ul>
+                                    </div>
+                                    <div class="product-info common-cart-info text-center">
+                                        <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="cart-name">@p.Name</a>
+                                        <p class="cart-price">$ @p.Price</p>
+                                        <p class="product-list-text" style="">@p.Description</p>
+                                        <div class="hover-option">
+                                            <div class="add-cart-btn">
+                                                <a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="background-color: #eb3e32" class="btn btn-primary border-0">Səbətə əlavə et</a>
+                                            </div>
+                                            <ul class="hover-icon">
+                                                @*<li><a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="margin-top: 10px"><i style="color: #eb3e32" class="bi bi-cart3"></i></a></li>*@
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
+
+                    }
+                    else
+                    {
+                        @foreach (var p in Model.Products)
+                        {
+                            <div class="col-md-4 col-6">
+                                <div class="product-box common-cart-box box-1">
+                                    <div class="product-img common-cart-img">
+                                        <img src="~/assets/image/@p.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
+                                        @*<img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">*@
+                                        <div class="hover-option">
+
+                                            <ul class="hover-icon">
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-info common-cart-info text-center">
+                                        <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="cart-name">@p.Name</a>
+                                        <p class="cart-price">$ @p.Price</p>
+                                        <p class="product-list-text" style="">@p.Description</p>
+                                        <div class="hover-option">
+                                            <div class="add-cart-btn">
+                                                <a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="background-color: #eb3e32" class="btn btn-primary border-0">Səbətə əlavə et</a>
+                                            </div>
+                                            <ul class="hover-icon">
+                                                @*<li><a asp-controller="ProductBFOS" asp-action="SetBasket" asp-route-id="@p.Id" style="margin-top: 10px"><i style="color: #eb3e32" class="bi bi-cart3"></i></a></li>*@
+                                                <li><a asp-controller="ProductBFOS" asp-action="SetFavorite" asp-route-id="@p.Id"><i class="fa fa-heart"></i></a></li>
+                                                <li><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="quickview-popup-link"><i class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
                     }
                 </div>
                 <div class="col-md-12">
@@ -88,50 +129,53 @@
                                 <li><a href="#" aria-label="Next"><i class="fa fa-angle-right"></i></a></li>
                             </ul>*@
                         <div class="pagination_page">
-                            @if (@Model.Product.AllPageCount > 1)
+                            @if (@Model.Product != null)
                             {
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-center">
+                                @if (@Model.Product.AllPageCount > 1)
+                                {
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
 
-                                        @if (Model.Product.CurrentPage > 1)
-                                        {
-                                            var prev = Model.Product.CurrentPage - 1;
-                                            <li class="">
-                                                <a class="page-link d-none" asp-action="Index" asp-route-page="@prev"><i class="bi bi-chevron-left"></i></a>
-                                            </li>
- }
-                                        else
-                                        {
-                                            <li class="">
-                                                <a class="page-link d-none"><i class="bi bi-chevron-left"></i></a>
-                                            </li>
-}
-                                        @{ if (1 < Model.Product.AllPageCount)
+                                            @if (Model.Product.CurrentPage > 1)
                                             {
-                                                var start = 1;
-                                                var end = Model.Product.AllPageCount;
-                                                for (int i = start; i <= end; i++)
+                                                var prev = Model.Product.CurrentPage - 1;
+                                                <li class="">
+                                                    <a class="page-link d-none" asp-action="Index" asp-route-page="@prev"><i class="bi bi-chevron-left"></i></a>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li class="">
+                                                    <a class="page-link d-none"><i class="bi bi-chevron-left"></i></a>
+                                                </li>
+                                            }
+                                            @{ if (1 < Model.Product.AllPageCount)
                                                 {
-                                                    <li class="@(Model.Product.CurrentPage == i ? "disabled" : "")">
-                                                        <a class="" asp-action="Index" asp-route-page="@i">@i</a>
-                                                    </li>
- }
-                                            } }
-                                        @if (Model.Product.CurrentPage < Model.Product.AllPageCount)
-                                        {
-                                            var next = Model.Product.CurrentPage + 1;
-                                            <li class="">
-                                                <a class="" asp-action="Index" asp-route-page="@next"><i class="fa fa-angle-right"></i></a>
-                                            </li>
- }
-                                        else
-                                        {
-                                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-}
+                                                    var start = 1;
+                                                    var end = Model.Product.AllPageCount;
+                                                    for (int i = start; i <= end; i++)
+                                                    {
+                                                        <li class="@(Model.Product.CurrentPage == i ? "disabled" : "")">
+                                                            <a class="" asp-action="Index" asp-route-page="@i">@i</a>
+                                                        </li>
+                                                    }
+                                                } }
+                                            @if (Model.Product.CurrentPage < Model.Product.AllPageCount)
+                                            {
+                                                var next = Model.Product.CurrentPage + 1;
+                                                <li class="">
+                                                    <a class="" asp-action="Index" asp-route-page="@next"><i class="fa fa-angle-right"></i></a>
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                            }
 
-                                    </ul>
-                                </nav>}
+                                        </ul>
+                                    </nav>}
 
+                            }
                         </div>
                     </nav>
                 </div>
@@ -158,7 +202,7 @@
                             <ul>
                                 @foreach (var item in Model.ProductCategories)
                                 {
-                                    <li><a asp-controller="ProductSearch" asp-action="" asp-route-categoryid="@item.Id">@item.Name<span>(@item.Products.Where(p => p.IsDeleted == false).Count())</span></a></li>
+                                    <li><a asp-controller="ProductSearch" asp-action="Index" asp-route-categoryid="@item.Id">@item.Name<span>(@item.Products.Where(p => p.IsDeleted == false).Count())</span></a></li>
 
                                 }
                             </ul>

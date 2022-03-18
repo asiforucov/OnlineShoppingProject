@@ -27,35 +27,28 @@ namespace LifeStyle.Controllers
         public async  Task<IActionResult> Index(int page = 1)
         {
             var product = await _productService.GetAllPaginatedAsync(page);
-            var productImage = await _productImageService.GetAllAsync();
+
             var homeVM = new HomePaginatedVM()
             {
-               
-                ProductImages = productImage
+                //ProductImages = productImage
             };
        
             homeVM.Product = product;
             return View(homeVM);
         }
         [HttpGet]
-        public async Task<IActionResult> Index(string productSearch,int page =1)
+        public async Task<IActionResult> Index(string productSearch)
         {
             ViewData["SearchedProduct"] = productSearch;
-            var product = await _productService.GetAllPaginatedAsync(page);
-            var productImage = await _productImageService.GetAllAsync();
-            var productQuery = from p in await _unitOfWork.productRepository.GetAllAsync() select p;
+            var product = await _productService.GetAllAsync();
+            //var productImage = await _productImageService.GetAllAsync();
+            var productQuery = from p in await _unitOfWork.productRepository.GetAllAsync(p=>p.IsDeleted == false) select p;
             if (!String.IsNullOrEmpty(productSearch))
             {
                 productQuery =
                     productQuery.Where(p => p.Name.Trim().ToLower().Contains(productSearch.Trim().ToLower()));
             }
-            var homeVM = new HomePaginatedVM()
-            {
-
-                ProductImages = productImage,
-                //Product = productQuery
-            };
-            return View(homeVM);
+            return View(productQuery.ToList());
         }
     }
 }
