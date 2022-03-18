@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Interfaces;
+using Business.ViewModels;
 using Core;
 using Microsoft.AspNetCore.Authorization;
 
@@ -38,10 +39,14 @@ namespace LifeStyle.Areas.Admin.Controllers
 
         public async Task<IActionResult> GetProduct()
         {
+            
             var product = await _unitOfWork.productRepository.GetAllAsync(p => p.IsDeleted == false);
-            ViewBag.productCount = product.Count;
+            var dashboardVM = new DashboardVM()
+            {
+                ProductCount = product.Count
+            };
            
-            return View();
+            return View(dashboardVM);
         } 
         public async Task<IActionResult> GetOrder()
         {

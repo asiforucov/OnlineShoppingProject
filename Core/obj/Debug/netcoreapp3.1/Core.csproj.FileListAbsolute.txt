@@ -7,4 +7,3 @@ C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.Assembly
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.dll
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.pdb
-C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.csproj.AssemblyReference.cache

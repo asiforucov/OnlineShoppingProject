@@ -2,100 +2,101 @@
 @{
     ViewData["Title"] = "Basket";
     int count = 1;
+    decimal priceSum = 0;
 }
 
 <!-- -----BASKET TABLE----- -->
 <section class="cart-section pt_large">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="cart-table table-responsive">
-                    <table class="table table-bordered text-center">
-                        <thead>
-                            <tr class="row-1">
-                                <th class="row-title"><p>#</p></th>
-                                <th class="row-title"><p>Məhsul</p></th>
-                                <th class="row-title"><p>Məhsulun adı</p></th>
-                                <th class="row-title"><p>Qiymət</p></th>
-                                <th class="row-title"><p>Say</p></th>
-                                <th class="row-title"><p>Cəmi</p></th>
-                                <th class="row-title"><p></p></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach (var item in Model.ProductOperations)
-                        {
-                            var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
-                            <tr class="row-2">
-                                <td class="row-close ">@count</td>
-                                <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
-                                <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
-                                <td class="product-price" data-title="Price">
-                                    <p> @product.Price</p>
-                                </td>
-                                <td class="product-price" data-title="Price">
-                                    <p> @product.Count</p>
-                                </td>
-                                <td class="product-price" data-title="Price">
-                                    <p> @product.Count</p>
-                                </td>
-                                <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="Deletebasket" asp-route-id="@product.Id"><i class="bi bi-x-circle"></i></a></td>
-                            </tr>
-                            count++;
-                        }
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="12">
-                                    <ul class="table-btn">
-                                        <li><a asp-controller="Home" asp-action="Index" class="btn btn-secondary"><i class="fa fa-chevron-left"></i>Alışverişə keç</a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
+
+    @if (Model.ProductOperations.Count != 0)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cart-table table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                                <tr class="row-1">
+                                    <th class="row-title"><p>#</p></th>
+                                    <th class="row-title"><p>Məhsul</p></th>
+                                    <th class="row-title"><p>Məhsulun adı</p></th>
+                                    <th class="row-title"><p>Qiymət</p></th>
+                                    <th class="row-title"><p>Say</p></th>
+                                    <th class="row-title"><p>Cəmi</p></th>
+                                    <th class="row-title"><p></p></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ProductOperations)
+                                {
+                                    var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
+                                    <tr class="row-2">
+                                        <td class="row-close ">@count</td>
+                                        <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
+                                        <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
+                                        <td class="product-price" data-title="Price">
+                                            <p> @product.Price</p>
+                                        </td>
+                                        <td class="product-price">
+                                            <p> @product.Count</p>
+                                        </td>
+                                        <td class="product-price" data-title="Price">
+                                            <p> @product.Count</p>
+                                        </td>
+                                        <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="Deletebasket" asp-route-id="@product.Id"><i class="bi bi-x-circle"></i></a></td>
+                                    </tr>
+                                    count++;
+                                    priceSum += product.Price;
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="12">
+                                        <ul class="table-btn">
+                                            <li><a asp-controller="Home" asp-action="Index" class="btn btn-secondary"><i class="fa fa-chevron-left"></i>Alışverişə keç</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="container">
+            <h2>Səbəziniz boşdur</h2>
+        </div>
+    }
+
+
 </section>
 <!-- -----BASKET TABLE----- -->
 <!-- -----CARD TOTAL----- -->
 <section class="cart-box-section pb_large">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-lg-4 col-md-6">
-                <div class="cart-inner-box box-1 text-center">
-                    <div class="ci-title">
-                        <h6>Promo kod</h6>
-                    </div>
-                    <div class="ci-caption">
-                        <p>Promo kod daxil edərək endirim qazanın</p>
-                        <form>
-                            <input required="" class="form-control" type="text" placeholder="Kod">
-                            <button class="btn btn-secondary" type="submit">Daxil et</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
+            
+            <div class="col-lg-4 col-md-6" style="text-align: center">
                 <div class="cart-inner-box box-2 text-center">
                     <div class="ci-title">
                         <h6>Cəmi</h6>
                     </div>
                     <div class="ci-caption">
                         <ul>
-                            <li>Məhsul dəyəri <span>$237.00</span></li>
-                            <li>Ümumi <span>$237.00</span></li>
+                            <li>Məhsul dəyəri <span>@priceSum ₼ </span></li>
+                            <li>Ümumi <span>@priceSum ₼ </span></li>
 
                         </ul>
                     </div>
                     <div class="ci-btn">
-                        <a href="checkout.html" class="btn btn-primary btn-block rounded-0">Sifariş ver</a>
+                        <a asp-controller="ProductBFOS" asp-action="Pay" asp-route-pid="@Model.Products.FirstOrDefault().Id" asp-route-userid="@Model.ProductOperations.FirstOrDefault().ApplicationUserId" class="btn btn-primary btn-block rounded-0">Sifariş ver</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>a
 </section>
 <!-- -----CARD TOTAL----- -->

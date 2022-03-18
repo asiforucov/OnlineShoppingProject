@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Business.Interfaces;
 using Core;
 using Core.Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Business.Implementations
 {
@@ -34,6 +35,15 @@ namespace Business.Implementations
             await _unitOfWork.SaveAsync();
         }
 
+        public async Task DeleteOrdered(int id, string userid)
+        {
+            var bfos = await _unitOfWork.productBFOSRepository.Get(p =>
+                p.ProductId == id && p.ApplicationUserId == userid && p.Ordered == true);
+            bfos.Ordered = false;
+            _unitOfWork.productBFOSRepository.Update(bfos);
+            await _unitOfWork.SaveAsync();
+        }
+
         public Task<ProductOperation> Get(int id)
         {
             throw new NotImplementedException();
@@ -41,22 +51,22 @@ namespace Business.Implementations
 
         public async Task<List<ProductOperation>> GetAllAsync(string userId)
         {
-            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId);
+            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId,"Product");
         }
 
         public async Task<List<ProductOperation>> GetAllBasketAsync(string userId)
         {
-            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId && po.IsBasket == true);
+            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId && po.IsBasket == true, "Product");
         }
 
         public async Task<List<ProductOperation>> GetAllFavouriteAsync(string userId)
         {
-            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId && po.IsFavorite == true);
+            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId && po.IsFavorite == true, "Product");
         }
 
-        public Task<List<ProductOperation>> GetAllOrderedAsync(string userId)
+        public async Task<List<ProductOperation>> GetAllOrderedAsync(string userId)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.productBFOSRepository.GetAllAsync(po => po.IsDeleted == false && po.ApplicationUserId == userId && po.Ordered == true, "Product");
         }
 
         public Task<List<ProductOperation>> GetAllSendAsync(string userId)
@@ -90,9 +100,22 @@ namespace Business.Implementations
             await _unitOfWork.SaveAsync();
         }
 
-        public Task SetOrdered(int id, string userid)
+        public async Task SetOrdered( string userid)
         {
-            throw new NotImplementedException();
+            var dbBFOS = await _unitOfWork.productBFOSRepository.Get(so=>so.IsBasket==true&& so.ApplicationUserId == userid && so.IsBasket == true);
+            dbBFOS.IsBasket = false;
+            dbBFOS.Ordered = true;
+            _unitOfWork.productBFOSRepository.Update(dbBFOS);
+            await _unitOfWork.SaveAsync();
+        }
+        [HttpPost]
+        public async Task SetOrdered(int id, string userid)
+        {
+            var dbBFOS = await _unitOfWork.productBFOSRepository.Get(so => so.ProductId==id && so.ApplicationUserId == userid && so.IsBasket == true);
+            dbBFOS.IsBasket = false;
+            dbBFOS.Ordered = true;
+            _unitOfWork.productBFOSRepository.Update(dbBFOS);
+            await _unitOfWork.SaveAsync();
         }
 
         public Task SetSend(int id, string userid)

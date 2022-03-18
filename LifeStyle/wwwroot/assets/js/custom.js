@@ -1,11 +1,4 @@
-/*=========================================================
-Author       : Bestwebcreator.
-Template Name: ATZ Shop - Online Shopping Store HTML Template
-Version      : 1.3
-==============================================================*/
 
-(function($) {
-	'use strict';
 
 /*===================================*
 01. LOADING JS

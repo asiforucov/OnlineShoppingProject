@@ -4648,7 +4648,7 @@ iframe {
     font-size: 18px;
 }
 .nav-fixed .header-btm {
-    position: fixed;
+    position: fixed !important;
     right: 0;
     left: 0;
     top: 0;
