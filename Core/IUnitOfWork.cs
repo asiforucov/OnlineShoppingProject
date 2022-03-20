@@ -18,6 +18,7 @@ namespace Core
         public ISliderRepository sliderRepository { get;  }
         public IAccountRepository accountRepository { get;  }
         public IOrderRepository orderRepository { get;  }
+        public ISaleRepository saleRepository { get;  }
         public IProductBFOSRepository productBFOSRepository { get;  }
         Task SaveAsync();
     }

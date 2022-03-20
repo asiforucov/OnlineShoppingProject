@@ -220,3 +220,5 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyl
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.dll
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.pdb
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.genruntimeconfig.cache
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Sale\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Sale\Update.cshtml.g.cs

@@ -28,7 +28,7 @@
                                 <td class="row-close close-1"></td>
                                 <td class="row-close">@count</td>
                                 <td class="row-img"><img src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == product.Id && p.IsMain == true).FirstOrDefault().Image" width="120px" alt="cart-img"></td>
-                                <td class="product-name"><a href="#" style="color: black;">@product.Name</a></td>
+                                <td class="product-name"><a asp-controller="Product_detail" asp-action="Index" asp-route-id="@product.Id" style="color: black;">@product.Name</a></td>
                                 <td class="product-price" data-title="Price">
                                     <p> @product.Price</p>
                                 </td>

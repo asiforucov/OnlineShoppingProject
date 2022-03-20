@@ -83,6 +83,7 @@ namespace LifeStyle
             services.AddScoped<IProductBrandService, ProductSizeService>();
             services.AddScoped<ISliderService, SliderService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ISaleService, SaleService>();
             services.AddScoped<IProductBFOSService, ProductBFOSService>();
         }
 

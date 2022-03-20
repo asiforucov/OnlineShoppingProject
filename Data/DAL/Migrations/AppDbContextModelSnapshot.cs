@@ -405,6 +405,27 @@ namespace Data.DAL.Migrations
                     b.ToTable("ProductOperations");
                 });
 
+            modelBuilder.Entity("Core.Entities.Sale", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sales");
+                });
+
             modelBuilder.Entity("Core.Entities.Slider", b =>
                 {
                     b.Property<int>("Id")

@@ -254,8 +254,10 @@
         </div>
 </section>
 <!-- ---PRODUCT--- -->
+
 <!-- -----SALE----- -->
-<section class="bg_light_pink pt_large pb_large">
+<section class="bg_light_pink pt_large pb_large " id="time">
+    <input type="hidden" id="endtime" value="@Model.Sale.Time">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-md-4">
@@ -265,35 +267,35 @@
             </div>
             <div class="col-md-7">
                 <div class="deal_section text-center">
-                    <h2 class="deal_title">Yaz endirimi</h2>
-                    <h3 class="a">21-28 Mart tarixlərində xüsusi endirimlərdən yararlanın.</h3>
-                    @*<p>Endirimə qaldı:</p>
+                    <h2 class="deal_title">@Model.Sale.Title</h2>
+                    <p>@Model.Sale.Description</p>
+                    <p>Endirimə qaldı:</p>
                     <div class="countdown_time" data-time="2020/03/15">
                         <div class="countdown_box">
-                            <div class="countdown_content">
-                                <span class="countdown days">00 </span>
+                            <div class="countdown_content time-card">
+                                <span class="countdown days" data-days="">00 </span>
                                 <span class="cd_text">Gün</span>
                             </div>
                         </div>
                         <div class="countdown_box">
-                            <div class="countdown_content">
-                                <span class="countdown hours">00</span>
+                            <div class="countdown_content time-card">
+                                <span class="countdown hours" data-hours="">00</span>
                                 <span class="cd_text">Saat</span>
                             </div>
                         </div>
                         <div class="countdown_box">
-                            <div class="countdown_content">
-                                <span class="countdown minutes">00</span>
+                            <div class="countdown_content time-card">
+                                <span class="countdown minutes" data-minutes="">00</span>
                                 <span class="cd_text">Dəqiqə</span>
                             </div>
                         </div>
                         <div class="countdown_box">
-                            <div class="countdown_content">
-                                <span class="countdown seconds">00</span>
+                            <div class="countdown_content time-card">
+                                <span class="countdown seconds" data-seconds="">00</span>
                                 <span class="cd_text">Saniyə</span>
                             </div>
                         </div>
-                    </div>*@
+                    </div>
                 </div>
             </div>
         </div>

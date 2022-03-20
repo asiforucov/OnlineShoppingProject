@@ -22,6 +22,7 @@ namespace Data.Repositories
         private ISliderRepository _sliderRepository;
         private IAccountRepository _accountRepository;
         private IOrderRepository _orderRepository;
+        private ISaleRepository _saleRepository;
         private IProductBFOSRepository _productBFOSRepository;
 
 
@@ -48,6 +49,8 @@ namespace Data.Repositories
 
         public IAccountRepository accountRepository => _accountRepository = _accountRepository ?? new AccountRepository(_context); 
         public IOrderRepository orderRepository => _orderRepository = _orderRepository ?? new OrderRepository(_context);
+
+        public ISaleRepository saleRepository => _saleRepository = _saleRepository ?? new SaleRepository(_context);
 
         public async Task SaveAsync()
         {

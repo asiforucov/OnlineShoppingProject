@@ -13,21 +13,24 @@ namespace LifeStyle.Controllers
     public class HomeController : Controller
     {
         private readonly ISliderService _sliderService;
+        private readonly ISaleService _saleService;
         private readonly IProductService _productService;
         private readonly IProductBFOSService _productBfosService;
         private readonly IProductImageService _productImageService;
         private readonly IGenderCategoryService _genderCategoryService;
-        public HomeController(ISliderService sliderService, IProductBFOSService productBfosService, IGenderCategoryService genderCategoryService, IProductService productService, IProductImageService productImageService)
+        public HomeController(ISliderService sliderService, ISaleService saleService, IProductBFOSService productBfosService, IGenderCategoryService genderCategoryService, IProductService productService, IProductImageService productImageService)
         {
             _sliderService = sliderService;
             _genderCategoryService = genderCategoryService;
             _productService = productService;
             _productImageService = productImageService;
             _productBfosService = productBfosService;
+            _saleService = saleService;
         }
         public async Task<IActionResult> Index()
         {
             var sliders = await _sliderService.GetAllAsync();
+            var sale = await _saleService.Get();
             var gender = await _genderCategoryService.GetAllAsync();
             var product = await _productService.GetAllAsync();
             var productImage = await _productImageService.GetAllAsync();
@@ -36,7 +39,8 @@ namespace LifeStyle.Controllers
                 Sliders = sliders,
                 GenderCategory = gender,
                 Product = product,
-                ProductImages = productImage
+                ProductImages = productImage,
+                Sale = sale
             };
             return View(homeVM);
         }

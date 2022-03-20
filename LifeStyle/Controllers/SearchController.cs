@@ -24,31 +24,36 @@ namespace LifeStyle.Controllers
             _productImageService = productImageService;
             _unitOfWork = unitOfWork;
         }
-        public async  Task<IActionResult> Index(int page = 1)
+        public async  Task<IActionResult> Index()
         {
-            var product = await _productService.GetAllPaginatedAsync(page);
-
-            var homeVM = new HomePaginatedVM()
+            var product = await _productService.GetAllAsync();
+            var productImage = await _productImageService.GetAllAsync();
+            var homeVM = new HomeVM()
             {
-                //ProductImages = productImage
+                ProductImages = productImage,
+                Product = product
             };
-       
-            homeVM.Product = product;
             return View(homeVM);
         }
         [HttpGet]
         public async Task<IActionResult> Index(string productSearch)
         {
             ViewData["SearchedProduct"] = productSearch;
-            var product = await _productService.GetAllAsync();
             //var productImage = await _productImageService.GetAllAsync();
-            var productQuery = from p in await _unitOfWork.productRepository.GetAllAsync(p=>p.IsDeleted == false) select p;
+            var productQuery = from p in await _unitOfWork.productRepository.GetAllAsync(p => p.IsDeleted == false) select p;
             if (!String.IsNullOrEmpty(productSearch))
             {
                 productQuery =
                     productQuery.Where(p => p.Name.Trim().ToLower().Contains(productSearch.Trim().ToLower()));
             }
-            return View(productQuery.ToList());
+            //var pageProduct = await _productService.GetAllPaginatedAsync(page);
+            var productImage = await _productImageService.GetAllAsync();
+            var homeVM = new HomeVM()
+            {
+                ProductImages = productImage,
+                Product = productQuery.ToList()
+            };
+            return View(homeVM);
         }
     }
 }

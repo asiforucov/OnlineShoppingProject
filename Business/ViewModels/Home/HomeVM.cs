@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Core.Entities;
 
 namespace Business.ViewModels.Home
 {
@@ -12,5 +13,6 @@ namespace Business.ViewModels.Home
         public List<Core.Entities.ProductBrand> ProductBrands { get; set; }
         public List<Core.Entities.Product> Product { get; set; }
         public List<Core.Entities.ProductImage> ProductImages { get; set; }
+        public Sale Sale { get; set; }
     }
 }
