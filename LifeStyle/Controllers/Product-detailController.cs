@@ -48,7 +48,7 @@ namespace LifeStyle.Controllers
         public async  Task<IActionResult> CreateComment(ProductDetailVM productDetailVm)
         {
              await _commentService.Create(productDetailVm);
-             return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
         public async  Task<IActionResult> Delete(int id)
         {

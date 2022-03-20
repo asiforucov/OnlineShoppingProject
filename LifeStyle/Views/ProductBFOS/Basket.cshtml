@@ -22,7 +22,6 @@
                                     <th class="row-title"><p>Məhsulun adı</p></th>
                                     <th class="row-title"><p>Qiymət</p></th>
                                     <th class="row-title"><p>Say</p></th>
-                                    <th class="row-title"><p>Cəmi</p></th>
                                     <th class="row-title"><p></p></th>
                                 </tr>
                             </thead>
@@ -40,9 +39,7 @@
                                         <td class="product-price">
                                             <p> @product.Count</p>
                                         </td>
-                                        <td class="product-price" data-title="Price">
-                                            <p> @product.Count</p>
-                                        </td>
+                                      
                                         <td class="row-close close-2" data-title="product-remove"><a asp-controller="ProductBFOS" asp-action="Deletebasket" asp-route-id="@product.Id"><i class="bi bi-x-circle"></i></a></td>
                                     </tr>
                                     count++;
@@ -92,7 +89,16 @@
                         </ul>
                     </div>
                     <div class="ci-btn">
+                         @if (priceSum == 0)
+                         {
+                             <ul class="table-btn">
+                                 <li><a asp-controller="Home" asp-action="Index" class="btn btn-secondary"><i class="fa fa-chevron-left"></i>Alışverişə keç</a></li>
+                             </ul>
+                         }
+                         else
+                         {
                         <a asp-controller="ProductBFOS" asp-action="Pay" asp-route-pid="@Model.Products.FirstOrDefault().Id" asp-route-userid="@Model.ProductOperations.FirstOrDefault().ApplicationUserId" class="btn btn-primary btn-block rounded-0">Sifariş ver</a>
+                         }
                     </div>
                 </div>
             </div>

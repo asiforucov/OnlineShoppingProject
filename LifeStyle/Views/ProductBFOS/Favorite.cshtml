@@ -23,7 +23,7 @@
                         <tbody>
                         @foreach (var item in Model.ProductOperations)
                         {
-                            var product = Model.Products.Where(p => p.Id == item.ProductId).FirstOrDefault();
+                            var product = Model.Products.Where(p => p.Id == item.ProductId && p.IsDeleted == false).FirstOrDefault();
                             <tr class="row-2">
                                 <td class="row-close close-1"></td>
                                 <td class="row-close">@count</td>
