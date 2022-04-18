@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Business.Interfaces;
 using Core.Entities;
 using Data.DAL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class OrderedController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

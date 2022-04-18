@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.ViewModels.ProductSize;
 using Business.ViewModels.Slider;
 using Microsoft.AspNetCore.Http;
 
@@ -35,7 +36,9 @@ namespace LifeStyle
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews()
-                .AddFluentValidation(p => p.RegisterValidatorsFromAssemblyContaining<SliderCreateViewModel>());
+                .AddFluentValidation(p =>
+                    p.RegisterValidatorsFromAssemblyContaining<ProductBrandCreateViewModel>()
+                );
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:Default"]);

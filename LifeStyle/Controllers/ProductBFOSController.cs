@@ -92,10 +92,11 @@ namespace LifeStyle.Controllers
         [Authorize]
         public async Task<IActionResult> SetOrdered(int id)
         {
-            var userId = _userManager.GetUserId(HttpContext.User);
-            await _productBFOSService.SetOrdered(id, userId);
+         
+                var userId = _userManager.GetUserId(HttpContext.User);
+                await _productBFOSService.SetOrdered(id, userId);
 
-            return RedirectToAction("SuccesOrdered");
+                return RedirectToAction("SuccesOrdered");
         }
         public async Task<IActionResult> DeleteOrder(int id)
         {
@@ -120,23 +121,28 @@ namespace LifeStyle.Controllers
         public async Task<IActionResult> Pay(OrderVM orderVm)
         {
             //orderVm.ApplicationUserId = "1e2d0c37-6522-422d-b344-dcb6b6e2b4e7";
-            var order = new Order()
+            if (ModelState.IsValid)
             {
-                Name = orderVm.Name,
-                PhoneNumber = orderVm.PhoneNumber,
-                Size = orderVm.Size,
-                Color = orderVm.Color,
-                PostalCode = orderVm.PostalCode,
-                Adress = orderVm.Adress,
-                City = orderVm.City,
-                ApplicationUserId = orderVm.ApplicationUserId,
-                Surname = orderVm.Surname,
-                ProductId = orderVm.ProductId
-            };
-            await _context.Orders.AddAsync(order);
-            await _context.SaveChangesAsync();
+                var order = new Order()
+                {
+                    Name = orderVm.Name,
+                    PhoneNumber = orderVm.PhoneNumber,
+                    Size = orderVm.Size,
+                    Color = orderVm.Color,
+                    PostalCode = orderVm.PostalCode,
+                    Adress = orderVm.Adress,
+                    City = orderVm.City,
+                    ApplicationUserId = orderVm.ApplicationUserId,
+                    Surname = orderVm.Surname,
+                    ProductId = orderVm.ProductId
+                };
+                await _context.Orders.AddAsync(order);
+                await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(SuccesOrdered));
+                return RedirectToAction(nameof(SuccesOrdered));
+            }
+
+            return View();
         }
         [Authorize]
         public async Task<IActionResult> Ordered()

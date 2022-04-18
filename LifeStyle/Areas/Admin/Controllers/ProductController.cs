@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 using Business.Tools;
 using Business.ViewModels.Product;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

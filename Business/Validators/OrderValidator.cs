@@ -11,14 +11,14 @@ namespace Business.Validators
     {
         public OrderValidator()
         {
-            RuleFor(p => p.Name).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.Surname).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.PhoneNumber).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.City).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.Color).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.Size).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.Adress).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.PostalCode).NotNull().NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Name).NotNull().WithMessage("Adınızı daxil edin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Surname).NotNull().WithMessage("Soyadınızı daxil edin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.PhoneNumber).NotNull().WithMessage("Telefon nömrənizi daxil edin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.City).NotNull().WithMessage("Şəhər daxil edin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Color).NotNull().WithMessage("Məhsulun istədiyiniz rəngini seçin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Size).NotNull().WithMessage("Məhsulun istədiyiniz ölçüsünü seçin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Adress).NotNull().WithMessage("Ünvan daxil edin").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.PostalCode).NotNull().WithMessage("Poçt nömrəsi daxil edin").NotEmpty().MaximumLength(200);
         }
     }
 }

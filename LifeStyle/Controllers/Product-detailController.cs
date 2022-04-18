@@ -45,15 +45,23 @@ namespace LifeStyle.Controllers
 
         [Authorize]
         [HttpPost]
-        public async  Task<IActionResult> CreateComment(ProductDetailVM productDetailVm)
+        public async Task<IActionResult> CreateComment(ProductDetailVM productDetailVm)
         {
-             await _commentService.Create(productDetailVm);
-            return RedirectToAction("Index", "Home");
+          
+                await _commentService.Create(productDetailVm);
+                return RedirectToAction("Index", "Home");
+          
+
         }
-        public async  Task<IActionResult> Delete(int id)
+        public async  Task<IActionResult> Delete(int id, string ReturnUrl)
         {
              await _commentService.Remove(id);
-             return RedirectToAction("Index","Home");
+             if (ReturnUrl != null)
+             {
+
+                 return Redirect(ReturnUrl);
+             }
+            return RedirectToAction("Index","Home");
         }
         
     }

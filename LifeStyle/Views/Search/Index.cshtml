@@ -50,7 +50,9 @@
                         <div class="col-md-4 col-6">
                             <div class="product-box common-cart-box box-1">
                                 <div class="product-img common-cart-img">
-                                    <img src="./assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
+                                  @*  <img src="./assets/image/@Model.ProductImages.Where(p => p.ProductId == p.Id && p.IsMain == true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">*@
+                                    <img src="~/assets/image/@p.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().Image" style="object-fit: cover" alt="product-img">
+
                                     <div class="hover-option">
                                         <div class="add-cart-btn">
                                             <a href="#" class="btn btn-primary">Səbətə əlavə et</a>
@@ -62,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info common-cart-info text-center">
-                                    <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id class="cart-name">@p.Name</a>
+                                    <a asp-controller="Product_detail" asp-action="Index" asp-route-id="@p.Id" class="cart-name">@p.Name</a>
                                     <p class="cart-price">$ @p.Price</p>
                                     <p class="product-list-text" style="">@p.Description</p>
                                     <div class="hover-option">

@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using Business.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class UsersController : Controller
     {
 

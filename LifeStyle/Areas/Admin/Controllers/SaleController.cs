@@ -5,10 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Interfaces;
 using Business.ViewModels.Home;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class SaleController : Controller
     {
         private readonly ISaleService _saleService;

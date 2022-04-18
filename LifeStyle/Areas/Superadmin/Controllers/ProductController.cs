@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Business.Interfaces;
 using Business.ViewModels.Product;
 using Core;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Superadmin.Controllers
 {
-    [Area("Superadmin")]
+    [Area("SuperAdmin")]
+    [Authorize(Roles = "SuperAdmin")]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -34,7 +36,7 @@ namespace LifeStyle.Areas.Superadmin.Controllers
         {
             var productCategories = await _productCategoryService.GetAllAsync();
             var productImages = await _productImageService.GetAllAsync();
-            var product = await _unitOfWork.productRepository.GetAllAsync();
+            var product = await _productService.GetAllAsync();
             ProductHomeVM productHomeVM = new ProductHomeVM()
             {
                 ProductImages = productImages,
@@ -48,7 +50,7 @@ namespace LifeStyle.Areas.Superadmin.Controllers
         {
             var productCategories = await _productCategoryService.GetAllAsync();
             var productImages = await _productImageService.GetAllAsync();
-            var product = await _unitOfWork.productRepository.GetAllAsync();
+            var product = await _productService.GetAllAsync();
             ProductHomeVM productHomeVM = new ProductHomeVM()
             {
                 ProductImages = productImages,
@@ -56,19 +58,12 @@ namespace LifeStyle.Areas.Superadmin.Controllers
                 Products = product
             };
             return View(productHomeVM);
-        } 
-        public async Task<IActionResult> GetDeleted()
+        }
+        public async Task<ActionResult> Delete(int id)
         {
-            var productCategories = await _productCategoryService.GetAllAsync();
-            var productImages = await _productImageService.GetAllAsync();
-            var product = await _unitOfWork.productRepository.GetAllAsync();
-            ProductHomeVM productHomeVM = new ProductHomeVM()
-            {
-                ProductImages = productImages,
-                ProductCategories = productCategories,
-                Products = product
-            };
-            return View(productHomeVM);
+            await _productService.Remove(id);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

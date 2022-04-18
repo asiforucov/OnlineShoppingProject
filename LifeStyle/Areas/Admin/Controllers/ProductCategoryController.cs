@@ -7,10 +7,12 @@ using Business.Interfaces;
 using Business.ViewModels.ProductCategory;
 using Core;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class ProductCategoryController : Controller
     {
         private readonly IProductCategoryService _productCategoryService;
@@ -35,8 +37,12 @@ namespace LifeStyle.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCategoryCreateViewModel model)
         {
-            await _productCategoryService.Create(model);
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                await _productCategoryService.Create(model);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(model);
         }
 
 

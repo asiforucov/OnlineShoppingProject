@@ -144,6 +144,7 @@
                                             <input asp-for="Content" required  rows="6" class="form-control" placeholder="Şərhini yaz"/>
                                             <input type="hidden" asp-for="UserName"  value="@User.Identity.Name" />
                                             <input type="hidden" asp-for="ProductId"   value="@Model.product.Id" />
+                                            <span asp-validation-for="Content" class="text-danger"></span>
                                         </div>
                                         <div class="input-btn">
                                             <button type="submit" class="btn btn-secondary">Göndər</button>

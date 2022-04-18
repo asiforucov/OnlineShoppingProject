@@ -11,9 +11,9 @@ namespace Business.Validators
     {
         public SliderCreateValidator()
         {
-            RuleFor(p => p.Name).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.Title).NotNull().NotEmpty().MaximumLength(200);
-            RuleFor(p => p.Photo).NotNull().NotEmpty();
+            RuleFor(p => p.Name).NotNull().WithMessage("Mətn başlığı boş qala bilməz").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Title).NotNull().WithMessage("Mətn boş qala bilməz").NotEmpty().MaximumLength(200);
+            RuleFor(p => p.Photo).NotNull().WithMessage("Şəkil seçilməlidir").NotEmpty();
         }
     }
 }
