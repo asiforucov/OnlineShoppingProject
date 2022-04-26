@@ -1,0 +1,38 @@
+﻿@model Business.ViewModels.Product.ProductHomeVM
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Şəkli</th>
+            <th scope="col">Adı</th>
+            <th scope="col">Qiyməti</th>
+            <th scope="col">Stokda sayı</th>
+            <th scope="col">Əlavə edilmə tarixi</th>
+            <th scope="col">Kateqoriya</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pr in Model.Products)
+        {
+            <tr>
+                <th scope="row">@count</th>
+                <td> <img width="100px" src="~/assets/image/@Model.ProductImages.Where(p => p.ProductId == pr.Id && p.IsMain == true).FirstOrDefault().Image" />  </td>
+                <td>@pr.Name</td>
+                <td>@pr.Price</td>
+                <td>@pr.Count</td>
+                <td>@pr.CreateDT</td>
+                <td>@pr.ProductCategory.Name</td>
+                <td>
+                  
+                </td>
+            </tr>
+            count++;
+        }
+
+    </tbody>
+</table>

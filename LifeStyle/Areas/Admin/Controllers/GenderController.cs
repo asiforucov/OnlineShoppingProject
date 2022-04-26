@@ -7,10 +7,12 @@ using Business.Interfaces;
 using Business.ViewModels.GenderCategory;
 using Core;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class GenderController : Controller
     {
         private readonly IGenderCategoryService _genderCategoryService;
@@ -36,8 +38,13 @@ namespace LifeStyle.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(GenderCategoryCreateViewModel model)
         {
-            await _genderCategoryService.Create(model);
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                await _genderCategoryService.Create(model);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
         }
 
 

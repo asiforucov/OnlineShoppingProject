@@ -8,19 +8,24 @@
     <div class="form-group">
         <label asp-for="Name">Slayd mətn başlığı</label>
         <input asp-for="Name" style="text-transform: none" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Title">Slayd mətni</label>
         <input asp-for="Title" style="text-transform: none" class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+        <span asp-validation-for="Title" class="text-danger"></span>
+
     </div>
     @*<div class="form-group">
             <label asp-for="Photo">Slayd üçün şəkil</label>
             <input asp-for="Photo" type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>*@
-    <div class="form-group">
-        <label asp-for="Photo" class="form-label" for="customFile">Şəkil seçin</label>
-        <input asp-for="Photo" type="file" class="form-control" id="customFile" />
-    </div>
+<div class="form-group">
+    <label asp-for="Photo" class="form-label" for="customFile">Şəkil seçin</label>
+    <input asp-for="Photo" type="file" class="form-control" id="customFile" />
+    <span asp-validation-for="Photo" class="text-danger"></span>
+
+</div>
         <button type="submit" class="btn btn-success">Əlavə et</button>
 </form>
 </div>

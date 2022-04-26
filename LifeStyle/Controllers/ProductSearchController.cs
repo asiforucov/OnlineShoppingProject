@@ -35,13 +35,13 @@ namespace LifeStyle.Controllers
                 //Product = product,
                 ProductImages = productImage
             };
-            //if (categoryid!= 0)
-            //{
-            //    var filteredCategory = await _productCategoryService.Get(categoryid);
-            //    homeVM.Product = filteredCategory.Products;
-            //    return View(homeVM);
+            if (categoryid != 0)
+            {
+                var filteredCategory = await _productCategoryService.Get(categoryid);
+                homeVM.Products = filteredCategory.Products;
+                return View(homeVM);
 
-            //}
+            }
 
             homeVM.Product = product;
             return View(homeVM);

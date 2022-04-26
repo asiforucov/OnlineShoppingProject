@@ -112,7 +112,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item  active ">
-                        <a class="nav-link " asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                        <a class="nav-link " asp-area="SuperAdmin" asp-controller="SuperHome" asp-action="Index">
                             <i class="ni ni-tv-2 text-primary"></i>Dashboard
                         </a>
                     </li>
@@ -122,12 +122,12 @@
                         </a>
                     </li> 
                     <li class="nav-item">
-                        <a class="nav-link " asp-area="Superadmin" asp-controller="Product" asp-action="GetDeleted">
+                        <a class="nav-link " asp-area="Superadmin" asp-controller="Deleted_Product" asp-action="Index">
                             <i style="color: #5e72e4" class="bi bi-box-seam"></i>Silinmiş məhsullar
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../index.html">
+                        <a class="nav-link " asp-area="Superadmin" asp-controller="Users_SuperAdmin" asp-action="Index">
                             <i class="ni ni-circle-08 text-primary"></i>İstifadəçilər
                         </a>
                     </li>

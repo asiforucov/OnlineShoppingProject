@@ -94,9 +94,9 @@
                     </div>
                 </div>
                 <!-- Form -->
-                <form class="mt-4 mb-3 d-md-none">
+                <form class="mt-4 mb-3 d-md-none" method="get" asp-controller="SearchAdmin" asp-action="Index">
                     <div class="input-group input-group-rounded input-group-merge">
-                        <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+                        <input type="search" class="form-control form-control-rounded form-control-prepended" value="@ViewData["SearchedProduct"]" name="productSearch"  placeholder="Search" >
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-search"></span>
@@ -138,8 +138,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../index.html">
+                        <a class="nav-link " asp-area="Admin" asp-controller="Ordered" asp-action="Index">
+                            <i style="color: #5e72e4" class="ni ni-box-2"></i>Sifarişlər
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="Admin" asp-controller="Users" asp-action="Index">
                             <i class="ni ni-circle-08 text-primary"></i>İstifadəçilər
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-area="Admin" asp-controller="Sale" asp-action="Index">
+                            <i class="ni ni-time-alarm text-primary"></i>Endirimlər
                         </a>
                     </li>
                    

@@ -1,0 +1,67 @@
+﻿@model Business.ViewModels.ProductBFOS.OrderVM
+@{
+    ViewData["Title"] = "Pay";
+}
+
+<div style="text-align: center">
+    <h2 style="padding-top: 5%">Sifariş ver</h2>
+</div>
+<div class="container" style="padding: 5%">
+
+    <form method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Name">Ad</label>
+                <input asp-for="Name" class="form-control" id="inputEmail4">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Surname">Soyad</label>
+                <input asp-for="Surname" class="form-control">
+                <span asp-validation-for="Surname" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label>Məhsul rəngi</label>
+                <input asp-for="Color" type="text" class="form-control">
+                <span asp-validation-for="Color" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label>Məhsul ölçüsü</label>
+                <input asp-for="Size" type="text" class="form-control">
+                <span asp-validation-for="Size" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label>Şəhər</label>
+                <input asp-for="City" type="text" class="form-control">
+                <span asp-validation-for="City" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label>Ünvan</label>
+                <input asp-for="Adress" type="text" class="form-control">
+                <span asp-validation-for="Adress" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label>Telefon nömrəsi</label>
+                <input asp-for="PhoneNumber" type="text" class="form-control">
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label>Poçt kodu</label>
+                <input asp-for="PostalCode" type="text" class="form-control">
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+
+            </div>
+            <input type="hidden" asp-for="ApplicationUserId" value="@ViewBag.Userid" />
+            <input type="hidden" asp-for="ProductId" value="@ViewBag.Pid" />
+        </div>
+        <div style="text-align: center">
+            <button type="submit" class="btn btn-primary" style="background-color: #eb3e32">Sifariş ver</button>
+        </div>
+    </form>
+</div>

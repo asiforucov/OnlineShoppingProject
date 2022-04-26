@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="~/assets/css/mCustomScrollbar.min.css">
     <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <script src="~/assets/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/assets/css/animate.css">
     <!-- Font Icon -->
     <link rel="stylesheet" href="~/login-register/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -23,7 +22,13 @@
 
 </head>
 <body>
+<<<<<<< HEAD
     @*<div id="loader"></div>*@
+=======
+<div id="loader"></div>
+
+
+>>>>>>> 3c19e7b4e4aeda33952e9a8cf0f8c98357821858
 
     <!-- ---HEADER--- -->
     <header class="header-4">
@@ -77,8 +82,8 @@
                             <div class="header-logo">
                                 <a asp-controller="Home" asp-action="Index"><img src="~/assets/image/logo/Lifestyle-100.png" alt="logo"></a>
                             </div>
-                            <form class="header-form">
-                                <input class="search-box" placeholder="Axtar..." required="" value="" type="search">
+                            <form class="header-form" method="get" asp-controller="Search" asp-action="Index">
+                                <input autocomplete="off" class="search-box" placeholder="Axtar..."  value="@ViewData["SearchedProduct"]" name="productSearch" type="search">
                                 <button type="submit">Axtar</button>
                             </form>
                             <div class="header-right">
@@ -93,19 +98,19 @@
                                 </div>
                                 <div class="header-cart">
                                     <div class="basket">
-                                        <a href="#">
+                                        <a asp-controller="ProductBFOS" asp-action="Basket">
                                             <div class="cart-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                                                 </svg>
-                                                <span>02</span>
+                                                @*<span>02</span>*@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="basket-price">
-                                        <h4>100 ₼</h4><i class="fa fa-angle-down"></i>
-                                    </div>
-                                    <div class="cart-box">
+                                    @*<div class="basket-price">
+                                        <h4>100 ₼</h4>
+                                    </div>*@
+                                    @*<div class="cart-box">
                                         <div class="cart-info">
 
 
@@ -137,7 +142,7 @@
                                         <div class="cart-btn">
                                             <a asp-controller="ProductBFOS" asp-action="Basket" class="">Səbətə bax</a>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                                 <div class="d-lg-none mm_icon">
                                     <div class="form-captions" id="search">
@@ -151,7 +156,7 @@
                 </div>
             </div>
         </div>
-        <div class="header-btm">
+        <div class="header-btm" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -234,7 +239,7 @@
                     <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">Xüsusi</h6>
                     <ul class="widget-list">
                         <li class="widget-list-item">
-                            <a class="widget-list-link" href="">Kateqoriyalar</a>
+                            <a class="widget-list-link" asp-controller="ProductSearch" asp-action="Index">Kateqoriyalar</a>
                         </li>
 
                     </ul>
@@ -248,13 +253,13 @@
                     <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">Hesab və çatdırılma</h6>
                     <ul class="widget-list">
                         <li class="widget-list-item">
-                            <a class="widget-list-link" href="">Profil məlumatı</a>
+                            <a class="widget-list-link" asp-controller="My_User" asp-action="Index">Profil məlumatı</a>
                         </li>
                         <li class="widget-list-item">
-                            <a class="widget-list-link" asp-controller="Favorities" asp-action="Index">Arzu siyahısı</a>
+                            <a class="widget-list-link" asp-controller="ProductBFOS" asp-action="Favorite">Arzu siyahısı</a>
                         </li>
                         <li class="widget-list-item">
-                            <a class="widget-list-link" href="">Ünvan</a>
+                            <a class="widget-list-link" asp-controller="My_User" asp-action="Index">Ünvan</a>
                         </li>
                     </ul>
                 </div>
@@ -297,6 +302,7 @@
         </div>
         <!-- Footer Links -->
     </footer>
+<<<<<<< HEAD
     <div style="display: none;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/xkDThoocEYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/xkDThoocEYo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -314,7 +320,19 @@
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+=======
+   
+<!-- ---FOOTER--- -->
+
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/asif.js"></script>
+
+   
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+>>>>>>> 3c19e7b4e4aeda33952e9a8cf0f8c98357821858
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

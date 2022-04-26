@@ -159,6 +159,7 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gender\Create.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gender\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gender\Update.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Ordered\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PraductBrand\Create.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PraductBrand\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\PraductBrand\Update.cshtml.g.cs
@@ -169,11 +170,13 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Update.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product_detail_admin\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SearchAdmin\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Update.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Users\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\Product\GetAll.cshtml.g.cs
@@ -185,8 +188,12 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\_ViewStart.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ConfirmationSuccess.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\PassDetailSend.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetSuccesful.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ThanksRegistration.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Error_404\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\FAQ\Index.cshtml.g.cs
@@ -196,8 +203,12 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Privacy_Policy\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductBFOS\Basket.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductBFOS\Favorite.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductBFOS\Pay.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductBFOS\SetOrdered.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductBFOS\SuccesOrdered.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\ProductSearch\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Product_detail\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Search\Index.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -209,6 +220,7 @@ C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyl
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.dll
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.pdb
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetSuccesful.cshtml.g.cs
 C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
@@ -428,3 +440,9 @@ C:\Users\asifr\Source\Repos\OnlineShoppingProject\LifeStyle\obj\Debug\netcoreapp
 C:\Users\asifr\Source\Repos\OnlineShoppingProject\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.dll
 C:\Users\asifr\Source\Repos\OnlineShoppingProject\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.pdb
 C:\Users\asifr\Source\Repos\OnlineShoppingProject\LifeStyle\obj\Debug\netcoreapp3.1\LifeStyle.genruntimeconfig.cache
+=======
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Sale\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Sale\Update.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\Deleted_Product\Index.cshtml.g.cs
+C:\Users\asifr\source\repos\LifeStyle\LifeStyle\obj\Debug\netcoreapp3.1\Razor\Areas\Superadmin\Views\Users_SuperAdmin\Index.cshtml.g.cs
+>>>>>>> 3c19e7b4e4aeda33952e9a8cf0f8c98357821858

@@ -25,6 +25,7 @@ namespace Data.DAL
             builder.ApplyConfiguration(new ProductBrandConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new SliderConfiguration());
+          
             base.OnModelCreating(builder);
         }
 
@@ -35,6 +36,8 @@ namespace Data.DAL
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<Slider> Slider { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Sale> Sales { get; set; }
         public DbSet<ProductOperation> ProductOperations { get; set; }
     }
 }

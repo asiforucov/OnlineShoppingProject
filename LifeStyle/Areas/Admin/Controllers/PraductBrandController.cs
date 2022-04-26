@@ -8,10 +8,12 @@ using Business.ViewModels.ProductCategory;
 using Business.ViewModels.ProductSize;
 using Core;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeStyle.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin, SuperAdmin")]
     public class PraductBrandController : Controller
     {
         private readonly IProductBrandService _productBrandService;
@@ -40,8 +42,13 @@ namespace LifeStyle.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductBrandCreateViewModel model)
         {
-            await _productBrandService.Create(model);
-            return RedirectToAction(nameof(Index));
+            if (ModelState.IsValid)
+            {
+                await _productBrandService.Create(model);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
         }
         public async Task<ActionResult> Update(int id)
         {

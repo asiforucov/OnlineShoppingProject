@@ -12,6 +12,8 @@ namespace Business.ViewModels.Home
         public List<Core.Entities.ProductCategory> ProductCategories { get; set; }
         public List<Core.Entities.ProductBrand> ProductBrands { get; set; }
         public Paginate<Core.Entities.Product> Product { get; set; }
+        public List<Core.Entities.Product> Products { get; set; }
+
         public List<Core.Entities.ProductImage> ProductImages { get; set; }
     }
 }

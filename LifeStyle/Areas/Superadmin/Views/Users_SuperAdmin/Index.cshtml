@@ -1,0 +1,40 @@
+﻿@model Business.ViewModels.User.UsersVM
+
+
+@{
+    int count = 1;
+}
+
+<div class="container">
+    <div style="padding-top: 5%" class=" container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Ad Soyad</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefon</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var user in Model.ApplicationUsers)
+            {
+                <tr>
+
+                    <th>@count</th>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNumber</td>
+                </tr>
+
+                count++;
+            }
+            </tbody>
+        </table>
+    </div>
+    @*@foreach (var user in Model.ApplicationUsers)
+    {
+        <p>@user.FullName</p>
+        <p>@user.</p>
+    }*@
+</div>

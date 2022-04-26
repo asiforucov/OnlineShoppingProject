@@ -81,7 +81,7 @@
             <div class="signin-image">
 
                 <figure><img src="~/login-register/pngegg.png" alt="sing up image"></figure>
-                <a href="#" class="signup-image-link">Qeydiyyatdan keç</a>
+                <a asp-controller="Account" asp-action="Register" class="signup-image-link">Qeydiyyatdan keç</a>
             </div>
 
             <div class="signin-form">
@@ -115,7 +115,6 @@
                     <span class="social-label">Bunlarla daxil ol</span>
                     <ul class="socials">
                         <li><a asp-controller="Account" asp-action="FacebookLogin"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                        <li><a asp-controller="Account" asp-action="TwitterLogin"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
                         <li><a asp-controller="Account" asp-action="GoogleLogin"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                     </ul>
                 </div>
