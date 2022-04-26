@@ -8,3 +8,13 @@ C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.csproj.C
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.dll
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.pdb
 C:\Users\asifr\source\repos\LifeStyle\Core\obj\Debug\netcoreapp3.1\Core.csproj.AssemblyReference.cache
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.csproj.AssemblyReference.cache
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.dll
+C:\Users\asifr\Source\Repos\OnlineShoppingProject\Core\obj\Debug\netcoreapp3.1\Core.pdb

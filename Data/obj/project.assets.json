@@ -5982,11 +5982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\asifr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Data\\obj\\",
+      "outputPath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6007,8 +6007,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Core\\Core.csproj"
+            "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Core\\Core.csproj"
             }
           }
         }

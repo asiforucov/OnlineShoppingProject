@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pdyvy1agBZb/1333PCg3LbmzUUkmblK4fxwQ3qRPwiJQu6K3lrF5CGUWfmQVQ5M4tWY5LFyN7gRLQOc9FFzFMQ==",
+  "dgSpecHash": "R1oRvb40w3OYb0ey74XhnGmjCcN6pQIuEimXfv5bzSYEGCCgAGzN4/1hRnqahJo8evQrbnerSMKRuQF1tkdKDg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\LifeStyle\\LifeStyle.csproj",
+  "projectFilePath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\LifeStyle\\LifeStyle.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",

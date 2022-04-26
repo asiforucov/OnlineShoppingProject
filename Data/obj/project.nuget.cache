@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2oKCYj8cJoX7r5/30ptIp2n0fsfFi4N/gojb7Qpc4SRv4EfqVn5OGM0avxSuMN5aAqBuxVoi0Gj6kXYtXijWCw==",
+  "dgSpecHash": "XP6GfYh5S4K88plbejqaXW6u2woJI9UPuN+KnLpMDxIJpe2YAmdaMsyWOsWj8B4JEFm0Di93mbhCUau39q3Uiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Data\\Data.csproj",
+  "projectFilePath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.22\\microsoft.aspnetcore.authentication.facebook.3.1.22.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.22\\microsoft.aspnetcore.authentication.google.3.1.22.nupkg.sha512",

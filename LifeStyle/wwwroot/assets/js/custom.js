@@ -1,8 +1,4 @@
-/*=========================================================
-Author       : Bestwebcreator.
-Template Name: ATZ Shop - Online Shopping Store HTML Template
-Version      : 1.3
-==============================================================*/
+
 
 (function($) {
 	'use strict';
@@ -84,12 +80,12 @@ $(window).on('load', function() {
 06. SEARCH JS
 *===================================*/
 
-	$(document).ready(function(){
-	  $('#search').on("click",(function(e){
-	  $(".header-form").toggleClass("search-open");
-		e.stopPropagation()
-	  }));
-	})
+	//$(document).ready(function(){
+	//  $('#search').on("click",(function(e){
+	//  $(".header-form").toggleClass("search-open");
+	//	e.stopPropagation()
+	//  }));
+	//})
 	
 	
 /*===================================*

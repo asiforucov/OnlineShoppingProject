@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ml32z88FBvR1OMOTdopXxRTd9vN1P2pQuDk0+kglaLBdvRWuddA+Fd0rDMpErnM7r8MNoqlZwf8Ykr8mciqPcw==",
+  "dgSpecHash": "6dyVGYC7kdtyMRnt7cztMt44ckh6qZHNJ8Z9Adv0dZEiq9O98378K7nf1UI690WMZ/lWB7xRgv+GMnX1G2TVPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\asifr\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",

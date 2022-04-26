@@ -8963,11 +8963,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\LifeStyle\\LifeStyle.csproj",
+      "projectUniqueName": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\LifeStyle\\LifeStyle.csproj",
       "projectName": "LifeStyle",
-      "projectPath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\LifeStyle\\LifeStyle.csproj",
+      "projectPath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\LifeStyle\\LifeStyle.csproj",
       "packagesPath": "C:\\Users\\asifr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\LifeStyle\\obj\\",
+      "outputPath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\LifeStyle\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8988,8 +8988,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\asifr\\source\\repos\\LifeStyle\\Business\\Business.csproj"
+            "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\asifr\\Source\\Repos\\OnlineShoppingProject\\Business\\Business.csproj"
             }
           }
         }
